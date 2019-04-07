@@ -1,0 +1,155 @@
+@CHARSET "ISO-8859-1";
+
+/*
+ * MasterDetail.css  There are four division created in the page body {header, master, detail, and footer}.
+ * Each of these has an id assigned and they are formatted using the style information found below.
+ * 
+ * Design Notes:
+ *   1. When a style sheet is linked to an HTML document the element does not require the <style> tag.
+ *   2. All of the available style attributes for any HTML tag can be located at the 
+ *      http://www.w3schools.com/tags/default.asp site.  At that site, for example, the "HTML <div> Tag" 
+ *      selected in the "HTML Tags" list displays the browser support for the <div> element and links to
+ *      the Global and Event Attributes.  Use caution regarding HTML 5 information as there are differences
+ *      among browsers.  Some of those are demonstrated in code for this page.
+ *   3. There are three selectors used with CSS.  The '#' selector is an "id selector" and the
+ *      '.' is a class selector.  "id" names are unique to a specific element in the <body>.
+ *      "class" selector is a property name that can be assigned to many different elements.
+ *      Third, the style can be assigned by html tag name, for example: h1 {color: orange;text-align: center;}
+ *   4. The class 'scriptingOK' is created to enable a functionality in which different page content is
+ *      displayed or not based on whether Javascript is turned on or off.
+ *   5. The Master/Detail side-by-side format is achieved using the style 'float'.  When 'float' is NOT assigned 
+ *      the element is rendered by the browser having an individually fixed horizontal position. When 'float' 
+ *      is assigned the browser will render that element as one of a potential number of  elements horizontally 
+ *      aligned as space in the main body permits.  The "as space permits" disclaimer is the reason
+ *      why the main page must resize the 'detail' portion to FIT the remaining space after the 'master'
+ *      content is rendered.  The header and footer are not 'float' and the 'master' and 'detail' are 'float'.
+ *      The floated elements are rendered in the order of their appearance in the document.  Each element is 
+ *      assigned an alignment.  The 'master' division must be aligned Left but the 'detail' may be either 
+ *      as it is sized to fit exactly in the remaining horizontal space.
+ *   6. The dimensions of the containing master and detail <div> elements specify the height and width of
+ *      their contained <iframe> elements where the iframe elements' height and width are set to 100%.  The
+ *      width of the master div element is fixed to 140px and the width of the detail div element is computed
+ *      to fit the balance of the page's body.  The height of both master and detail can also be established
+ *      by resizing to fit the page's body height.
+ */
+ #mainDocument {
+	margin: 0;
+	padding: 0;
+	border: 0; 
+}
+ 
+ body {
+	margin: 0;
+	padding: 10px 10px 10px 10px;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	background-image: url(../images/ocean.jpg); 
+	background-size: cover;
+	}
+ 
+.scriptingOK { display: none; }
+ 
+/* scripted is the containing element for the master and detail elements */
+#scripted {
+	background: rgba(0, 0, 0, 0.0); /*transparent*/
+	margin: 0;
+	padding: 0;
+	border: 0; 
+}
+
+#header {
+    background-color:grey;
+    color:white;
+    text-align:left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.companyName { vertical-align: bottom; text-align: left; font-size: 40px; white-space: nowrap; overflow: hidden;}
+.companyPurpose { vertical-align: top; text-align: left; font-size: 30px; white-space: nowrap; overflow: hidden;}
+	
+#privateReference {
+	right: 30px;
+ 	vertical-align: top; 
+	font-size: 10px;
+    background-color:grey;
+    color:#c0c0c0;
+    text-align:right;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 0;
+    border: 0; 
+}
+	
+/* master is the left side element that contains the table of hyperlinks that index the detail object's content */
+#master {
+    background-color:#e2e5e1;
+	/* float: The float property will float an element within the containing element.  The float: left; places the floated element 
+     * with a left alignment with other floated elements.
+     */
+    float:left;
+    width: 140px;
+    height: 706px; 
+    margin: 0;
+    padding: 0;
+    /*
+     * The overflow property specifies whether to clip content, render scrollbars or just display content when it 
+     * overflows its block level container.  
+     */
+    overflow: auto;
+    /*
+     * I struggled with the browser's rescale sensitivity regarding space to the right side of the detail division.  I've 
+     * placed a border with an adjusted thickness around the master division and for some reason that removed the problem regarding 
+     * resizing.  I initially decided to leave the border around master and just color it the same as master's background to make it 
+     * invisible.  This is all pretty weird but it worked.  But it also created a small gap at the bottom of the detail content the 
+     * size of the border.  I finally realized that the resize event is lagging the actual user resize action and so the values
+     * computed in the resize function were either larger or smaller than the resulting space available after the resize depending
+     * on the direction of the resize.  So I reasoned out that I needed to leave the width sizing to the browser.  The solution
+     * was found at http://jsfiddle.net/bgBXM/10/ where the width of the fixed width master div becomes the width of the detail div's 
+     * left margin.  In this solution only the master div is floated left and it is then fitted into the left margin of the detail div.
+     */
+	border-width: 0px; 
+	cursor: pointer;
+	}
+	
+/* detail is the is the right side element that contains the slaved page data. */
+#detail {
+    /* float: The float property will float an element within the containing element.  The float: left; places the floated element 
+     * with a left alignment with other floated elements.
+     */
+	/*float:left;*/
+    padding: 0;
+	border: 0; 
+	margin-left: 140px;
+	}
+	
+/* detailframe is the frame container in detail. */
+#detailframe {
+	width: 100%; 
+	height: 100%; 
+	margin: 0;
+    padding: 0;
+    border: 0;
+}
+	
+#footer {
+    background-color:black;
+    color:white;
+    /* clear: The clear: both; removes the previous float style so that the footer is displayed as a normal boxed element.
+     */
+    clear:both;
+    text-align:center;
+    margin: 0;
+    padding: 0; /*5px 0px 5px 0px;*/ 
+    border: 0;
+	}
+
+#displayDebugInfo {
+	font-size: 10px;
+	margin: 0;
+    padding: 0;
+    border: 0;
+}

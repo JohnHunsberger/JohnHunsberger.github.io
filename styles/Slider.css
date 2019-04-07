@@ -1,0 +1,52 @@
+@CHARSET "ISO-8859-1";
+
+/*
+ * DESIGN NOTES:
+ *   1. Take care with the textual content to allow the browser a line break option.  For example
+ *      (http://www.lehigh.edu/engineering/academics/undergraduate/majors/computereng.html) would
+ *      potentially force the browser to widen the page container resulting in subsequent textual
+ *      content to be formatted to the new wider page.  But adding '-' or ' ' allows line breaks.
+ *      (http://www.lehigh.edu/ engineering/academics/ undergraduate/majors/computereng.html)
+ *                             ^                      ^
+ */
+
+/*
+ * The visualContainer class is the view port into which each of the subsequent
+ * container pages must fit exactly.
+ */
+ .visualContainer {
+ 	height: auto;
+ 	width: 100%;
+ 	overflow-x: hidden;
+}
+
+/*
+ * The contentContainer class is the container that is N times wider than the visual container.
+ * This and each container must have the height of the visual container.  Anything
+ * not shown needs to be hidden from sight.  Changing the position of the content Container can
+ * be done by setting its left: position to 0 (page 1) or -100% (page 2).  I find this interesting
+ * that the contentContainer must be positioned left by 100% to expose the second page but then
+ * it is perfectly reasonable in that the width is 200% of its container visualContainer.
+ */
+.contentContainer {
+	overflow: hidden;  /*Hide all overflow*/
+	position: relative; /*The element is positioned relative to its normal position, so "left:20px" adds 20 pixels to the element's LEFT position*/
+	width: 200%; /* The percentage depends on the number of pages.  100% times N pages.*/
+	height: 100%;
+	left: 0;
+  }
+
+/*
+ * The container class is the HTML division that contains the document pertaining to a single
+ * page.  It turns out that each container must stretch the full height of its contentContainer.  To
+ * do that its height property is set to 100vh (full view height).  Each container must align 
+ * horizontally.  To do that its float property is left.  Don't forget to add a subsequent float:end;
+ */
+.container {
+	overflow-y: scroll;
+    width: 50%; /*The percentage depends on the number of pages.  100% divided by N pages.*/
+    height: 100vh;
+    float: left; /*get pages aligned horizontally*/
+    font-size: 1em;
+}
+

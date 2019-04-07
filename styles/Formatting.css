@@ -1,0 +1,312 @@
+@CHARSET "ISO-8859-1";
+
+/*
+ * Style data can be assigned to HTML tags in a variety of ways.
+ *   1. External stylesheet.  Each page must include a reference to the external style sheet file inside 
+ *      the <link> element. The <link> element goes inside the <head> section.  The syntax is:
+ *           Selector {CSS Property:value;} 
+ *               Selector: points to the HTML element you want to style.
+ *               eg: p {text-align: center;}
+ *      Selectors: element, #id and .class 
+ *
+ *   2. Internal stylesheet.  Same as above but uses the <style></style> HTML elements.
+ *
+ *   3. Inline style.  HTML TagElements have defined attributes that can be included.  The "style" attribute and the syntax is:
+ *           <HTML_TagName style="property:value;">  The property and value are a CSS property and value.
+ *                eg: <p style="text-align:center;">Centered paragraph.</p>
+ *           Use background-color for background color
+ *           Use color for text colors
+ *           Use font-family for text fonts
+ *           Use font-size for text sizes
+ *           Use text-align for text alignment
+ * 
+ * Design Notes:
+ *   1. When a style sheet is linked to an HTML document the element does not require the <style> tag.
+ *   2. All of the available style attributes for any HTML tag can be located at the 
+ *      http://www.w3schools.com/tags/default.asp site.  At that site, for example, the "HTML <div> Tag" 
+ *      selected in the "HTML Tags" list displays the browser support for the <div> element and links to
+ *      the Global and Event Attributes.  Use caution regarding HTML 5 information as there are differences
+ *      among browsers.  Some of those are demonstrated in code for this page.
+ *   3. There are three selectors used with CSS.  The '#' selector is an "id selector" and the
+ *      '.' is a class selector.  "id" names are unique to a specific element in the <body>.
+ *      "class" selector is a property name that can be assigned to many different elements.
+ *      Third, the style can be assigned by html tag name, for example: h1 {color: orange;text-align: center;}
+ *   4. The class 'scriptingOK' is created to enable a functionality in which different page content is
+ *      displayed or not based on whether Javascript is turned on or off.
+ *   5. The Master/Detail side-by-side format is achieved using the style 'float'.  When 'float' is NOT assigned 
+ *      the element is rendered by the browser having an individually fixed horizontal position. When 'float' 
+ *      is assigned the browser will render that element as one of a potential number of  elements horizontally 
+ *      aligned as space in the main body permits.  The "as space permits" disclaimer is the reason
+ *      why the main page must resize the 'detail' portion to FIT the remaining space after the 'master'
+ *      content is rendered.  The header and footer are not 'float' and the 'master' and 'detail' are 'float'.
+ *      The floated elements are rendered in the order of their appearance in the document.  Each element is 
+ *      assigned an alignment.  The 'master' division must be aligned Left but the 'detail' may be either 
+ *      as it is sized to fit exactly in the remaining horizontal space.
+ *   6. The dimensions of the containing master and detail <div> elements specify the height and width of
+ *      their contained <iframe> elements where the iframe elements' height and width are set to 100%.  The
+ *      width of the master div element is fixed to 140px and the width of the detail div element is computed
+ *      to fit the balance of the page's body.  The height of both master and detail can also be established
+ *      by resizing to fit the page's body height.
+ */
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: default;
+}
+
+b.xcursor {
+	cursor: pointer;
+}
+
+.embedded-page {
+	background-color:white; 
+	margin:0px 20px 0px 20px;
+}
+
+.banner {
+	color: #0000ff;
+	text-align: center;
+	background-color: #c1ffff;
+	margin: 0px 0px 10px 0px;
+	font-size: 120%;
+	line-height: 150%;
+	border-width: 0px 0px 4px 0px;
+	border-bottom-style: groove;
+	border-color: #0080ff;
+}
+
+.paragraph {
+	line-height: 130%;
+	text-align: justify;
+}
+
+.masterListMajor {
+	line-height: 110%;
+	font-size: 15px;
+}
+
+.masterListMinor {
+	padding-left: 10px;
+	padding-right: 25px;
+	line-height: 100%;
+	font-size: 14px;
+	color: blue;
+}
+
+.masterListMinorSub {
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 100%;
+	font-size: 14px;
+	color: darkblue;
+}
+
+.stars {
+	text-decoration: none; 
+	font-style: italic; 
+	font-size: 11px;
+}
+
+.skillCategory {
+	font-weight: bold; 
+	font-size: 20px; 
+	color:#674fb0; 
+	margin-bottom:0.1em;
+}
+
+.skillsTable {
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.skillsTableCellHeading {
+	text-align: center;
+	cellpadding: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.skillsTableCell {
+	text-align: center;
+	cellpadding: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 12px;
+}
+
+.discussionLink {
+	font-size: 10pt; 
+	text-decoration: none;
+}
+
+.footnote {
+	font-size: 10px;
+	font-weight: bold;
+                     color: blue;
+                     text-decoration: none;
+}
+.footNoteTableStart {
+	vertical-align: bottom;
+	font-size: 12px;
+	height: 25px;
+}
+
+.footNoteText {
+	font-size: 12px;
+	color: #484848;
+	font-style: italic;
+}
+
+.historyTable {
+	border-style: solid;
+	border-width: 3px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 20px 0px 0px 0px;
+}
+
+.historyTableHeading {
+	text-align: center;
+	font-size: 20px;
+	cellpadding: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.historyTableCellHeading {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #d1eaef;
+	cellpadding: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.historyTableCell {
+	text-align: center;
+	cellpadding: 0;
+	border-style: solid;
+	border-width: 1px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 12px;
+}
+
+.historyH1 {
+	font-size: 22px;
+	margin-bottom: 0.1em;
+}
+
+.list-heading {
+	font-weight: bold; 
+	list-style-type: none;
+}
+
+#thisArticle {
+	align: center; 
+	border: 1px solid #c3c3c3; 
+	width: 700px; 
+	margin-left: auto; 
+	margin-right: auto;  
+	background-color: white;
+}
+
+.TOC {
+	background-color: AliceBlue;
+	font-weight: bold;
+	font-size: 20px;
+}
+.TOC_entry {
+	font-weight: normal;
+	font-size: 14px;
+	margin: 4px 0px 0px 20px;
+}
+.TOC_link {
+	text-decoration: none;
+	color: black;
+}
+
+.lnk_modal {
+    font-size: 90%;
+    display: none; /* Shown by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding: 2px  3px 2px 3px;
+    border: 2px solid rgb(190,200,200);
+    border-radius: 5px;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(200,255,255,0.9); 
+}
+.contributor {
+    margin: 8px 0px 0px 20px;
+    line-height: 130%;
+    text-align: justify;
+    color: #003c1e;
+    background-color: #eefffd;
+}
+._Aside {
+    margin-top: 10px;
+    padding: 0px 5px 0px 5px;
+    background-color: white;
+    border: 2px dotted black;
+    line-height: 130%;  /*<=== Just added hooberdoober*/
+}
+.aside {
+    color: grey;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.operators_table {
+	border-collapse: collapse;
+	font-size:95%; 
+	border: 1px solid black;
+	text-align: center;
+	margin: 1em auto;
+}
+.operators_heading {
+	background-color:CornflowerBlue;
+	color: white;
+	border-collapse: collapse;
+	font-size:90%; 
+	border: 1px solid black;
+	text-align: center;
+}
+.operators_type {
+	background-color:Cyan;
+	border-collapse: collapse;
+	font-size:90%; 
+	border: 1px solid black;
+	text-align: center;
+}
+.operators {
+	border-collapse: collapse;
+	font-size:90%; 
+	border: 1px solid black;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+}
+.operator_except {
+	background-color: yellow;
+	border-collapse: collapse;
+	font-size:90%; 
+	border: 1px solid black;
+	text-align: center;
+	padding: 0px 5px 0px 5px;
+}
+span.backspace {
+	margin-left: -5px;
+}
