@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<!--  
+  indexMobile.html is the mobile web page (index page) of a web site that serves the site's mobile device access.
+  This and all other web content on this site was hand written by John Hunsberger to demonstrate some simple, 
+  perhaps useful techniques and to highlight some issues as well.  This content is open for anyone to copy.  If 
+  you have questions or opinions about this content feel free to contact me.  The ideas presented are not my invention, 
+  they are my application.
+  
+  The original design choice mimicked the standard page but added the slider that is still in use.  I found that
+  because the right side contained page used an iFrame that it removed the page's swipe response.  Starting that
+  slider on the left most page allowed the user to swipe left to expose the right page containing the iFrame but
+  once the iFrame was exposed the user could not swipe right to return to the left page.  A modified structure
+  as implemented here was devised to eliminate that.
+  
+  Design Notes:
+	1. This page contains a modal dialog box popup.
+	2. This page contains a slider.  The Slider.css defines the necessary format to hide a page depending on the 
+	   relative position of the visualContainer (either 0 or -100%).  When position 0 page 1 shows and page 2 is 
+	   hidden.  When set to -100% the page 2 shows and page 1 is hidden.  The transition between pages is implemented 
+	   using the swipe event in mobileview-js.eclipse.js.  It is important that all pages have the same dimensions.
+	
+	        |----------|
+	        |  Splash  |
+	        |----------|
+	        
+	        |----------|----------|
+	        |  Page 1  |  Page 2  | <<== contentContainer (two pages in one container)
+	        |          |          |      Pages must be same dimensions, set by mobileview-js.eclipse.js loadView().
+	        |----------|----------|
+                 ^
+                 ^== visualContainer (only shows one page at a time.)
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work History</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto" width="280px"
+					src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th
+					style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th> <!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th> <!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div><!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface" ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)" ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+<!-- ********************************************************************************************* -->			    
+		    <div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Products.html"></a>Product</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Equipment.html"></a>Equipment</td>
+							</tr>
+
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Reference</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- This Page</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Tool Chain</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Cognition</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Quantum</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Encryption</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Trains</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Chess</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Modeling</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Gaming</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+	    	</div> <!-- /master -->
+<!-- ************************************************************************************* -->			    
+			<div class="container" id="detail">
+				<div id="page2"> <!-- added wrapper for sizing content with margins. -->
+	<table class="historyTable">
+		<colgroup>
+			<col style="width: 50%;">
+			<col style="width: 50%;">
+		</colgroup>
+		<tr>
+			<th class="historyTableHeading" colspan="2">Educational Basis</th>
+		</tr>
+		<tr>
+			<td class="historyTableCellHeading">Location of Study</td>
+			<td class="historyTableCellHeading">Completion</td>
+		</tr>
+		<tr>
+			<td class="historyTableCell">Lehigh University, Bethlehem, Pa.<sup><a class="footnote" href="#fn1">1</a></sup></td>
+			<td class="historyTableCell">B.S. Computer Engineering<sup><a class="footnote" href="#fn2">2</a></sup></td>
+		</tr>
+		<tr>
+			<td class="historyTableCell">Penn State University
+				Ogontz/Abington campus, Abington, PA.<sup><a class="footnote" href="#fn3">3</a></sup></td>
+			<td class="historyTableCell">15 credits towards M.S. Engineering
+				Science<sup><a class="footnote" href="#fn4">4</a></sup> (3.8 GPA)</td>
+		</tr>
+	</table>
+	<br>
+<h1 class="historyH1">Employment History</h1>
+<p style="font-style:italic; font-size:80%;">Similar to many other working engineers, my experience has ranged across many of the engineering disciplines.</p>
+<br>
+	<table class="employmentTable">
+		<colgroup>
+			<col width="10%">
+			<col width="20%">
+			<col width="20%">
+			<col width="60%">
+		</colgroup>
+		<tr><td class="employmentTableEntry" colspan="3">Most Recent Employer:</td><td class="employmentTableEntry">Schneider Electric, Knightdale, NC</td></tr>
+		<tr><td class="employmentTableEntry" colspan="3">Current Position:</td><td class="employmentTableEntry"><b>Program Manager, Test Engineering&nbsp;</b><sup>
+		<a class="footnote" href="#fn5">5</a></sup></td></tr>
+		<tr><td class="employmentTableEntry" colspan="3">Duration:</td><td class="employmentTableEntry">4/2009 - Present</td></tr>
+		<tr><td colspan="3">Highlights:</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Provide development and support of production test equipment for Breakers and Automation.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Collaborate with peers to create cost estimates for new test equipment requests.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Emphasis on safe work and safe equipment designs.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Participate on peer and safety reviews for developed equipment.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Analysis of test coverage for circuit board panels and production cell work-added testers.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Analysis of equipment capacity based on projected annual sales at maturity.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Participate on formal equipment safety reviews.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o AutoCAD, Word, Excel, PowerPoint documentation for Electrical Designs.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Revision/version control for all engineering releases.</td><td></td></tr>
+		<tr><td></td><td colspan="3" class="wider-line">o Extensive LabVIEW based test sequence control and instrument drivers.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Knowledge and experience with many high level programming languages and assembly languages used for real time controls.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Knowledge and experience with several PLC languages used for machine controls.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Developed Windows DLL to enable LabView test software communications via USB port using Microsoft Visual Studio and Visual C++ development tools.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Developed LASER measurement system based on Keyence heads and controller.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Developed automation controls with Modicon momentum PLC controllers using ProWORX 32.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Developed motion controls for linear and stepper motors.  Most projects used Yaskawa amplifiers and controllers, some used NI Motion Controller.  Projects used torque and speed control methods.</td><td></td></tr>
+	</table>
+	<br>
+	<table class="employmentTable">
+		<colgroup>
+			<col width="10%">
+			<col width="20%">
+			<col width="20%">
+			<col width="60%">
+		</colgroup>
+		<tr><td class="employmentTableEntry" colspan="3">Employer:</td><td class="employmentTableEntry">Schneider Electric, Knightdale, NC</td></tr>
+		<tr><td class="employmentTableEntry" colspan="3">Previous Position:</td><td class="employmentTableEntry">Engineering Manager, Test Engineering&nbsp;
+		<sup><a class="footnote" href="#fn6">6</a></sup></td></tr>
+		<tr><td class="employmentTableEntry" colspan="3">Duration:</td><td class="employmentTableEntry">1/2006 - 4/2009</td></tr>
+		<tr><td colspan="3">Highlights:</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Managed eight test engineering direct reports at two locations, performance appraisals and staffing.<br></td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Assured safe work and safe equipment designs by periodic audits.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Coordinated and assured timely completion of projects.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Assured successful and timely Plant manufacturing production test support for existing Breakers and Automation production equipment.</td><td></td></tr>  
+        <tr><td></td><td colspan="3" class="wider-line">o Tactical planning for resource utilization in complex test and calibration equipment designs.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Program management of equipment builds to track and report project execution.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Managed peer and safety reviews of developed equipment.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Established and assured the implementation of engineering processes; Formal Equipment Safety Reviews, Archive of Electrical Design data; Version control for software releases, Tester and Lab equipment calibrations.</td><td></td></tr>
+	</table>
+	<br>
+	<table class="employmentTable">
+		<colgroup>
+			<col width="10%">
+			<col width="20%">
+			<col width="20%">
+			<col width="60%">
+		</colgroup>
+		<tr><td class="employmentTableEntry" colspan="3">Employer:</td><td class="employmentTableEntry">Schneider Electric, Knightdale, NC</td></tr>
+		<tr><td class="employmentTableEntry" colspan="3">Previous Position:</td><td class="employmentTableEntry">Sr. Staff Engineer, Electrical/Electronic/Software</td></tr>
+		<tr><td class="employmentTableEntry" colspan="3">Duration:</td><td class="employmentTableEntry">9/1996 - 1/2006</td></tr>
+		<tr><td colspan="3">Highlights:</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Supervised five design engineering direct reports, performance appraisals and staffing.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Responsible Engineer for electronic design support of products used in control, communications, and safety applications.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Provide lead product manufacturing, quality, marketing and sales support for assigned products.  Tactical planning for resource utilization in product line support.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Participate with Marketing to provide direct customer contact for various product lines.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Implemented design changes on existing products.  Participate in design reviews.  Provide failure modes and risk analysis.  Principle responsibility for cost and schedule containment.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Internally recognized authority on risk assessment.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Architect and Developer of ActiveX Control for Windows using Microsoft Visual C++ compiler. Object based design methodology.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Architect and Developer for Mobile Device application using MetroWerks CodeWarrior C / C++ compiler for Motorola DragonBall microprocessor.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Architect and Developer for Windows based Enterprise Database Application using Visual Basic 6.0, SQL, and HTML.  The application was custom Client Software with a common Server Database that was used throughout the corporation for coordinating and tracking product design changes.  Performed Voice of Customer interviews for system definition.  Object based design and documentation methodology.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Project design leader for small team to development embedded real-time firmware for a protocol bridge.  The processor board was based on the Motorola dragonball uP.  Tools used included C++, MS SourceSafe, and in-circuit debugger.</td><td></td></tr>
+        <tr><td></td><td colspan="3" class="wider-line">o Supported firmware for embedded controls of existing products, including a PLC employing dual processors, Intel 86xxx family uP and AMD 2900 family bit slice.</td><td></td></tr>
+	</table>
+<br>
+    <a id="fnotes"></a>
+	<table>
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+		<tr>
+			<td id="fn1"><span class="footNoteText">&nbsp;1. <a target="_blank"
+				href="http://www.lehigh.edu">Lehigh University</a>.
+				(http://www.lehigh.edu)</span>
+		<tr>
+			<td id="fn2"><span class="footNoteText">&nbsp;2. <a target="_blank"
+				href="https://engineering.lehigh.edu/academics/undergraduate/majors/computer-engineering">Lehigh
+					University, Computer Engineering</a>.
+				(https://engineering.lehigh.edu/ academics/undergraduate/ majors/computer-engineering)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp;Computer engineers
+					differ from computer scientists and programmers because they focus
+					more on hardware, while computer scientists focus more on software.
+					However, computer engineers address the relationship and
+					interactions between software and hardware in solving real
+					engineering problems.</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn3">&nbsp;3. <a target="_blank"
+				href="http://abington.psu.edu/">Penn State Abington Campus</a>.
+				(http://abington.psu.edu/)<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn4">&nbsp;4. <a target="_blank"
+				href="https://harrisburg.psu.edu/science-engineering-technology/engineering-science-management/master-engineering-engineering-science">MS Engineiering Science</a>.
+				(https://harrisburg.psu.edu/science-engineering-technology/engineering-science-management/master-engineering-engineering-science)<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn5" style="font-size: 12px"> 5. &nbsp;This position change resulted from a 
+				corporate-wide flattening of the overall reporting structure.  The main activity for this position is design
+				of new test equipment.
+				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Article: <a target="_blank"
+				href="http://www.nber.org/digest/oct03/w9633.html">the National Bureau
+					of Economic Research, Article on The Flattening of Corporate Management</a>.
+				(http://www.nber.org/digest/oct03/w9633.html)</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn6">&nbsp;6. The small number of direct reports enabled me to 
+			also function as another Test Engineer resource.
+			</td>
+		</tr>
+	</table>
+
+				</div> <!-- /page2 -->
+			</div> <!-- /container -->
+<!-- ************************************************************************************* -->			    
+		</div><!-- /contentContainer -->
+	</div> <!-- /visualContainer -->
+</body>
+</html>

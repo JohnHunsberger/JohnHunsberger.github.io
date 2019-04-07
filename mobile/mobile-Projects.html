@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<!--  
+  indexMobile.html is the mobile web page (index page) of a web site that serves the site's mobile device access.
+  This and all other web content on this site was hand written by John Hunsberger to demonstrate some simple, 
+  perhaps useful techniques and to highlight some issues as well.  This content is open for anyone to copy.  If 
+  you have questions or opinions about this content feel free to contact me.  The ideas presented are not my invention, 
+  they are my application.
+  
+  The original design choice mimicked the standard page but added the slider that is still in use.  I found that
+  because the right side contained page used an iFrame that it removed the page's swipe response.  Starting that
+  slider on the left most page allowed the user to swipe left to expose the right page containing the iFrame but
+  once the iFrame was exposed the user could not swipe right to return to the left page.  A modified structure
+  as implemented here was devised to eliminate that.
+  
+  Design Notes:
+	1. This page contains a modal dialog box popup.
+	2. This page contains a slider.  The Slider.css defines the necessary format to hide a page depending on the 
+	   relative position of the visualContainer (either 0 or -100%).  When position 0 page 1 shows and page 2 is 
+	   hidden.  When set to -100% the page 2 shows and page 1 is hidden.  The transition between pages is implemented 
+	   using the swipe event in mobileview-js.eclipse.js.  It is important that all pages have the same dimensions.
+	
+	        |----------|
+	        |  Splash  |
+	        |----------|
+	        
+	        |----------|----------|
+	        |  Page 1  |  Page 2  | <<== contentContainer (two pages in one container)
+	        |          |          |      Pages must be same dimensions, set by mobileview-js.eclipse.js loadView().
+	        |----------|----------|
+                 ^
+                 ^== visualContainer (only shows one page at a time.)
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Management</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto" width="280px"
+					src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th
+					style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th> <!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th> <!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div><!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface" ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)" ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+<!-- ********************************************************************************************* -->			    
+		    <div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Products.html">Product</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Equipment.html">Equipment</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Reference</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- This Page</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Tool Chain</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Cognition</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Quantum</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Encryption</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Trains</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Chess</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Modeling</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Gaming</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+	    	</div> <!-- /master -->
+<!-- ************************************************************************************* -->			    
+			<div class="container" id="detail">
+				<div id="page2"> <!-- added wrapper for sizing content with margins. -->
+	<h1 class="capabilityHeading">Project Management Accomplishments</h1>
+	
+	<p class="spread">The information here first presents a
+	detailed list of the project skills offeredt.  The general
+	classification of the skills are Scheduling, Costing, Traceability and Documentation.
+	That is followed by a discussion regarding the general project skills offered.  </p>
+	<p class="separator"> </p>
+		<a href="../mobile/mobile-Capability.html#Definitions"
+			style="text-decoration: none; font-style: italic; font-size: 11px;">*
+			Definition of rank stars, icons and acronyms</a>
+	<table class="skillsTable">
+		<tr>
+			<th class="skillsTableCellHeading" colspan="4">Skills Table</th>
+		</tr>
+		<tr>
+			<td class="skillsTableCellHeading" style="width: 100px;">Rank</td>
+			<td class="skillsTableCellHeading" style="width: 150px;">Skill</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Environment</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Activity</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Scheduling</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Costing</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Traceability</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Documentation</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+	</table>
+	<br>
+	
+	<span style="font-weight: bold;">Project Management Activities:</span><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;creation of detailed work breakdown structures<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;analysis of schedule to reduce duration (parallel efforts)<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;estimation of components, equipment and labor cost<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;tracking and reporting of expenses against budgeted account<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;tracking and reporting of development efforts against schedule<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;creation of progress and variance reports<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;preparation of recovery plans<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;preparation of phase deliverable documentation<br>
+	<br>
+	<span style="font-weight: bold;">Kinds of Tools:</span><sup><a class="footnote" href="#fn7">7</a></sup><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Schedule:</span> Microsoft Project<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Action Items:</span> Microsoft Excel<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Reports:</span> Microsoft Word<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Cost:</span> Various Accounting Systems<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Collaboration:</span> War Room<sup><a class="footnote" href="#fn6">6</a></sup><br>
+	<br>
+	<span style="font-weight: bold;">Project Management Discussion:</span><br>
+	<p "margin-bottom: 0.5em;> </p>
+	<p class="spread">A project is a joint activity requiring both a defined duration and
+	target cost. Projects consist of various phases during which varying
+	resources produce specified results
+	<sup><a class="footnote" href="#fn1">1</a></sup>. Marketing and business
+	management perform an analysis to assure that the project's deliverable
+	is viable for the business. The success of the project execution that
+	follows will be strongly tied to the accuracy of the requirements and
+	design specifications that define both the required function and
+	performance
+	<sup><a class="footnote" href="#fn2">2</a></sup> &nbsp;of the offer.</p>
+	<p class="separator"> </p>
+	<p class="spread">
+		Many companies define their formal project process as specific phases<sup><a class="footnote"
+			href="#fn3">3</a></sup>, each phase having defined deliverables for the
+		subsequent phase. The formality of the phase breakdown allows
+		management to track project progress and cost against the plan, as well
+		as to assure that each required activity for project completion is
+		identified and attended to.
+	</p>
+	<p class="separator"> </p>
+	<p class="spread">
+		It is essential for management to be able to track the project's
+		progress. Schedule and cost can be accounted for using work
+		breakdown structures<sup><a class="footnote" href="#fn4">4</a></sup>. &nbsp;The WBS can
+		be itemized into a tool such as Microsoft Project® to produce a
+		waterfall execution path. This is true regardless of the use of Agile
+		or Waterfall<sup><a class="footnote" href="#fn5">5</a></sup> &nbsp; project
+		methodology. Even short cycle 'sprint' deliverables of Agile can have
+		cost and schedule work breakdown elements.
+	</p>
+	
+	<a id="fnotes"></a>
+	<table>
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn1">&nbsp;1. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Project_management">Wikipedia,
+					Article on Program Management</a>.
+				(https://en.wikipedia.org/wiki/Project_management)
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn3">&nbsp;2. <a target="_blank"
+				href="http://www.ppi-int.com/systems-engineering/types-of-requirements.php">Project
+					Performance International, Article on Types of Requirements</a>.
+				(http://www.ppi-int.com/systems-engineering/types-of-requirements.php)
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn2">&nbsp;3. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Phase%E2%80%93gate_model">Wikipedia,
+					Article on Phase-Gate Model</a>.
+				(https://en.wikipedia.org/wiki/Phase-gate_model)
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn4">&nbsp;4. <a target="_blank"
+				href="http://www.projecttimes.com/articles/using-work-breakdown-structure-wbs-for-effective-project-estimation.html">Project
+					Management Times Article on Work Breakdown Structures</a>.
+				(http://www.projecttimes.com/articles/using-work-breakdown-structure-wbs-for-effective-project-estimation.html)
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn5">&nbsp;5. <a target="_blank"
+				href="http://www.base36.com/2012/12/agile-waterfall-methodologies-a-side-by-side-comparison/">BASE36
+					Article on Agile and Waterfall Methodologies</a>.
+				(http://www.base36.com/2012/12/agile-waterfall-methodologies-a-side-by-side-comparison/)
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn6">&nbsp;6. <a target="_blank"
+				href="http://project-management-knowledge.com/definitions/w/war-room/">Project Management Knowledge
+					Article on War Room</a>.
+				(http://project-management-knowledge.com/definitions/w/war-room/)
+			</td>
+		</tr>
+		<tr>
+			<td id="fn7"><span class="footNoteText"> &nbsp;7. About the Tools List:</span> 
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp;The list of tools is a just a swipe at some kinds of tools used.  It is not
+				reasonable to include an exhaustive list here. Any working engineer having this background
+				will have used an enormous variety of tools ranging from soldering irons to part programmers.
+				The list presented is merely intended to give a flavor of the tool types.</div>
+			</td>
+		</tr>
+
+	</table>
+				</div> <!-- /page2 -->
+			</div> <!-- /container -->
+<!-- ************************************************************************************* -->			    
+		</div><!-- /contentContainer -->
+	</div> <!-- /visualContainer -->
+</body>
+</html>

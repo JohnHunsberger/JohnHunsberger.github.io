@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<!--  
+  indexMobile.html is the mobile web page (index page) of a web site that serves the site's mobile device access.
+  This and all other web content on this site was hand written by John Hunsberger to demonstrate some simple, 
+  perhaps useful techniques and to highlight some issues as well.  This content is open for anyone to copy.  If 
+  you have questions or opinions about this content feel free to contact me.  The ideas presented are not my invention, 
+  they are my application.
+  
+  The original design choice mimicked the standard page but added the slider that is still in use.  I found that
+  because the right side contained page used an iFrame that it removed the page's swipe response.  Starting that
+  slider on the left most page allowed the user to swipe left to expose the right page containing the iFrame but
+  once the iFrame was exposed the user could not swipe right to return to the left page.  A modified structure
+  as implemented here was devised to eliminate that.
+  
+  Design Notes:
+	1. This page contains a modal dialog box popup.
+	2. This page contains a slider.  The Slider.css defines the necessary format to hide a page depending on the 
+	   relative position of the visualContainer (either 0 or -100%).  When position 0 page 1 shows and page 2 is 
+	   hidden.  When set to -100% the page 2 shows and page 1 is hidden.  The transition between pages is implemented 
+	   using the swipe event in mobileview-js.eclipse.js.  It is important that all pages have the same dimensions.
+	
+	        |----------|
+	        |  Splash  |
+	        |----------|
+	        
+	        |----------|----------|
+	        |  Page 1  |  Page 2  | <<== contentContainer (two pages in one container)
+	        |          |          |      Pages must be same dimensions, set by mobileview-js.eclipse.js loadView().
+	        |----------|----------|
+                 ^
+                 ^== visualContainer (only shows one page at a time.)
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Design</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto" width="280px"
+					src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th
+					style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th> <!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th> <!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div><!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface" ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)" ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+<!-- ********************************************************************************************* -->			    
+		    <div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Products.html">Product</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Equipment.html">Equipment</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Reference</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- This Page</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Tool Chain</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Cognition</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Quantum</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Encryption</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Trains</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Chess</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Modeling</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Gaming</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+	    	</div> <!-- /master -->
+<!-- ************************************************************************************* -->			    
+			<div class="container" id="detail">
+				<div id="page2"> <!-- added wrapper for sizing content with margins. -->
+	<h1 class="capabilityHeading">Product Design Accomplishments</h1>
+	<p class="spread">The information presented here first presents a detailed list of the product offer engineering skills
+	that are offered.  The product perspective is large. This service's engineering activities 
+	for the product offers is divided into three categories:  
+	<a href="#Concept">Concept</a>, 
+	<a href="#Design">Design</a>, and 
+	<a href="#Support">Support</a>.
+	A discussion is then presented for each of the three categories that explains the offer of
+	<a href="#ProductConcept">Concept</a>, 
+	<a href="#ProductDesign">Design</a>, and 
+	<a href="#ProductSupport">Support</a>.
+	</p>
+    <p id="Concept" style="font-weight: bold; font-size: 1em; color: blue; margin-top: 1em; margin-bottom:0.1em; margin-left:1em;">Concept:</p>
+	<a href="../mobile/mobile-Capability.html#Definitions"
+		style="text-decoration: none; font-style: italic; font-size: 11px;">*
+		Definition of rank stars, icons and acronyms</a>
+	<table class="skillsTable">
+		<tr>
+			<th class="skillsTableCellHeading" colspan="4">Concept Phase Skills Table</th>
+		</tr>
+		<tr>
+			<td class="skillsTableCellHeading" style="width: 100px;">Rank</td>
+			<td class="skillsTableCellHeading" style="width: 150px;">Skill</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Environment</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Activity</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Design Concepts and Trade-Offs</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Cost Estimation</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Develop Detailed Schedule</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+	</table>
+	<br>
+	<span style="font-weight: bold;">Concept Activities:</span><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;analyze requirements viability with respect to cost and technology<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;propose alternatives, compromises and opportunities<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;assist consensus on final product requirements<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;propose product cost and design time<br>
+	<br>
+	<span style="font-weight: bold;">Kinds of Tools:</span><sup><a class="footnote" href="#fn2">2</a></sup></li><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Concept:</span> Requirements Analysis, Similar Designs, Available Supporting Technologies, Voice of the Customer<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Estimates:</span> Mature Year Quantities, Available Design Metrics, Similar designs, Vendor Quotes,  Google<br>
+	
+    <p id="Design" style="font-weight: bold; font-size: 1em; color:blue; margin-top: 1em; margin-bottom:0.1em; margin-left:1em;">Design:</p>
+	<a href="../mobile/mobile-Capability.html#Definitions"
+		style="text-decoration: none; font-style: italic; font-size: 11px;">*
+		Definition of rank stars, icons and acronyms</a>
+	<table class="skillsTable">
+		<tr>
+			<th class="skillsTableCellHeading" colspan="4">Design Phase Skills Table</th>
+		</tr>
+		<tr>
+			<td class="skillsTableCellHeading" style="width: 100px;">Rank</td>
+			<td class="skillsTableCellHeading" style="width: 150px;">Skill</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Environment</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Activity</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Design Architecture (HW SW FW)</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Design Specification (HW SW FW)</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Detailed Design (HW SW FW)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Hardware and Software Integration
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Debugging (HW SW FW)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Product Verification
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star.png"></img></td>
+			<td class="skillsTableCell">Agency Approval
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star.png"></img></td>
+			<td class="skillsTableCell">Cost To Complete
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star.png"></img></td>
+			<td class="skillsTableCell">Variance Reports and<br>Recovery
+				Planning
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Documentation
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+	</table>
+	<br>
+	<span style="font-weight: bold;">Design Activities:</span><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<a href="../mobile/mobile-Engineering.html#EngineeeringActivities">Engineering Design Activities</a></span><br>
+	
+	<span style="font-weight: bold;">Kinds of Tools:</span><sup><a class="footnote" href="#fn2">2</a></sup><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<a href="../mobile/mobile-Engineering.html#EngineeringTools" style="color: #007070;">Engineering Design Tools</a><br>
+	
+	<p id="Support" style="font-weight: bold; font-size: 1em; color:blue; margin-top: 1em; margin-bottom:0.1em; margin-left:1em;">Support:</p>
+	<a href="../unscripted/unscripted-Capability.html"
+		style="text-decoration: none; font-style: italic; font-size: 11px;">*
+		Definition of rank stars, icons and acronyms</a>
+	<table class="skillsTable">
+		<tr>
+			<th class="skillsTableCellHeading" colspan="4">Support Skills Table</th>
+		</tr>
+		<tr>
+			<td class="skillsTableCellHeading" style="width: 100px;">Rank</td>
+			<td class="skillsTableCellHeading" style="width: 150px;">Skill</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Environment</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Activity</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Product Knowledge (Know capability)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Customer Defect Localization (Identify the source)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Customer Defect Mitigation (Provide a solution)</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Share Insights (Recommend other offers)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Obsolescence (modify product and manufacturing equipment)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Make Improvements (Product improvement opportunity)
+			</td>
+			<td class="skillsTableCell"><img src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+	</table>
+	<br>
+	<span style="font-weight: bold;">Product Support Activities:</span><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;thorough analysis of existing product functionality and design<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;direct customer on-site and phone support<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;built customer satisfaction by timely resolution of issues (100% success)<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;redesign products to accommodate obsolete components<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;update impacted assembly and test equipment<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;work with manufacturing to update parts and processes<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;work with manufacturing to resolve yield issues<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;update published technical documentation<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;update UL files after product modifications<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;publish application notes<br>
+	<br>
+	<span style="font-weight: bold;">Kinds of Tools:</span><sup><a class="footnote" href="#fn2">2</a></sup><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Customer Support:</span> Product documentation, Product Specification, Software Specification, Electrical Schematics, Installation Review, Value Stream<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Product Quality:</span> Failure Modes Effects Analysis (FMEA), Product Audits, Customer Returned Material Analysis, Cause and Corrective Actions, Calibration Data for Assembly and Test <br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Product Maintenance:</span> Customer Feedback, Customer Site Visits, Customer Returned Material Analysis, Obsolescence Design Changes<br>
+	
+	<p id="ProductConcept" style="font-weight: bold; margin-top: 2em; margin-bottom: .5em;">Product Concept Discussion:</p>
+	<p class="spread">It is expected that the best product design efforts 
+	result in a product that is safe, has least cost, achieves robust implementation of the specification's functionality / performance, and keeps the development costs within the project budget.
+	It is also expected that existing product offers continue to be available for sale without disruptions due to component obsolescence or supplier issues.
+	Safety has always been a paramount concern in all design activity by this service.</p>
+	<p class="spread">During the concept phase of a new product offer the deliverables serve to determine
+	whether the product offer has market viability with respect to the proposed sell price.  At first a number of design proposals are
+	prepared based on the preliminary marketing product specification<sup><a class="footnote" href="#fn1">1</a></sup>.</p>
+	<p class="spread">A technical review process assures the feasibility of the 
+	requirements and selects one of the proposed implementations.  That design concept
+	becomes the basis for an estimation of the product and project costs.</p>
+	<p class="spread">Projected product costs have been created for circuit boards, firmware and software projects.  Estimations 
+	were created by either analysis or comparison.  In previous analysis estimations the costs factors have included total functionality, component costs, design complexity, required performance limits and 
+	producibility costs of labor and plant.</p>
+	<p class="spread">A separate presentation of project related skills is available in "<a href="../unscripted/unscripted-Projects.html">Project</a>".  Please review
+	that information regarding specific project skills offered.</p>
+	<p class="separator"> </p>
+	
+	<p id="ProductDesign" style="font-weight: bold; margin-top: 2em; margin-bottom: .5em;">Product Design Discussion:</p>
+	<p class="spread">During the design phase the product design deliverables start with a design specification<sup><a class="footnote" href="#fn1">1</a></sup>.  The design activity is to 
+	produce a product that implements precisely the functionality and
+	performance defined in the product specification.  The design competencies offered by this service are subdivided into two areas; Electrical and Software design.</p>
+	
+	<p class="spread">Electrical design experience includes digital circuitry, microcontrollers and analog interfaces.  Some typical design factors addressed are timing, 
+	propagation delays, currents, power dissipation and noise.</p>
+	<p class="spread">Software deliverables have included real time control assembly level code and high level application code.</p>
+	<p class="spread">Design of embedded software has 
+	addressed such design factors as tool chain, execution speed, memory allocation, interrupts, timers, A/D, code/data separation, stack management, 
+	register usage and in-circuit debugging.</p>
+	<p class="spread">Design of high level software has addressed design factors such as Operating System, IDE, version control, configuration control, architecture, user interface, security,
+	design patterns, data structures, data types, scope, thread safety, performance, libraries, APIs, DLLs and robustness.</p>
+	<p class="spread">All design work has had to be qualified before being released to manufacturing.  Qualification test plans varied between electrical and software designs.   
+	Both types of design work have agency requirements that apply.
+	In general a compliance to MIL, FCC, NFPA, NEC, IEC, UL, CE and IEC sets design implementation requirements and restrictions for the purpose of consumer safety or systems compatibility.</p>
+	<p class="spread">Many of the past product modifications performed by this service due to obsolescence required a UL inspection and update of the UL report on file.
+	One example of past effort was the preparation of the Shoup Electronic Voting Machines for certification by the Federal Election Commission.  This required the preparation of the firmware and 
+	software to conform with the Voting Systems Standards<sup><a class="footnote" href="#fn3">3</a></sup> that reference the ANSI/ ISO/ ASQC 
+	QS9000-3-1997.  The actual testing was performed by <a href="https://www.nts.com/locations">Wyle Labs in Huntsville, Al.</a>, now NTS.</p>
+    <p class="spread">All manufactured product designs have been designed with regard to manufacturability.  Specifications for specific properties of the product assemblies that must be 
+    tested and verified at manufacture have been supplied to the manufacturing quality assurance.</p>
+    <p class="spread">The additional section of <a href="../unscripted/unscripted-Equipment.html">Equipment</a> contains detail regarding
+    this service's preparation of production assembly and test equipment.  Also, a separate presentation of design related skills is available in 
+    "<a href="../unscripted/unscripted-Engineering.html">Engineering</a>".  Please review that information regarding specific engineering skills offered.</p>
+	
+	<p id="ProductSupport" style="font-weight: bold; margin-top: 2em; margin-bottom: .5em;">Product Support Discussion:</p>
+	<p class="spread">During the support phase the product function or analysis has frequently required direct customer contact.  Customer satisfaction has been
+	considered to be paramount to the successful launch of any new product, whether it was an electronic or software design.  There is an understanding
+	of the urgency by the customer to have their issues resolved in a timely manner.  Providing the necessary engineering skills to resolve 
+	customer issues assures them that their business is valued.</p>
+    <p class="spread">Product offers in the later stage of their life cycle have component obsolescence issues. It has been
+	necessary to make design changes to accommodate new components.  Product change impacts product performance, product cost, manufacturing process, 
+	purchased parts, product testing and agency approvals (UL, CSA, IEC).  The importance to maintain safety, quality, agency approvals, and producibility in any product change is understood.</p>
+	
+	
+<br>
+	<a id="fnotes"></a>
+	<table>
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+
+		<tr>
+			<td id="fn1"><span class="footNoteText"> &nbsp;1. <a target="_blank"
+				href="https://users.ece.cmu.edu/~koopman/des_s99/requirements_specs/">Requirements &amp; Specifications</a>.
+				(https://users.ece.cmu.edu/~koopman/des_s99/ requirements_specs/)</span><br>
+				<div style="font-size: 70%;">&nbsp;&nbsp; Paper: "Requirements &amp; Specifications", Carnegie Mellon University, 
+				18-849b Dependable Embedded Systems, Spring 1999, Author: Eushiuan Tran<br>
+				"There is a distinct difference between requirements and specifications."</div>
+			</td>
+		</tr>
+		<tr>
+			<td id="fn2"><span class="footNoteText"> &nbsp;2. About the Tools List:</span><br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp;The list of tools is a just a swipe at some kinds of tools used.  It is not
+				reasonable to include an exhaustive list here. Any working engineer having this background
+				will have used an enormous variety of tools ranging from soldering irons to part programmers.
+				The list presented is merely intended to give a flavor of the tool types.</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn3"><span class="footNoteText"> &nbsp;3. <a target="_blank" href="https://www.eac.gov/testing_and_certification/default.aspx">Voting Systems Standards</a>.
+			(https://www.eac.gov/testing_and_certification /default.aspx)</span>
+			</td>
+		</tr>
+	</table>
+				</div> <!-- /page2 -->
+			</div> <!-- /container -->
+<!-- ************************************************************************************* -->			    
+		</div><!-- /contentContainer -->
+	</div> <!-- /visualContainer -->
+</body>
+</html>

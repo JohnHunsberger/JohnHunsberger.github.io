@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Bookmarks</title>
+
+<style>
+#backIcon {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 24px;
+	height: 24px;
+	float: left;
+}
+#importantNotice {
+	font-size: 12px;
+	margin: 0;
+	padding-left: 40px;
+	border: 0;
+}
+#drawLine {
+	font-size: 5px; 
+	border-bottom: 1px solid green;
+	width: 100%;
+	float: clear;
+}
+#bookmarkframe {
+	background-color: GhostWhite;
+    position: relative;
+    top: 0px;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*	border-width: 2px; */
+	/*	border-style: solid; */
+	/*	border-color: yellow; */
+}
+</style>
+
+<script>
+function goBack(){
+	window.history.back();
+}
+</script>
+
+</head>
+<body>
+	<!--
+	Design Note:
+	  1. The HTML5 iframe tag still supports "width" but not "height".
+	  2. The HTML5 iframe tag will not process a CSS "width" but will support CSS "height".
+	-->
+	<img id="backIcon" alt="Go Back" src="../images/Back.png" onClick="goBack()">
+	<p id="importantNotice">Some links will not allow framing.  If an error or a blank screen is displayed use 
+	     the back arrow shown at the left.  Then right click the desired link and select open in a new tab.</p>
+	<p id="drawLine">&nbsp;</p>
+	<iframe id="bookmarkframe" width=100% seamless
+		src="../bookmarks.html"></iframe>
+</body>
+</html>

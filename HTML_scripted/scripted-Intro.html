@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<!--  
+scripted-Intro.html: ABOUT OLD TUG'S Offer.
+
+scripted-Intro.html is the initial page content displayed in the detail section of the main page.  This and all other web 
+content on this site was hand written by me, John Hunsberger, to demonstrate some simple but elegant techniques.  This 
+content is open for anyone to copy.  If you have questions about any of this content feel free to ask me.  The ideas 
+presented are not invention, they are my application.
+
+Design Notes:
+  1. The page contains a reference that uses target = "_blank" to have the linked site displayed in a
+     different tab of the browser.
+  2. The document created by this page lives inside the DETAIL iframe of the index.html generated
+     document.  Although Chrome does not allow the content of the DETAIL iframe to reassign content to
+     another iframe, it is permitted to reload the DETAIL iframe with a new document using the anchor <a>
+     link.  This is done below to allow the user to quickly navigate to the brief summary documents.
+  3. This page contains a modal dialog box popup.
+-->
+<head>
+<meta charset="ISO-8859-1">
+<title>Introduction</title>
+<link rel="stylesheet" type="text/css" href="../styles/Formatting.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/formatting-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+</head>
+<body onClick="modalWindowClick(event.target);" class="embedded-page">
+
+    <!-- The myModal division defined below is a pop-up message that is displayed when this page content
+         is loaded for the first time.  The display format is defined in Modal.css.  
+      -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="closeThisModal" onClick="modalCloseClick()">X</span><br>
+			<hr >
+			Thank you for your interest in Old Tug.  Well, an old engineer who wants to share some personal interests.<br>
+            I currently do contract work so I also present an overview of my experience and qualifications.
+		</div>
+	</div>
+	<H2 class="banner">About Old Tug Tech Stuff</H2>
+	<p class="paragraph">
+	Thank you for your interest in Old Tug Tech Stuff offered by John Hunsberger.  My intent is to share some of
+	my interests with others using this site.  I created the site entirely from HTML and CSS and included an explanation
+	on how this was done for anyone interested.  This information is accessed using the "Dev Info" index on the left
+	side of the displayed page.
+    </p>
+    
+    <p class="paragraph">
+    The first (currently only) interest shared is related to quantum mechanics.  I have found that people in general 
+    do not grasp the meaning of quantum.  My thought process on this topic was that a historical treatment 
+    of its evolution would be the most interesting way to present it.  I hope you also find it interesting.
+    </p>
+
+	<div style="color: MidnightBlue;">
+	<ul>
+		<li>Use the index at the left side of this page: Interests; -Quantum</li>
+		<li style="list-style-type: none;">
+			<ul>
+				<li>Topics related to Quantum Mechanics.</li>
+			</ul>
+		</li>
+	</ul>
+	</div>	
+	<p class="paragraph">I currently do contract work so I also present an overview of my experience and qualifications.
+	For potential contract interest, the capability offer is presented in detail
+	in <a href="../HTML_unscripted/unscripted-Capability.html">Capabilities</a>.  
+	This is a guide to understand the self assessment
+	used to rank these capabilities.  With over thirty years of engineering experience the offer of
+	services includes the following general areas. Refer to these individual links for more details.
+	
+	<div style="color: MidnightBlue; font-style: italic;">
+	<ul>
+		<li><a href="../HTML_unscripted/unscripted-Projects.html">Project</a>:</li>
+		<li style="list-style-type: none;">
+			<ul>
+				<li>Experienced with all phases of product project activities.</li>
+			</ul>
+		<li><a href="../HTML_unscripted/unscripted-Engineering.html">Engineering</a>:</li>
+		<li style="list-style-type: none;">
+			<ul>
+				<li>Experienced with electric design principles ranging from board level to rack and stack.</li>
+			</ul>
+		</li>
+		<li><a href="../HTML_unscripted/unscripted-Products.html">Product</a>:</li>
+		<li style="list-style-type: none;">
+			<ul>
+				<li>Broad experience with the aspects of the product life cycle in planning, development, manufacture, test and sustaining.</li>
+			</ul>
+		</li>
+		<li><a href="../HTML_unscripted/unscripted-Equipment.html">Equipment</a>:</li>
+		<li style="list-style-type: none;">
+			<ul>
+				<li>Extensive design and programming of safe ergonomic industrial controls.</li>
+			</ul>
+		</li>
+	</ul>
+	</div>
+	
+	<p class="paragraph">In the event that you wish to inquire about a short-term Contact arrangement, information to contact me is available at <a href="../HTML_unscripted/unscripted-Contacts.html">Contacts</a>. 
+	</p>
+
+<!-- This script must be included as the last thing the browser reads and executes.  I'm not sure why
+     but I think it is because the variable definition is used for the functions and so the document
+     model must be complete before the elements can be referenced to assign them functions.  'modalView'
+     is assigned to the element with ID 'myModal' which is a <div> defined at the start of this document.
+     The <div> is the modal dialog message that is displayed.
+ -->
+	<script type="text/javascript">
+		var modalView = document.getElementById('myModal');
+		/*First assure that the browser supports HTML5 local storage.*/
+		if (typeof (Storage) !== "undefined") {
+			/*Retrieve 'justOnce' and if "FALSE" display it 'inline' else hide it. */
+			modalView.style.display = (sessionStorage.justOnce=="FALSE") ? "inline" : "none";
+		}
+	</script>
+</body>
+</html>

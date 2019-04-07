@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<!--  
+  indexMobile.html is the mobile web page (index page) of a web site that serves the site's mobile device access.
+  This and all other web content on this site was hand written by John Hunsberger to demonstrate some simple, 
+  perhaps useful techniques and to highlight some issues as well.  This content is open for anyone to copy.  If 
+  you have questions or opinions about this content feel free to contact me.  The ideas presented are not my invention, 
+  they are my application.
+  
+  The original design choice mimicked the standard page but added the slider that is still in use.  I found that
+  because the right side contained page used an iFrame that it removed the page's swipe response.  Starting that
+  slider on the left most page allowed the user to swipe left to expose the right page containing the iFrame but
+  once the iFrame was exposed the user could not swipe right to return to the left page.  A modified structure
+  as implemented here was devised to eliminate that.
+  
+  Design Notes:
+	1. This page contains a slider.  The Slider.css defines the necessary format to hide a page depending on the 
+	   relative position of the visualContainer (either 0 or -100%).  When position 0 page 1 shows and page 2 is 
+	   hidden.  When set to -100% the page 2 shows and page 1 is hidden.  The transition between pages is implemented 
+	   using the swipe event in mobileview-js.eclipse.js.  It is important that all pages have the same dimensions.
+	
+	        |----------|
+	        |  Splash  |
+	        |----------|
+	        
+	        |----------|----------|
+	        |  Page 1  |  Page 2  | <<== contentContainer (two pages in one container)
+	        |          |          |      Pages must be same dimensions, set by mobileview-js.eclipse.js loadView().
+	        |----------|----------|
+                 ^
+                 ^== visualContainer (only shows one page at a time.)
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability Overview</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto"
+					width="280px" src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th>
+				<!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th>
+				<!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div>
+	<!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface"
+		ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)"
+		ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+			<!-- ********************************************************************************************* -->
+			<div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Products.html">Product</a></td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Equipment.html">Equipment</a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Cognition</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Quantum</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Encryption</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Trains</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Chess</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Modeling</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Gaming</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+			</div>
+			<!-- /master -->
+			<!-- ************************************************************************************* -->
+			<div class="container" id="detail">
+				<div id="page2">
+					<!-- added wrapper for sizing content with margins. -->
+					<h1 class="capabilityHeading">Capabilities offered and how
+						they are ranked.</h1>
+					<p class="spread">The information below presents the offer. The skills are organized into four
+						categories. Each of the four categories is presented in more
+						detail on a dedicated page. There is an explanation of how the
+						skill offers are assigned a maturity rank based on a self
+						assessment.</p>
+					<p class="spread">The capabilities presented are as skill based
+						competencies. The competencies offered 
+						are grouped into four categories. Each category presents a list of
+						associated skills. The categories are:</p>
+					<ul style="margin-top: 0;">
+						<li><a
+							onclick="changeView('../mobile/mobile-Projects.html')"
+							style="color: blue; text-decoration: underline;">Project</a></li>
+						<li><a
+							onclick="changeView('../mobile/mobile-Engineering.html')"
+							style="color: blue; text-decoration: underline;">Engineering</a></li>
+						<li><a
+							onclick="changeView('../mobile/mobile-Products.html')"
+							style="color: blue; text-decoration: underline;">Product</a></li>
+						<li><a
+							onclick="changeView('../mobile/mobile-Equipment.html')"
+							style="color: blue; text-decoration: underline;">Equipment</a></li>
+					</ul>
+					<br>
+					<p class="spread">Project skills are those work skills offered
+						that pertain to the collaboration process to plan, track and
+						measure the various phases required of a project team to produce a
+						specified result.</p>
+					<p class="spread">Engineering skills are those work skills
+						offered that pertain to the collaborative efforts for
+						conceptualization, architecture, detailed design, debug, test, and
+						manufacture of a specified product offer.</p>
+					<p class="spread">Product skills are those work skills offered
+						that pertain to the life cycle, agency compliance, safety,
+						upgrade, maintenance, and support for marketed products.</p>
+					<p class="spread">Equipment skills are those work skills
+						offered that pertain to the design of production test equipment
+						for safety, robustness, capability and capacity.</p>
+					<p class="spread">
+						The word 'competency' by itself does not include any specific
+						measure<sup><a class="footnote" href="#fn1">1</a></sup>. Because
+						it is not sufficient to only state that a capability exists, each
+						skill presented also includes an indication of that skill's
+						maturity. A three star system is used to convey a maturity level
+						for each skill. The assignment of stars is based on a personal
+						skills assessment. Consequently it is important that an interview
+						take place to assure the fit of this service to a particular
+						project requirement.
+					</p>
+					<br> <a id="Definitions"></a>
+					<div style="background: #f8f8f8;">
+						<h3 class="capabilityH1">Rank Stars:</h3>
+						<table>
+							<tr>
+								<td
+									style="text-align: left; vertical-align: top; min-width: 45px"><img
+									src="../images/star.png"></img></td>
+								<td>One star indicates that the skill is not core but has
+									previously been performed during employment for an assigned
+									task. (<a style="font-style: italic;">Exposure</a>)
+								</td>
+							</tr>
+							<tr>
+								<td
+									style="text-align: left; vertical-align: top; min-width: 45px"><img
+									src="../images/star2.png"></img></td>
+								<td>Two stars indicate that the skill is core and has been
+									performed as required for assignments within the past five
+									years. (<a style="font-style: italic;">Competent</a>)
+								</td>
+							</tr>
+							<tr>
+								<td
+									style="text-align: left; vertical-align: top; min-width: 45px"><img
+									src="../images/star3.png"></td>
+								<td>Three stars indicate that the skill is core and has
+									been performed frequently for assignments within the past five
+									years. (<a style="font-style: italic;">Strength</a>)
+								</td>
+							</tr>
+						</table>
+					</div>
+					<br>
+					<p class="spread">In addition to specific skills, some
+						employers attach a significance to the type of business
+						environment in which a particular skill was applied. The types of
+						business environment in which a skill was applied are divided into
+						two categories, Aerospace and Commercial. These are represented by
+						the following icons.</p>
+					<br>
+					<div style="background: #f8f8f8;">
+						<h3 class="capabilityH1">Icons:</h3>
+						<table>
+							<tr>
+								<td>Aerospace -</td>
+								<td style="vertical-align: top; min-width: 15px"><img
+									src="../images/Aerospace.png"></img></td>
+							</tr>
+							<tr>
+								<td>Commercial -</td>
+								<td style="vertical-align: top; min-width: 15px"><img
+									src="../images/Commercial.png"></img></td>
+							</tr>
+						</table>
+					</div>
+					<br>
+					<div style="background: #f8f8f8;">
+						<h3 class="capabilityH1">Acronyms:</h3>
+						<br>
+						<table>
+							<tr>
+								<td>NPD -</td>
+								<td>New Product Development</td>
+							</tr>
+							<tr>
+								<td>PT -</td>
+								<td>Production Test</td>
+							</tr>
+						</table>
+					</div>
+					<br>
+					<h3 class="capabilityH1">Summary:</h3>
+					<p class="spread">The accumulated work experience presented
+						spans a diverse range of competencies involving both electronic
+						and software development. The software development in itself is
+						diverse. It includes both high level application and low level
+						embedded real-time controls. The commercial product experience
+						includes plant control system, programmable logic controllers,
+						product communication protocol accessories, line isolation
+						monitor, electronic breaker test equipment and electronic voting
+						machine. The aerospace product experience includes electronic and
+						software development for satellite ground stations and testing of
+						complex satellite components.</p>
+					<br>
+					<p class="spread">It is important to understand the
+						applicability of the skill levels presented. A skill level
+						offering may be too low-level for a required task and could rule
+						this service out. That same skill level may be complete and
+						sufficient to successfully provide a supporting role for that same
+						task that could could help achieve a critical schedule milestone.
+						The goal of this service is to provide high quality engineering
+						assistance that fills a resource gap for your offer process.</p>
+					<br> <a id="fnotes"></a>
+					<table>
+						<tr>
+							<td class="footNoteTableStart">---------------------------------------------</td>
+						</tr>
+						<tr>
+							<td>Reference:<br>
+								<div style="font-size: 10px">&nbsp;&nbsp;Competence is the
+									ability of an individual to do a job properly. A competency is
+									a set of defined behaviors that provide a structured guide
+									enabling the identification, evaluation and development of the
+									behaviors in individual employees.</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="footNoteText" id="fn1">&nbsp;1. <a
+								target="_blank"
+								href="https://en.wikipedia.org/wiki/Competence_(human_resources)">Wikipedia,
+									Article on Competence</a>. (https://en.wikipedia.org/
+								wiki/Competence_ (human_resources))
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- /page2 -->
+			</div>
+			<!-- /container -->
+			<!-- ************************************************************************************* -->
+		</div>
+		<!-- /contentContainer -->
+	</div>
+	<!-- /visualContainer -->
+</body>
+</html>

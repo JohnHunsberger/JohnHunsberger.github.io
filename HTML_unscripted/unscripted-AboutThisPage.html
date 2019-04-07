@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<!--  
+unscripted-AboutThisPage.html: ABOUT OLD TUG ENGINEERING skills.
+
+unscripted-AboutThisPage.html is content displayed in the detail section of the main page that explains the motive
+for creating this site and some insight to what was gained by doing it.  
+This and all other web content on this site was hand written by me, John Hunsberger, to demonstrate some simple but 
+elegant techniques.  This content is open for anyone to copy.  If you have questions about any of this content feel 
+free to ask me.  The ideas presented are not invention, they are my application.
+
+Design Notes:
+  1. 
+-->
+<head>
+<meta charset="ISO-8859-1">
+<title>About This Site</title>
+<link rel="stylesheet" type="text/css" href="../styles/Formatting.css">
+</head>
+<body class="embedded-page">
+<H2 class="banner">About the OLD TUG TECH STUFF Website</H2>
+
+<div class="TOC">Section Contents Links:<br>
+   <p class="TOC_entry"><a class="TOC_link" href="#overview">Overview</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#formatting_view">Non-Mobile Formatting the Master/Detail view</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#inserting_docs">Non-Mobile Inserting documents</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#unscripted_view">Non-Mobile Providing the unscripted view</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#modal_dialog">Non-Mobile The modal dialog on loading</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#detect_mobile">Non-Mobile Detecting a mobile browser</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#slider_mechanics">Mobile Slider mechanics</a></p>
+   <p class="TOC_entry"><a class="TOC_link" href="#service_name">Site Name</a></p>
+</div>
+
+<H3 id="overview" style="margin-bottom: 0px;">Overview:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">My objective in developing this collection of HTML pages was achieve two goals.
+One goal was to present content about the technology offered for potential customers in a complete and organized view that respects the customer's limited time.
+The second goal is to share part of my personal interests in the hope that I might be able to offer information useful to others.
+Building this site required a good understanding of the interplay of the three basic web specifications (
+<a target="_blank" href="http://www.w3schools.com/html/html5_intro.asp">HTML5</a>, 
+<a target="_blank" href="http://www.w3schools.com/js/">JavaScript</a>, 
+<a target="_blank" href="http://www.w3schools.com/css/css3_intro.asp">CSS3</a>) and how these
+specifications are implemented in the various web browser applications.</p>
+
+<p class="paragraph"> I am aware of the many popular libraries available to developers hosted at 
+<a target="_blank" href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</a>. &nbsp;jQuery is extremely
+popular with developers<sup><a class="footnote" href="#fn1">1</a></sup>.  These libraries are great resources for professional developers.  
+They contain script and style content that has been
+tested to work correctly in most all browsers by resolving the inconsistencies among them.  In addition they hide much of the underlying details 
+required to achieve certain functionalities.  That improves the productivity of web developers.  Nevertheless, to best understand
+the interaction of the web specifications it was important to me to not use any of these libraries in the development of this web content.</p>
+  
+<p class="paragraph">To build a complete web resource for this site it was necessary to provide both a non-mobile style presentation and
+a mobile style presentation.  The first step to develop the site was to obtain a tool chain.  The tool chain is described
+in <a href="../unscripted/unscripted-ToolHomePage.html">Web Tool Chain</a>.  The design effort was started by first developing the non-mobile presentation.  The presentation model design 
+pattern that is used on the non-mobile page is the horizontal Master/Detail<sup><a class="footnote" href="#fn2">2</a></sup>.  The horizontal
+version of this model provides a 
+selectable content map of the site in the left side view and the content for the selected subject in the window of the right side view.  
+This model sets the content map as the Master and the content view for the selected subject as the Detail.</p>
+
+<p class="paragraph">The style chosen for the Master/Detail model uses a fixed width Master view and a resizable Detail view.  The combined 
+width of the Master and Detail views is set to a fixed maximum.  The two views are centered in the browser's frame and the unused background area displays
+the image of a bay.  A header and a footer are placed at the top and bottom.  The header contains the logo and name of OLD TUG Technology
+Support.  The header's configuration changes to
+adapt to the available horizontal space in the browser's window. The footer serves only as a base that underscores the Master/Detail display. </p>
+
+<p class="paragraph">
+The mobile presentation is based on the non-mobile style used.  The constraint imposed by the limited display area on most mobile browser based
+devices lead to the development of a slider style presentation.  The Master/Detail view in this solution is rendered as two containers within
+a single container.  The Master view of the non-mobile style is the left side of the slider and the Detail view is the right side.  The header
+is retained as a fixed display at the top of the view and a narrow Site Directory link is added between the header and slider.  The Site Directory
+link was deemed necessary to ensure the slider didn't inadvertently hide the site directory information.
+</p>
+
+<p class="paragraph">
+The slider mentioned is a structure that hides one or the other half of the display content.  In the mobile browser there is a swipe feature
+that allows the user to swipe the screen to sequence through a set of parallel panels.  This is a common mechanism used on websites when there are 
+a number of images to view.  Using this same mechanism here permits the user to swipe right to view the Site Directory and swipe left to view
+the selected content.  When a specific content is selected in the Site Directory view the associated content is immediately displayed with
+the Site Directory view hidden.
+</p>
+</div>
+
+<H3 id="formatting_view" style="margin-bottom: 0px;"><u>Non-Mobile</u> Formatting the Master/Detail view:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">The challenge in creating the desired non-mobile view was dynamically arranging all of the containers so that they continue
+to be rendered by
+browsers in the desired order while resizing the browser's frame.  The top level container for the rendered page is the &lt;body&gt;.  
+The limited width content area
+is a &lt;div&gt; tag container assigned the unique ID "scripted".  The body contains the four section containers that
+were created using &lt;div&gt; tags.  Each &lt;div&gt; tag was assigned a unique ID {header, master, detail, footer}.</p>
+<p class="paragraph">The initial effort to create a dynamic format 
+was a bit disappointing.  After some research the solution found requires the following document features.  The Detail &lt;div&gt; container is assigned a left
+margin style that is the same width as the Master &lt;div&gt;.  This creates the space in which the Master container will reside.  The
+Master &lt;div&gt; width is set to the fixed width of the Detail's left margin.  The Master style is set to float left.  The default
+float setting for all document elements is 'none'.  Setting the float property to left on the Master &lt;div&gt; instructs the browser
+to take this element from the normal flow and placed it along the left side of its container.  Then other elements are floated around it.
+Any resize of the browser's frame width triggers a javascript method that computes a new width for the Detail view.  This new width
+is the difference between the fixed Master width and the available width of the browsers frame.  This allows the combined width of
+the two side-by-side containers to fit in the new browser frame size.  The Master view always remains to the left of the Detail because 
+the fixed left margin of the Detail &lt;div&gt; 
+always has space for the fixed width Master.  The computed width of the Detail view has a fixed minimum value.
+ </p>
+</div>
+
+<H3 id="inserting_docs" style="margin-bottom: 0px;"><u>Non-Mobile</u> Inserting documents:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">The &lt;iframe&gt; tag was used as the detail view's container because the document displayed inside the detail view varies.  
+I enjoyed the modularity of inserted content so I also created a separate Master view HTML document that was also inserted into an &lt;iframe&gt; tag.
+In some browsers that approach worked fine but it did not work in Google's Chrome.  
+Google implemented a security feature in Chrome such that no inserted document content can modify any other inserted document.
+As a consequence the event methods initiated on the inserted Master view document could not change the source document for the &lt;iframe&gt; tag of the
+Detail view.  I believe this restriction is a result of the same-origin policy in Chrome<sup><a class="footnote" href="#fn3">3</a></sup>.  There
+are apparently ways to circumvent that policy.  To fix this, the document created for the Master was inserted into the &lt;body&gt; container in order to keep the 
+design as simple as possible and to assure compatibility for the users of this site.</p>
+</div>
+
+<H3 id="unscripted_view" style="margin-bottom: 0px;"><u>Non-Mobile</u> Providing the unscripted view:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">There is a feature added to the site's default web page that can distinguish whether the user's browser is configured
+to turn off the javascript.  It is not typical for a user to do that but it was an interesting "what if".</p>
+<p class="paragraph">A "scrpted" container was created using 
+&lt;div&gt; tag and assigned the ID "scripted".  Beneath this container the &lt;noscript&gt; HTML tag was used to create a conditional container
+with content that is executed by the browser only in the case that the javascript is turned off.  The "scripted" container is assigned a class
+name "hidden".  Followng the &lt;noscript&gt; container is a an embedded &lt;script&gt; field that contains a javascript function call to
+the 'scriptcheck();' method.</p>
+<p class="paragraph">It is important to this functionality that the browser processes the document's content sequentially and does
+not display the final page until it has been entirely processed.  The "scripted" container will not be displayed
+by the browser because the CSS style for the class selector "hidden" sets the display style to "none".  The 'scriptcheck();' method
+is only executed provided that the user's browser has the javascript enabled.  The javascript method scriptcheck() automatically changes
+the "scripted" &lt;div&gt; tag's class name in the document content from "hidden" to "shown". The CSS style for the class selector "shown" 
+sets the display style to "default".
+</p>
+</div>
+
+<H3 id="modal_dialog" style="margin-bottom: 0px;"><u>Non-Mobile</u> The modal dialog on loading:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">
+A modal dialog is displayed to notify the user about a significant circumstance or event the very first time that the site default web document is 
+loaded.  The design intent for this modal dialog is to display it only once when the default document is
+first loaded during the browser session.</p>
+<p class="paragraph">The modal content resides within the &lt;div&gt; element of the scripted introduction document.  That 
+document is the one that is initially displayed in the Detail section of the main page.  The modal &lt;div&gt; is positioned 
+immediately after the &lt;body&gt; HTML tag.
+The modal &lt;div&gt; tag is assigned the id name "myModal" and class name "modal".</p>
+<p class="paragraph">The style for the "modal" class has the
+display property assigned to 'block' (the default).  The 'block' display property value instructs the browser to initially 
+display the content. The "modal" class style has the z-index property set to 1.  This instructs the browser to display the 
+element on top of the body element rather than as part of it.  
+The modal class style also has the position property assigned 'fixed' so that the element is rendered by the browser using a fixed
+screen coordinate rather than an in-line element.  The "modal" style sets the fixed location of its element to the zero position 
+for both the top and left.  This places the 'myModal' element at the top left corner of its containing 'Detail' element.  The 
+"modal" style assigns 100% to the width and height property so that the "modal" element has the full width and height of
+the Detail view.  The "modal" style sets the color and opacity of its background using the RGBA "background-color" property.  The 
+"A" in RGBA is alpha channel.  It can be set to values from 0 to 1.  At 1 the background is fully opaque.  The color is
+set to black and the opacity is set to 0.4.  By setting a partial opacity with the black color the entire Detail view is
+given a grayed out appearance.</p>
+<p class="paragraph">Another &lt;div&gt; element is placed in the 'myModal' element and is assigned the class name "modal-content".
+This element comprises the visible modal dialog box.</p>
+<p class="paragraph">The style for "modal-content" sets the width to 50% of the myModal container.  The display width is 
+always one half of the myModal container which in turn is the full width of the Detail view.  The "modal-content"
+styled &lt;div&gt; container is centered in its containing element. Fluff was added such as background color and border.
+The initial content inside this element creates the 'X' character used to close the modal display.  The 'X' is just
+a text letter in a span tag.  The span tag is the class name "closeThisModal" and the 'onClick' event.</p>
+<p class="paragraph">The style for "closeThisModal" 
+assigns the display format for the letter X along with the rounded border and background color. The style sets
+the cursor hover and focus behavior.</p>
+<p class="paragraph">The span containing the letter X has the onClick event assigned to a javascript function.
+That function changes the modalView class's display style to "none".  Setting display to none instructs the 
+browser to no longer display the modalView &lt;div&gt; element.  Because the user can also choose to click
+elsewhere in the introduction document an onClick method was also assigned to the introduction document's
+&lt;body&gt; element.  This event's script also sets the modalView class's display style to "none".
+<p class="paragraph">The design intent is that this modal view is not displayed every time that the browser
+reloads the default document during the same session.  Happily HTML5 has included the window.sessionStorage feature.
+The window.sessionStorage is used to implement this design intent.</p>
+<p class="paragraph">
+A script container is placed at the very start of the default web document.  This script is executed by
+the browser while loading the document. The javascript contained creates the "justOnce" data item in the
+sessionStore and assigns the string "FALSE".  A script container is also added as the last item in the 
+scripted introduction document.  The javascript in this container examines the current value of the
+sessionStorage.justOnce data item.  If it is "FALSE" the display style for the modalView is set to "inline"
+so that the modal view is displayed by the browser.  If it is "TRUE" the dislay style is set to "none" so
+that the browser does not display the modalView element.  In each of the onClick javascript methods described
+earlier the sessionStorage.justOnce data item is set to "TRUE".  As long as the session persists all subsequent
+browser displays of the scripted introduction document do not display the modal dialog.
+</p>
+</div>
+
+<H3 id="detect_mobile" style="margin-bottom: 0px;"><u>Non-Mobile</u> Detecting a mobile browser:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">
+There are a great many different mobile devices available to people. The use of mobile and tablet devices to access information on the
+internet has surpassed the use of desktop PCs<sup><a class="footnote" href="#fn4">4</a></sup>. 
+Mobile browsers format the HTML content differently.  A standard web document will be minimized to fit
+the mobile device's screen resulting in an unreadable presentation.  It is important to provide site content that is designed
+to be rendered effectively by a mobile browser.</p>
+<p class="paragraph">
+On most servers the default web content displayed by the browser when it initially connects to the server is typically one of several common file 
+names {index.html, index.htm, index.php}. 
+Each server is configured for what default document file name is presented to a browser when it makes the initial HTTP document
+request.  The file's name (for example index.htm) is the same default document file name used for all of the browsers that connect to the
+site.</p>
+<p class="paragraph">
+The document file initially loaded by the browser is typically formatted for the traditional desktop or laptop PC browser.  In order to present 
+content designed specifically for a mobile 
+browser the initial document needs to interrogate the type of browser connecting and then switch to the mobile content for browsers
+identified as mobile. All browsers processe the entire HTML content of the default document obtained from the web site 
+before displaying it. This is important for the capability to detect and switch to work.</p>
+<p class="paragraph">
+The solution is the addition of a script container to the default document
+file as the very last element.  The javascript in that script container performs a function call that reads the navigator.userAgent and compares it to
+a list of currently known mobile browser identifiers.  If the result of the comparison has a match then the javascript sets
+the window.location to a new document file that is formatted for a mobile browser.
+</p>
+</div>
+
+
+<H3 id="slider_mechanics" style="margin-bottom: 0px;"><u>Mobile</u> Slider mechanics:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">
+The non-mobile content was designed using a Master/Detail display pattern.  Mobile device screens are too narrow to be able to
+reuse that pattern.  There are a number of good patterns used by developers for mobile devices.  The intent is to try something a
+bit different.  The desire is to present the same pattern but allow the user to swipe the screen to view either the Master
+or the Detail view.  The slider function is the mechanism used to enable this feature.  The slider function is most commonly
+used on web sites to display a sequence of images that are arranged in parallel and are displayed one after another in response
+to the user swipe events from the touch screen.</p>
+<p class="paragraph">
+Getting this function to work came with some challenges.  Among the chief insights to achieving success was the understanding that
+the containers intended to be arranged horizontally must all have the exact same width dimension.  Another insight was that the 
+horizontally arranged containers must all reside within a common container.  The common container is assigned the class name
+'visualContainer'.  The visualContainer class is the view port into which each of the subsequent container pages must fit exactly.  It
+defines the window in which an individual view is slid into.</p>
+<p class="paragraph">
+Inside the visualContainer object is placed a wide &lt;div&gt; container that is assigned the class name 'contentContainer'.  The 
+contentContainer &lt;div&gt; must be assigned a width that is the total width of all the objects that it contains.</p>
+<p class="paragraph">
+Each of the individual slider views are assigned the class name 'container' and since there are only two container class
+objects they are assigned a width of 50%.  So each of the two individual object views, Master and Detail, are assigned 50% of
+the total width assigned to the contentContainer.  If there were four slider views then the width of the contentContainer
+would need to double and each slider view would be assigned a width of 25%.  The resulting width of the each individual slider 
+view must match the width of the visualContainer.
+</p>
+<p class="paragraph">To align a desired slider view into the visualContainer the contentContainer needs to have its left property
+adjusted to reveal it.  The left property sets the left edge of the contentContainer to an absolute position.  In this case
+when left=0 the Master view is displayed.  When left=-100% the contentContainer's left edge is placed to the left of the
+visualContainer by 100% of the visualContainer's width.  This reveals the second slider view in the window of the visualContainer
+object.  In this case 100% is sufficient since there are only two slicer views.  If there were three then -200% would reveal
+the third view.
+</p>
+</div>
+
+<H3 id="service_name" style="margin-bottom: 0px;">Site Service Name:</H3>
+<div style="margin: -10px 30px 0px 30px">
+<p class="paragraph">As mentioned, the background for this page is a harbor view.  This bit of art was to emphasize the tug boat icon used.  The tug icon was
+inspired by the <a target="_blank" href="https://en.wikipedia.org/wiki/Hoga_(YT-146)">Tug Hoga (YT-146)</a>.  The inspirational performance 
+by Hoga's crew was the height of service and dedication to duty.  Their heroic service gave special meaning to the expression "Yeoman's Service"
+<sup><a class="footnote" href="#fn5">5</a></sup>.
+</p>
+</div>
+<br>
+    <a id="fnotes"></a>
+	<table>
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+		<tr>
+			<td id="fn1"><span class="footNoteText">&nbsp;1. <a target="_blank"
+				href="https://w3techs.com/technologies/details/js-jquery/all/all">W<sup>3</sup>Techs</a>.
+				(https://w3techs.com/technologies/details/js-jquery/all/all)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; jQuery is used by 96.4% of all the websites whose JavaScript library we know. This is 71.9% of all websites</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn2"><span class="footNoteText">&nbsp;2. <a target="_blank"
+				href="http://designingwebinterfaces.com/designing-web-interfaces-12-screen-patterns">Designing Web Interfaces; Theresa Neil</a>.
+				(http://designingwebinterfaces.com/designing-web-interfaces-12-screen-patterns)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Ideal for creating an efficient user experience by allowing the user to stay in the same screen while navigating between items.</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn3"><span class="footNoteText">&nbsp;3. <a target="_blank"
+				href="http://javascript.info/tutorial/same-origin-security-policy">Java Script Tutorial; Ilya Kantor</a>.
+				(http://javascript.info/tutorial/same-origin-security-policy)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; The "Same Origin" policy limits the access of one window to another.</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn4"><span class="footNoteText">&nbsp;4. <a target="_blank"
+				href="http://gs.statcounter.com/press/mobile-and-tablet-internet-usage-exceeds-desktop-for-first-time-worldwide">Mobile device usage</a>.
+				(http://gs.statcounter.com/press/mobile-and-tablet-internet-usage-exceeds-desktop-for-first-time-worldwide)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Mobile and tablet internet usage exceeds desktop for first time worldwide.</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn5"><span class="footNoteText">&nbsp;5. <a target="_blank"
+				href="https://en.wiktionary.org/wiki/yeoman's_service">Yeoman's Service</a>.
+				(https://en.wiktionary.org/wiki/yeoman's_service)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Arduous work, performed in a vigorous, committed manner.</div>
+			</td>
+		</tr>
+
+	</table>
+	<br>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<!--  
+  indexMobile.html is the mobile web page (index page) of a web site that serves the site's mobile device access.
+  This and all other web content on this site was hand written by John Hunsberger to demonstrate some simple, 
+  perhaps useful techniques and to highlight some issues as well.  This content is open for anyone to copy.  If 
+  you have questions or opinions about this content feel free to contact me.  The ideas presented are not my invention, 
+  they are my application.
+  
+  The original design choice mimicked the standard page but added the slider that is still in use.  I found that
+  because the right side contained page used an iFrame that it removed the page's swipe response.  Starting that
+  slider on the left most page allowed the user to swipe left to expose the right page containing the iFrame but
+  once the iFrame was exposed the user could not swipe right to return to the left page.  A modified structure
+  as implemented here was devised to eliminate that.
+  
+  Design Notes:
+	1. This page contains a modal dialog box popup.
+	2. This page contains a slider.  The Slider.css defines the necessary format to hide a page depending on the 
+	   relative position of the visualContainer (either 0 or -100%).  When position 0 page 1 shows and page 2 is 
+	   hidden.  When set to -100% the page 2 shows and page 1 is hidden.  The transition between pages is implemented 
+	   using the swipe event in mobileview-js.eclipse.js.  It is important that all pages have the same dimensions.
+	
+	        |----------|
+	        |  Splash  |
+	        |----------|
+	        
+	        |----------|----------|
+	        |  Page 1  |  Page 2  | <<== contentContainer (two pages in one container)
+	        |          |          |      Pages must be same dimensions, set by mobileview-js.eclipse.js loadView().
+	        |----------|----------|
+                 ^
+                 ^== visualContainer (only shows one page at a time.)
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Engineering</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto" width="280px"
+					src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th
+					style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th> <!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th> <!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div><!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface" ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)" ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+<!-- ********************************************************************************************* -->			    
+		    <div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Products.html">Product</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Equipment.html">Equipment</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Reference</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- This Page</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Tool Chain</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Cognition</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Quantum</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Encryption</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Trains</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Chess</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Modeling</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Gaming</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+	    	</div> <!-- /master -->
+<!-- ************************************************************************************* -->			    
+			<div class="container" id="detail">
+				<div id="page2"> <!-- added wrapper for sizing content with margins. -->
+	<h1 class="capabilityHeading">Engineering Accomplishments</h1>
+	
+	<p class="spread">The information here first presents a
+	detailed list of the engineering skills offered.  The general
+	classification of the skills are are Safety, Team Development, Circuit Design, Software Design, Circuit Design, Debugging and Analysis.
+	That is followed by a discussion regarding the general project skills offered.  </p>
+	
+	<p class="separator"> </p>
+	<a href="../mobile/mobile-Capability.html#Definitions"
+		style="text-decoration: none; font-style: italic; font-size: 11px;">*
+		Definition of rank stars, icons and acronyms</a>
+	<table class="skillsTable">
+		<tr>
+			<th class="skillsTableCellHeading" colspan="4">Skills Table</th>
+		</tr>
+		<tr>
+			<td class="skillsTableCellHeading" style="width: 100px;">Rank</td>
+			<td class="skillsTableCellHeading" style="width: 150px;">Skill</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Environment</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Activity</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Safety
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD,PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Circuit Design
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Design Simulation
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star.png"></img></td>
+			<td class="skillsTableCell">Qualification Testing
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Production Testing
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Real-Time Embedded Software
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Software Application Development
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Machine Sequence Controls
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Motion Controls
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Communications
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">NPD, PT</td>
+		</tr>
+	</table>
+	<br>
+	<span id="EngineeeringActivities" style="font-weight: bold;">Engineering Design Activities:</span><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;intelligent application user interfaces<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;requirements specification, voice of customer, use-case analysis<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;design specification, theory of operation<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;failure mode and effects analysis<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;installation and operation instruction<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;calibration and maintenance procedure<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;data acquisition via low and high level communications channels<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;high level object oriented programming languages<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;use of various integrated design environments<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;embedded real-time programming and use of the associated development tools<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;structured database architectures and use of SQL<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;use of CAD and simulation tools for electronic schematics<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;digital circuit design<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;rack mounted instrumentation for production testing<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;various programmable logic controller architectures and programming software<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;various microprocessors<br>
+	<br>
+	<span id="EngineeringTools" style="font-weight: bold;">Kinds of Tools:</span><sup><a class="footnote" href="#fn6">6</a></sup><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Team Development:</span> MS SourceSafe, MS Project, Workflow SW, team meetings, peer design reviews<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Safety:</span> Failure Modes and Effects Analysis, Fault Tree Analysis<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Digital Circuit Simulation:</span> Teradyne LASAR<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">SW Integrated Development Environments:</span> MSVS, Eclipse, MicroChip uP IDE, LabVIEW, Yaskawa SigmaWin, Schneider PLC ProWORX<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Electrical Circuit and Cabinet Drawings:</span> AutoCAD<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Typical Debug:</span> Power Supply, Arb, Oscilloscope, DMM, Logic Analyzer, In-Circuit Emulator, Debugger<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Data Analysis:</span> Data logger, MS Excel, MS Access<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Documentation:</span> MS PowerPoint, MS Word<br>
+	<br>
+	<span style="font-weight: bold;">Engineering Skills Discussion:</span><br>
+	<p style="margin-bottom: 0.5em;"> </p>
+	<p class="spread">The engineering discipline is established through a
+	combination of academic study and the application of principles in a
+	work environment. It is necessary to demonstrate an ability to
+	creatively apply the scientific principles to design
+	<sup><a class="footnote" href="#fn1">1</a></sup>. &nbsp;A candidate should have evidence of these qualifications.</p>
+	<p class="separator"> </p>
+	<p class="spread">
+	    I have formal academic training.
+		My engineering degree is a B.S. in Computer Engineering<sup><a
+			href="#fn2">2</a></sup> from Lehigh
+		University, Bethlehem, Pa. The Computer Engineering major was fairly new at the time that I was 
+		admitted into Lehigh's College of Engineering. This major
+		was founded upon the classical Electrical Engineering major but with a
+		concentration in Digital Circuit Architectures and Design Algorithms.
+	</p>
+	<p class="separator"> </p>
+	<p class="spread">
+		While employed at General Electric's Space Systems Division in King of
+		Prussia, Pa<sup><a class="footnote" href="#fn3">3</a></sup> &nbsp;I studied for my 
+			M.S. in Engineering Science<sup><a class="footnote" href="#fn4">4</a></sup> at Penn State's Ogontz Campus, which is now called
+		the Abington campus<sup><a class="footnote" href="#fn5">5</a></sup>. 
+		I successfully completed 15 credit hours toward that degree with a 3.8 GPA.
+	</p>
+
+	<a id="fnotes"></a>
+	<table>
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+		<tr>
+			<td id="fn1"><span class="footNoteText"> &nbsp;1. <a target="_blank"
+				href="http://www.britannica.com/technology/engineering">Encyclopedia
+					Britannica, Article on Engineering</a>.
+				(http://www.britannica.com/technology/engineering)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; The creative
+					application of "scientific principles to design or develop
+					structures, machines, apparatus, or manufacturing processes, or
+					works utilizing them singly or in combination; or to construct or
+					operate the same with full cognizance of their design; or to
+					forecast their behavior under specific operating conditions; all
+					as respects an intended function, economics of operation and safety
+					to life and property.</div>
+			</td>
+		</tr>
+		<tr>
+			<td id="fn2"><span class="footNoteText"> &nbsp;2. <a target="_blank"
+				href="http://www.lehigh.edu/engineering/academics/undergraduate/majors/computereng.html">Lehigh
+					University, Computer Engineering</a>.
+				(http://www.lehigh.edu/ engineering/academics/ undergraduate/majors/computereng.html)</span>
+			</td>
+		</tr>
+		<tr>
+			<td id="fn3"><span class="footNoteText"> &nbsp;3. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/GE_Aerospace">GE Aerospace</a>.
+				(https://en.wikipedia.org/wiki/GE_Aerospace)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp;This was sold to
+					Martin Marietta in 1993 and became part of Lockheed Martin in 1995
+					following that company's merger with the Lockheed Corporation.</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn4"> &nbsp;4. <a target="_blank"
+				href="https://harrisburg.psu.edu/science-engineering-technology/engineering-science-management/master-engineering-engineering-science">MS Engineiering Science</a>.
+				(https://harrisburg.psu.edu/science-engineering-technology/engineering-science-management/master-engineering-engineering-science)<br>
+			</td>
+		</tr>
+		<tr>
+			<td class="footNoteText" id="fn5"> &nbsp;5. <a target="_blank"
+				href="http://abington.psu.edu/">Penn State Abington Campus</a>.
+				(http://abington.psu.edu/)<br>
+			</td>
+		</tr>
+		<tr>
+			<td id="fn6"><span class="footNoteText"> &nbsp;6. About the Tools List:</span> 
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp;The list of tools is a just a swipe at some kinds of tools used.  It is not
+				reasonable to include an exhaustive list here. Any working engineer having this background
+				will have used an enormous variety of tools ranging from soldering irons to part programmers.
+				The list presented is merely intended to give a flavor of the tool types.</div>
+			</td>
+		</tr>
+	</table>
+				</div> <!-- /page2 -->
+			</div> <!-- /container -->
+<!-- ************************************************************************************* -->			    
+		</div><!-- /contentContainer -->
+	</div> <!-- /visualContainer -->
+</body>
+</html>

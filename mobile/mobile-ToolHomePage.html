@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<!--  
+unscripted-ToolHomePage.html: HTML Tool Chain.
+
+unscripted-ToolHomePage.html is content displayed in the detail section of the main page that explains the tool chain
+used to create the static web pages for OLD TUG.  
+This and all other web content on this site was hand written by me, John Hunsberger, to demonstrate some simple but 
+elegant techniques.  This content is open for anyone to copy.  If you have questions about any of this content feel 
+free to ask me.  The ideas presented are not invention, they are my application.
+
+Design Notes:
+  1. 
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tool Chain - Home Page</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<!-- ********************************************************************************************* -->
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto"
+					width="280px" src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th>
+				<!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th>
+				<!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div>
+	<!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface"
+		ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)"
+		ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+			<!-- ********************************************************************************************* -->
+			<div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Products.html">Product</a></td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- <a href="../mobile/mobile-Equipment.html">Equipment</a></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Cognition</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Quantum</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Encryption</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+						<td>
+							<table>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Trains</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Chess</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Modeling</td>
+								</tr>
+								<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+									<td>- Gaming</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td
+							style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+			</div>
+			<!-- /master -->
+			<!-- ************************************************************************************* -->
+			<div class="container" id="detail">
+				<div id="page2">
+					<div class="pagebag">
+						<h1 class="capabilityHeading">Tool Chain For This Site</h1>
+						<p class="spread">There are two basic tools used to create and
+							maintain the web content for OLD TUG. It is a
+							fact that the entire project could be done using just a text
+							editor but that approach would be difficult to organize and
+							navigate effectively. The following tools are not my preference
+							but they are sufficient for this static web project. There are a
+							number of IDE's available for web development. Which is best is a
+							matter of need and personal preference. For a discussion on
+							available IDEs examine the forum discussion at:</p>
+						<div style="margin: 0em 0em 0.8em 1em;">
+							<a target="_blank"
+								href="http://www.webdeveloper.com/forum/showthread.php?354647-Best-IDE-for-web-development">
+								http://www.webdeveloper.com/forum/
+								showthread.php?354647-Best-IDE-for-web-development</a>
+						</div>
+
+						<p class="spread">
+							The Eclipse IDE is used as a project explorer and editor for the
+							HTML, javascript and CSS files. The Eclipse IDE is free software
+							from <a target="_blank" href="https://www.eclipse.org/">Eclipse.org</a>.
+							Eclipse support for HTML projects offers an internal web browser
+							that displays the resulting presentation for a quick
+							understanding of the site's behavior. The Eclipse internal
+							browser's implementation of the HTML, CSS and Javascript web
+							specifications is very consistent with modern browsers. Eclipse
+							has specialized editors that offer error checking and
+							auto-completion for the document content that is based on the
+							corresponding standard. These features are very useful in
+							detecting specification errors while constructing the web
+							documents.
+						</p>
+
+						<p class="spread">
+							Debugging with Eclipse is possible but it is not used on this
+							project. The Eclipse "<a target="_blank"
+								href="http://www.eclipse.org/webtools/jsdt/debug/">Javascript
+								Development Tools Debug</a>" (JSDT) project offers the debugger
+							capability. In a large production environment it may be necessary
+							to have debug include both the server side and browser
+							information. The development support required for the static web
+							pages used for OLD TUG does not require any
+							server side support. The debug tools built into Chrome and
+							Firefox are used to debug the display formats and javascrpt
+							methods for this static site's documents.
+						</p>
+
+						<div class="SectionName">Eclipe IDE Setup:</div>
+						<p class="spread">
+							<span class="StepSection">Step 1: Download the latest
+								Eclipse.</span>
+						</p>
+						<div class="AsideSection">Initially the Mars version was
+							downloaded and installed. Currently the Neon version is being
+							used. The original Mars version did not include a HTML editor.
+							The menu selection "File>New>Project" did not display "Web"
+							project as an option. Consequently it was necessary to perform a
+							few additional steps for Mars that are not required for Neon:</div>
+						<br>
+
+						<div class="SubstepSection">1a: Use the Eclipse Marketplace
+							by using Help>Eclipse Marketplace...</div>
+						<br>
+						<div class="SubstepSection">1b: Set the "All Markets" to
+							"Eclipse Project" in the Search tab.</div>
+						<br>
+						<div class="SubstepSection">1c: Enter "Web" in the "Find".
+							Note that it displays installables that are not yet installed.</div>
+						<br>
+						<div class="SubstepSection">1d: Choose "HTML Editor (WTP)
+							Mars", http://download.eclipse.org/mars/, Eclipse Web Developer
+							Tools (required)</div>
+						<br>
+						<div class="AsideSection">This installed the "Web Tools
+							Platform" for Mars. The Eclipse menu selection File>New>Project
+							now displays "Web" project as an option. Neon incorporated the
+							HTML editor capability.</div>
+						<br>
+						<p class="spread">
+							<span class="StepSection">Step 2: In Eclipse create a
+								project using File> New> Project> Web> Static Web Project.</span><br>
+							<br> <span class="StepSection">Step 3: Create
+								documents.</span>
+						</p>
+						<div class="AsideSection">
+							Create HTML file using File> New> Other...> Web> HTML File<br>
+							Create CSS file using File> New> Other...> Web> CSS File<br>
+							Create SCRIPT file using File> New> JavaScript Source File<br>
+						</div>
+						<br>
+						<p class="spread">
+							<span class="StepSection">Step 4: A WYSIWYG for the user
+								interface is included in Eclipse but is not used for this
+								project. To access this feature right click on the HTML file>
+								Open With> Web Page Editor. This project's start page does not
+								render correctly in the WYSISYG tool.</span><br> <br> <span
+								class="StepSection">Step 5: As a default Eclipse uses its
+								internal browser when rendering the project's web content. This
+								browser is not used for the OLD TUG's static
+								web content development. The default browser is configured using
+								Window> Preferences> choose 'General' item> choose 'Web
+								Browser'. Set the checkbox ahead of the desired browser within
+								the displayed list and set the radio button at the top of the
+								dialog to 'Use external web browser'.</span>
+						</p>
+						<br>
+						<div class="AsideSection">The browsers installed on the PC
+							should be in the list of selectable browsers. If the desired
+							browser is installed but does not appear in this list then in the
+							'Web Browser' detail window click 'New..." then Name the browser
+							and use the browser in the dialog to identify the location of the
+							brower's executable.</div>
+
+						<div class="SectionName">Chrome Debugger Use:</div>
+						<p class="spread">
+							<span class="StepSection">Complete documentation on
+								ChromeDevTools can be obtained at:</span>
+						</p>
+						<div style="margin: 0em 0em 0.8em 1em;">
+							<a target="_blank"
+								href="https://developers.google.com/web/tools/chrome-devtools/">
+								https://developers.google.com/web/tools/chrome-devtools/</a>
+						</div>
+						<p class="spread">
+							<span class="StepSection">Step 1: The 'Project Explorer'
+								is on the left side of the Eclipse workspace. Right click on the
+								desired HTML file in the 'Project Explorer' that is to be
+								displayed. In the pop-up use Open With> Web Browser</span>
+						</p>
+						<div class="AsideSection">If the default browser has been
+							assigned to Chrome then the HTML content will be rendered in a
+							tab in Chrome.</div>
+						<br>
+						<p class="spread">
+							<span class="StepSection">Step 2: Chrome version 55.x is
+								currently used. Notice that there is an icon displayed in the
+								top right corner having three vertically positioned dots. When
+								the cursor is hovered on this icon it will display "Customize
+								and control Google Chrome". Click on this tool icon to display
+								the option list. Select More tools> Developer tools.</span>
+						</p>
+						<br>
+						<p class="spread">
+							<span class="StepSection">Step 3: The browser display will
+								reconfigure to the web development view. This view contains two
+								main configurable views consisting of a left side HTML rendering
+								view and right side debugger tool view. The right side debugger
+								view will reconfigure depending on which project data is
+								selected from the top menu bar. This menu bar contains the
+								entries {inspector icon, toggle device icon, Elements, Console,
+								Sources, Network, Timeline, Profiles, Application, Security,
+								Audits}.</span>
+						</p>
+						<div class="SubstepSection">
+							3a: The default dimension used to render the HTML view may not be
+							the correct proportion for the HTML content. This view pane can
+							be resized and adjusted to the desired dimension.<br> <br>
+							3b: The default rendering of the selected HTML file is a
+							non-mobile display. If the content is intended for a mobile
+							browser then the display must be switched to 'responsive'. To do
+							that use the 'toggle device icon' in the menu bar at the top of
+							the debugger view. After changing to the responsive view right
+							click in the view and select Reload. This will cause the view to
+							be reformatted.<br> <br>
+							<div class="AsideSection">
+								<strong><u>Important note:</u></strong> When the the Chrome
+								debugger is reconfigured to a responsive view it will lie about
+								what browser it is. In the non-mobile configuration Chrome will
+								respond to 'navigator.userAgent' as "Mozilla/5.0 (Windows NT
+								6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)
+								Chrome/55.0.2883.87 Safari/537.36". In the mobile configuration
+								the same inquiry gets the response "Mozilla/5.0 (Linux; Android
+								5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like
+								Gecko) Chrome/55.0.2883.87 Mobile Safari/537.36". This permits
+								the javascript to identify the browser as a mobile one and
+								respond by displaying a different document designed for a mobile
+								browser. <strong>This is not the case with Firefox</strong>.
+							</div>
+							<br> Also note that in the 'responsive' view it is possible
+							to select a particular display format corresponding to a popular
+							mobile device. To do this click on the menu bar at the top of the
+							mobile view that reads 'Responsive' and choose one of {Galaxy 55,
+							Nexus 5X, Nexus 6P, iPhone 5, iPhone 6, iPhone 6 Plus, iPad, iPad
+							Pro, Edit...}.<br> <br> 3c: Choose the "Elements" entry
+							in the menu bar at the top of the right side debugger view to
+							display the source HTML information from the selected HTML file.
+							Use the 'Sources' menu item in the menu bar to view the
+							associated image, script and style file contents.<br> <br>
+							3d: When the 'Elements' debug view of the document is displayed
+							the cursor can be placed over the top of the named element (such
+							as &lt;div&gt;) and the rendering view on the left side will
+							highlight that element. This is great for working through
+							formatting issues.<br> <br> 3e: When the 'Sources' view
+							of a script file content is displayed a break point can be placed
+							into a script by clicking on the line number of the desired
+							script line. During the processing of the web content the break
+							point may then be triggered. During the break in execution it is
+							possible to interrogate the values of the various variables. The
+							debugger control icons are placed just below the "Sources" file
+							list. This consists of six tool icons, left to right {Pause
+							script execution, Step over next function call, Step into next
+							function call, Step out of current function, Deactivate
+							breakpoints, Pause on exceptions}.
+						</div>
+						<!-- AsideSection -->
+						<div class="SectionName">Firefox Debugger Use:</div>
+						<p class="spread">
+							<span class="StepSection"> Complete documentation on
+								Firefox Development Tools can be obtained at:</span>
+						</p>
+						<div style="margin: 0em 0em 0.8em 1em;">
+							<a target="_blank"
+								href="https://developer.mozilla.org/en-US/docs/Tools">
+								https://developer.mozilla.org/en-US/docs/Tools</a>
+						</div>
+						<p class="spread">
+							<span class="StepSection">Step 1: The 'Project Explorer'
+								is on the left side of the Eclipse workspace. Right click on the
+								desired HTML file in the 'Project Explorer' that is to be
+								displayed. In the pop-up use Open With> Web Browser</span>
+						</p>
+						<div class="AsideSection">If the default browser has been
+							assigned to Firefox then the HTML content will be rendered in a
+							tab in Firefox.</div>
+						<br>
+						<p class="spread">
+							<span class="StepSection">Step 2: Firefox version 50.x is
+								currently used. Notice that there is an icon displayed in the
+								top right corner having three vertically positioned bars. When
+								the cursor is hovered on this icon it will display "Open menu".
+								Click on this tool icon to display the option dialog box. Click
+								on the "Developer" icon then choose "Toggle Tools".</span><br> <br>
+							<span class="StepSection">Step 3: The browser display will
+								reconfigure to the web development view. This view contains two
+								main configurable views consisting of a top side HTML rendering
+								view and bottom side debugger tool view. By default the debugger
+								view is displayed at the bottom of the page. The bottom side
+								debugger view will reconfigure depending on which project data
+								is selected from the top menu bar. This menu bar contains the
+								entries {Inspector, Console, Debugger, Style Editor,
+								Performance, Memory, Network, iFrame select icon, split console
+								toggle icon, responsive design icon, toolbox options icon, dock
+								side view icon, show separate window icon, close developer
+								icon}. </span>
+						</p>
+						<br>
+						<div class="AsideSection">
+							3a: The initial use of the bottom half of the browser's screen
+							for the debugger is not an issue. A nice feature is that the
+							debugger view can be changed to a side dock or an independent
+							window. That helps to display the desired dimension to the
+							browser view of the selected HTML file. There is a menu bar at
+							the top of the debug view. At the extreme right side are a
+							collection of tool icons. The very last tool icon is an 'X' that
+							is used to close the debug window. Use the tool icon immediately
+							to the left of the close tool icon to switch to a separate debug
+							window. When the cursor hovers over this tool icon the "Show in
+							separate window" is displayed. Use the tool icon immediately to
+							the left of the "Show in separate window" icon to dock the debug
+							view to the right side of the browser window. When the cursor
+							hovers over this tool icon the "Dock to side of browser window"
+							is displayed.<br> <br> 3b: The default rendering of the
+							selected HTML file is a non-mobile display. If the content is
+							intended for a mobile browser then the display must be switched
+							to the 'Responsive Design Mode'. In the right side of the menu
+							bar at the top of the debug view there are a number of tool
+							icons. The tool icon positioned third from the left will toggle
+							the HTML rendering between the non-mobile and mobile views. While
+							the debug view is docked in the bottom of the browser view the
+							cursor can hover over this icon and the "Responsive Design Mode"
+							is displayed. When the view is undocked in a separate window
+							there is no message displayed when the mouse is hovered over this
+							icon. Also note that in the 'responsive' view it is possible to
+							select a particular display format corresponding to a popular
+							mobile device. To do this click on the menu bar at the top of the
+							mobile view that reads '320x480' and choose one of {320x480,
+							360x640, 768x1024, 800x1280, 980x1280, 1280x600, 1920x900}.<br>
+							<br> 3c: Choose the "Inspector" entry in the menu bar at the
+							top of the left side of the debugger view to see how the browser
+							renders the document's elements. The debugger displays the HTML
+							source in the bottom left panel. When the cursor is hovered over
+							each section of the HTML source the debugger will highlight the
+							corresponding formatted element in the HTML rendering view. Use
+							the 'Debugger' menu item in the menu bar to view the associated
+							javascript and HTML file sources. Each of the associated files
+							can be selected from the files list at the left side of the
+							Debugger view.<br> <br> 3e: When a javascript file is
+							displayed in the 'Debugger' view a break point can be placed into
+							a script by clicking on the line number of the desired script
+							line. During the processing of the web content the break point
+							may then be triggered. During the break in execution it is
+							possible to interrogate the values of the various variables. The
+							debugger control icons are placed just above the "Sources" file
+							list. This consists of four tool icons, left to right {Click to
+							pause, Step over, Step in, Step out}.
+						</div>
+						<!-- AsideSection -->
+
+
+						<a id="fnotes"></a>
+						<table>
+							<tr>
+								<td class="footNoteTableStart">---------------------------------------------</td>
+							</tr>
+
+						</table>
+					</div>
+					<!-- pagebag -->
+				</div>
+				<!-- /page2 -->
+			</div>
+			<!-- /container -->
+			<!-- ************************************************************************************* -->
+		</div>
+		<!-- /contentContainer -->
+	</div>
+	<!-- /visualContainer -->
+</body>
+</html>

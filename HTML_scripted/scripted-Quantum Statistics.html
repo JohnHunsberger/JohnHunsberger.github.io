@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html>
+<!--  
+scripted-Quantum Statistics.html: How did Satyendra Bose develop his statistical model.
+
+scripted-Quantum Statistics.html is content displayed in the detail section of the main page that details
+Bose's statistical method.
+This and all other web content on this site was hand written by me, John Hunsberger, to demonstrate some simple but 
+elegant techniques.  This content is open for anyone to copy.  If you have questions about any of this content feel 
+free to ask me.  The ideas presented are not invention, they are my application.
+
+Design Notes:
+  1. 
+-->
+<head>
+<meta charset="ISO-8859-1">
+<title>Satyendra Nath Bose, Quantum Statistics</title>
+<link rel="stylesheet" type="text/css" href="../styles/Formatting.css">
+<script type="text/javascript" src="../scripts/footnotes-js.eclipse.js"></script>
+</head>
+<body class="embedded-page">
+
+  <div id="linkHoverMessage" class="lnk_modal">
+        hello world.
+  </div>
+
+<H2 class="banner">Satyendra Nath Bose, Quantum Statistics</H2>
+
+<div id="articleBoundary" style="margin: -10px 30px 0px 30px">
+<br>
+<p class="paragraph">
+<a target="_blank" href="https://www.famousscientists.org/s-n-bose/">Satyendranath Bose</a> had his fist paper on quantum statistics titled <a target="_blank" href="http://articles.adsabs.harvard.edu//full/1994JApA...15....3B/0000003.000.html ">"PLANCK'S LAW AND THE LIGHT QUANTUM HYPOTHESIS"</a> published in 'Zeitschrift fur Physik' on 2 July 1924.
+An English translation was later published in the 'Journal of Astrophysics and Astronomy', Vol. 15, NO. 1/MAR, P. 3, 1994.
+The referenced translation linked to here is made available by Harvard.  
+It is important to note that other translations exist and some examined contained significant errors.
+The referenced translation here seems to be accurate but just as with any translation it is always possible that it contains an omission or error.
+A <span style="font-weight: bold; background-color: #ffff99;">yellow highlighted bold font</span> is used in this article to identify formulas as they appear in Bose's paper.
+The highlighting is intended to aid the reader in relating this information to Bose's paper.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Special Note:</span><i> 
+In the information presented on this HTML document there are raised reference markers included in the text such as this example: 
+<span onmouseover="linkInfoON(this, 99)" onmouseout="linkInfoOFF()"><sup class="footnote">[99]</sup></span>.  
+For this example the marker would be a link to a corresponding footnote that is included at the completion of the text in the Reference list as reference number 99.  
+In many of the instances where a marker is present in the text, when the mouse is hovered over it the document will display a pop-up panel of additional information regarding the marked topic.
+When the pop-up panel is displayed with quotation marks around the text it indicates that the quoted text is copied directly from the reference.
+Clicking on the raised marker will result in the associated reference link to be displayed at the bottom of this document.
+The reference material can then be accessed by using the reference link provided.
+The quoted material displayed from the source is the property of the source document and is only displayed in the pop-up panel as a convenience.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+In his paper Bose referred to the earlier work by Max Planck in 1901 who derived a relationship between radiation density of a blackbody at thermal equilibrium and the mean energy of an oscillator.
+Bose credited Planck's work as the starting point for quantum theory.
+However he indicated that the <span style="font-weight: bold; background-color: #ffff99; white-space: nowrap;"><i>8&pi;&nu;<sup style="font-size: 80%;">2</sup>d&nu;/c<sup style="font-size: 80%;">3</sup></i></span> factor in Planck's radiation density formula was derived from classical theory and therefore was unsatisfactory.
+The main point of Bose's new derivation was to arrive at this same result without the reliance on classical theory, but rather by using a statistical derivation of the density of a black-body spectral emission.
+His new approach is explained in his 1924 paper.
+To make his paper a bit more accessible to most readers the following discussion of his 1924 paper is presented.
+Note that equations that have a yellow highlighted backgrounds are exactly the same equations that Bose presented in his publication.
+In addition, these equations are presented in the same order that they appear in his publication.
+
+</p><p class="paragraph">
+To begin, the reader may benefit from a reference for certain notations used by Bose.
+To minimize confusion the notations below are those used by Bose in his paper.
+<table style="border-collapse: collapse">
+  <tr style="vertical-align: top; background-color: #ececec;">
+    <td style="border: 1px solid black;"><b><i>d&nu;<sub style="font-size: 80%;">s</sub></i></b></td>
+    <td style="border: 1px solid black;">incremental change of frequency <b><i>&nu;<sub style="font-size: 80%;">s</sub></i></b>, where the subscript '<b>s</b>' is an index for an individual frequency</td>
+  </tr>
+  <tr style="vertical-align: top;">
+    <td style="border: 1px solid black;"><b><i>&rho;<sub style="font-size: 80%;">&nu;</sub></i></b></td>
+    <td style="border: 1px solid black;">the spectral density contribution from quanta having the frequency <b><i>&nu;</i></b></td>
+  </tr>
+  <tr style="vertical-align: top; background-color: #ececec;">
+    <td style="border: 1px solid black;"><b><i>&Alpha;<sup style="font-size: 80%;">s</sup></i></b></td>
+    <td style="border: 1px solid black;">the number of arrangements of a single quanta within an incremental frequency change <b><i>d&nu;<sub style="font-size: 80%;">s</sub></i></b></td>
+  </tr>
+  <tr style="vertical-align: top;">
+    <td style="border: 1px solid black;"><b><i>V</i></b></td>
+    <td style="border: 1px solid black;">the volume in which the spectral density is to be computed</td>
+  </tr>
+  <tr style="vertical-align: top; background-color: #ececec;">
+    <td style="border: 1px solid black;"><b><i>E</i></b></td>
+    <td style="border: 1px solid black;">the total energy of the quanta within the volume <b><i>V</i></b></td>
+  </tr>
+  <tr style="vertical-align: top;">
+    <td style="border: 1px solid black;"><b><i>N<sup style="font-size: 80%;">s</sup></i></b></td>
+    <td style="border: 1px solid black;">a count of the total number of quanta sharing the same frequency corresponding to the increment of frequency <b><i>d&nu;<sub style="font-size: 80%;">s</sub></i></b></td>
+  </tr>
+  <tr style="vertical-align: top; background-color: #ececec;">
+    <td style="border: 1px solid black;"><b><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">x</sub></i></b></td>
+    <td style="border: 1px solid black;">a phase space's unique cell division where the <b><i>s</i></b> superscript denotes the quanta frequency and the <b><i>x</i></b> subscript denotes the number of quanta within the cell</td>
+  </tr>
+  <tr style="vertical-align: top; background-color: #ececec;">
+    <td style="border: 1px solid black;"><b><i>W</i></b></td>
+    <td style="border: 1px solid black;">The statistical probability of cell populations over all the frequencies <b><i>d&nu;<sub style="font-size: 80%;">s</sub></i></b></td>
+  </tr>
+</table>
+
+<p class="paragraph">
+Bose began his paper by stating that the condition that must be met is the existing formula for radiation density as a function of energy.
+That formula for light density at a specific frequency &nu; was <span style="font-weight: bold; background-color: #ffff99; white-space: nowrap;"><i>&rho;<sub style="font-size: 80%;">&nu;</sub>d&nu;=(8&pi;&nu;<sup style="font-size: 80%;">2</sup>d&nu; / c<sup style="font-size: 80%;">3</sup>)E</i></span>.
+This formula states that the spectral density at a specific frequency <i>&rho;<sub style="font-size: 80%;">&nu;</sub></i> corresponding to each small increment of frequency <i>d&nu;</i> is equal to the total energy <i>E</i> times the scaling facor (8&pi;&nu;<sup style="font-size: 80%;">2</sup>d&nu; / c<sup style="font-size: 80%;">3</sup>).
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Don't be confused by the use of '<i>&nu;</i>' in the Bose equations for frequency.
+Planck's equation is sometimes presented using the letter '<i>f</i>' for frequency, but Planck originally wrote this formula as <i>E=h&nu;</i>.
+The '&nu;' character for frequency tends to be used interchangeably with '<i>f</i>'. 
+There is a discussion regarding the use of '<i>&nu;</i>' or '<i>f</i>' at <a target="_blank" href="https://physics.stackexchange.com/questions/23860/when-to-use-f-and-when-nu-signifying-frequency">The Stack Exchange</a>.
+</i><br>
+</div> <!-- /ASIDE -->
+<p class="paragraph">
+Max Planck had previously established in 1900 that for each quanta with the frequency <i>f</i> the energy would be given by <i>E=hf</i>.
+Bose based the total energy <i>E</i> having N<sub style="font-size: 80%;">s</sub> quanta on Plank's formula.
+He expressed that relationship as <i>E=&Sigma;<sub style="font-size: 80%;">s</sub>(N<sub style="font-size: 80%;">s</sub>h&nu;<sub style="font-size: 80%;">s</sub>)</i>.
+That states that the total energy <i>E</i> is the sum over all quanta frequencies.
+For each frequency the energy contribution is the number of quanta (<i>N<sub style="font-size: 80%;">s</sub></i>) at that frequency <i>&nu;<sub style="font-size: 80%;">s</sub></i> times Plank's energy formula.
+The summation for total energy <i>E</i> is defined over a range of <i>s</i>, <i>s</i>=0 to <i>s</i>=&infin;.
+He equated this summation to the integration formula <i>E=V &int;&rho;<sub style="font-size: 80%;">v</sub>dv</i>.&nbsp; 
+The integral means that the total energy <i>E</i> is comprised of all individual spectral densities <i>&rho;<sub style="font-size: 80%;">&nu;</sub></i> at each frequency &nu; times the volume <i>V</i> that contains all of the quanta particles.
+His explanation established the energy equalities <span style="font-weight: bold; background-color: #ffff99; white-space: nowrap;"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>(N<sub style="font-size: 80%;">s</sub>h&nu;<sub style="font-size: 80%;">s</sub>)</i>=<i>V &int;&rho;<sub style="font-size: 80%;">v</sub>dv</i></span>.&nbsp; 
+Be aware that in his translated paper they used subscripts and superscripts interchangeably, so N<sub style="font-size: 80%;">s</sub> is the same as N<sup style="font-size: 80%;">s</sup>.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;In the previous paragraph the symbols &Sigma;<sub style="font-size: 80%;">s</sub> and &int; were introduced.
+The symbol &Sigma;<sub style="font-size: 80%;">s</sub> is the mathematical notation for a successive summation over an incremental range of values indexed by the values of <span style="font-size: 80%;">s</span>.
+The <span style="font-size: 80%;">s</span> index is generally supplied with both initial and terminal values to define the range of the summation.
+The symbol &int; is the mathematical notation for the integration operator.
+In the case above the integral function is given by '&rho;<sub style="font-size: 80%;">v</sub>'.
+The operator &int; is often used with a start and end range over which the area is to be computed.
+The operator performs the area computation within the function's plot with respect to the function's zero axis.
+That base for the integration is indicated by the appended notation "dx" which is read "the change in x".
+Integral operators can be presented as multiples like &int;&int;&int;dx dy dz which would be the arbitrary area of a three dimensional region for a function with changes in x, y and z.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+Bose wrote that in order to evaluate the energy equality <i>E=&Sigma;<sub style="font-size: 80%;">s</sub>(N<sub style="font-size: 80%;">s</sub>hv<sub style="font-size: 80%;">s</sub>)</i>=<i>V &int;&rho;<sub style="font-size: 80%;">v</sub>dv</i>, it is necessary to find those numbers <i>N<sub style="font-size: 80%;">s</sub></i> for each frequency <i>&nu;<sub style="font-size: 80%;">s</sub></i> that determine its spectral density <i>&rho;<sub style="font-size: 80%;">&nu;</sub></i>.
+He reasoned that there would be many possible probability distribution curves resulting from the various combinations of <i>N<sub style="font-size: 80%;">s</sub></i> values.
+He pointed out that the solution for the correct value of <i>N<sub style="font-size: 80%;">s</sub></i> can be found where the probability distribution curve has a maximum and still satisfies the energy equality.
+These conditions are the constraints used in finding the final form of the derivation formula.
+He added that each quanta has a momentum of <span style="font-weight: bold; background-color: #ffff99; white-space: nowrap;"><i>p<sub style="font-size: 80%;">s</sub>=h&nu;<sub style="font-size: 80%;">s</sub>/c</i></span> in the direction of its motion.
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;For some it might be interesting to see how Bose obtained his momentum formula for each quanta.
+The quanta momentum formula just given is derived from the momentum formula (mass times velocity) <i>p=mV</i>, Planck's law <i>E=h&nu;</i> and Einstein's <i>E=mc<sup style="font-size: 80%;">2</sup></i>.
+Note that in the momentum formula <i>V</i> is Velocity and not the total Volume of Bose's formula.
+First equate the energy formulas <i>h&nu;=mc<sup style="font-size: 80%;">2</sup></i>.
+Then rearrange to obtain an expression for mass as <i>m=h&nu;/c<sup style="font-size: 80%;">2</sup></i>.
+Substitute this mass into the momentum formula <span style="white-space: nowrap;"><i>p=(h&nu;/c<sup style="font-size: 80%;">2</sup>)V</i></span>.
+For quanta the velocity <i>V</i> is the speed of light <i>c</i>.
+The substitution of <i>c</i> for <i>V</i> in  <span style="white-space: nowrap;"><i>p=(h&nu;/c<sup style="font-size: 80%;">2</sup>)V</i></span> allows the <i>c</i> value introduced in the numerator to cancel one c value of the <i>c<sup style="font-size: 80%;">2</sup></i> in the denominator.
+The final expression is then <i>p<sub style="font-size: 80%;">s</sub>=h&nu;<sub style="font-size: 80%;">s</sub>/c</i>.
+</i><br>
+</div> <!-- /ASIDE -->
+<p class="paragraph">
+Given that each quanta has both a position within <i>V</i> and a momentum that dictates its next position, he characterized each quanta contributing to the spectral density using three location coordinates and three momentum values (one momentum value for each coordinate axis).
+The three location coordinates define the quanta's position using x, y, and z coordinates.
+Then using these same coordinate axes he defined the three momentum components as p<sub style="font-size: 80%;">x</sub>, p<sub style="font-size: 80%;">y</sub> and p<sub style="font-size: 80%;">z</sub>.
+For any incremental change of the quanta there is a corresponding change in all these six values.
+Bose stated that these six values comprise the volume of a six dimensional phase space domain.
+The volume of the phase space domain is equal to the integral of all the incremental changes, <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99">&int; dx dy dz dp<sub style="font-size: 80%;">x</sub> dp<sub style="font-size: 80%;">y</sub> dp<sub style="font-size: 80%;">z</sub></span>.
+This six dimensional formula can be viewed as the product of two separate three dimensional formulas.
+</p><p class="paragraph">
+The triple integral of the three position changes, &int;&int;&int;dx dy dz, represents a volume <i>V</i>.
+The triple integral of the three momentum changes, &int;&int;&int;dp<sub style="font-size: 80%;">x</sub> dp<sub style="font-size: 80%;">y</sub> dp<sub style="font-size: 80%;">z</sub>, is also regarded as a volume within the momentum phase space that is equivalent to the incremental increase of a spherical shape.
+The three momentum components all change from their initial vector magnitudes p to new magnitudes corresponding to the change p+dp.
+The spherical increase in the vector space describes a shell in the three positional dimensions.
+The spherical shell shape of the incremental increase permits the change without regard to a specific direction.
+The volume of the spherical shell is obtained by multiplying the surface area of the sphere<span onmouseover="linkInfoON(this, 1)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn1">[1]</a></sup></span> having a radius of <i>p</i> times the thickness of the shell which is the incremental increase <i>dp</i>.
+This then gives the formula &int;&int;&int;dp<sub style="font-size: 80%;">x</sub> dp<sub style="font-size: 80%;">y</sub> dp<sub style="font-size: 80%;">z</sub>=4&pi;(p<sup style="font-size:70%;">2</sup>) dp.
+As previously stated, Bose defined the magnitude of the momentum p<sub style="font-size: 80%;">s</sub> as h&nu;<sub style="font-size: 80%;">s</sub>/c.
+Substituting the value of p<sub style="font-size: 80%;">s</sub> into the integral equation yields &int;&int;&int;dp<sub style="font-size: 80%;">x</sub> dp<sub style="font-size: 80%;">y</sub> dp<sub style="font-size: 80%;">z</sub>=4&pi;(h&nu;/c)<sup style="font-size:70%;">2</sup> d(h&nu;/c).
+Bose stated that the quanta particle's frequency forces it to remain on the cylindrical surface.
+He stated that there is then a correspondence between a change in the frequency domain (<span style="background-color: #ffff99; color: red; font-weight: bold;">d&nu;</span>) to a change in the phase space domain (<span style="background-color: #ffff99; color: red; font-weight: bold;">dp<sub style="font-size: 80%;">xyz</sub></span>).
+He wrote the formula for the quanta's momentum change as <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;">&int;&int;&int;<span style="background-color: #ffff99; color: red; font-weight: bold;">dp<sub style="font-size: 80%;">x</sub> dp<sub style="font-size: 80%;">y</sub> dp<sub style="font-size: 80%;">z</sub></span>=4&pi;(h&nu;/c)<sup style="font-size:70%;">2</sup> ((h <span style="color: red;">d&nu;</span>)/c)</span>.
+By squaring the individual members of the (h&nu;/c)<sup style="font-size:70%;">2</sup> term and combining the like terms, the final form of the equation can be written as <i>4&pi;(h<sup style="font-size: 80%;">3</sup>&nu;<sup style="font-size: 80%;">2</sup>/c<sup style="font-size: 80%;">3</sup>) d&nu;</i>.
+He concluded this part of his analysis by combining the volume times the momentum to depict the volume of the phase space domain as a function of frequency as <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&int; dx dy dz dp<sub style="font-size: 80%;">x</sub> dp<sub style="font-size: 80%;">y</sub> dp<sub style="font-size: 80%;">z</sub>=4&pi;(h<sup style="font-size: 80%;">3</sup>&nu;<sup style="font-size: 80%;">2</sup>/c<sup style="font-size: 80%;">3</sup>) V d&nu;</i></span>.
+This final formula equates the frequency domain equivalent to his phase space domain.
+</p><p class="paragraph">
+Bose then divided up the phase space into individual cells.
+His proposed set of cells represented the number of possible arrangements of individual quantum particles having the frequency &nu; positioned within the phase space volume.
+This approach was significant to his derivation.
+By treating quantum particles as being indistinguishable he departed from the prevailing wisdom of his time which arithmetically treated quantum particles as unique hertzian oscillators.
+To develop the statistical treatment Bose created a method to implement counts and probable distributions.
+</p><p class="paragraph">
+
+He stated that the number of phase space cells must match the total number of possible arrangements for each quantum particle within the phase space.
+The minimal energy change of a photon was given by Max Planck's equation '<i>E=h&nu;</i>'.
+Planck had previously established the constant <i>h</i> as the discrete incremental change of energy for each quantum.
+Bose used the minimal energy change to assign the volume of each cell of the phase space as <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>h<sup style="font-size: 80%;">3</sup></i></span>.
+To compute the total number of unique cells in the domain per frequency &nu;<sub style="font-size: 80%;">s</sub> he divided the frequency domain formula equivalent of the phase space by the <i>h<sup style="font-size: 80%;">3</sup></i> volume to obtain 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>4&pi;(&nu;<sup style="font-size: 80%;">2</sup>/c<sup style="font-size: 80%;">3</sup>)V d&nu;</i></span>.
+Curiously, Bose stated in this article, "<i>Concerning the kind of subdivision of this type, nothing definitive can be said.</i>"
+He then indicated that to account for polarization, the count formula must be multiplied by 2.
+On page 3 of his article Bose wrote the final formula for the number of unique cells in phase space for a given frequency <i>&nu;<sub style="font-size: 80%;">s</sub></i> as 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>8&pi;(&nu;<sup style="font-size: 80%;">2</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>/c<sup style="font-size: 80%;">3</sup>)V d&nu;<sub style="font-size: 80%;">s</sub></i></span>.
+On page 4 Bose established the equation for the variable 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Alpha;<sup style="font-size: 80%;">s</sup>=8&pi;(&nu;<sup style="font-size: 80%;">2</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>/c<sup style="font-size: 80%;">3</sup>) d&nu;<sub style="font-size: 80%;">s</sub></i></span>.
+It is subtle point to make, but observe that in this definition of <i>&Alpha;<sup style="font-size: 80%;">s</sup></i> it is not distributed over the volume V.
+</p><p class="paragraph">
+
+Having defined his mathematical model Bose then began his statistical derivation.
+Given <i>N<sub style="font-size: 80%;">s</sub></i> quanta within each increment of frequency <i>d&nu;<sub style="font-size: 80%;">s</sub></i>, the question that he next addressed was in how many ways can the <i>N<sub style="font-size: 80%;">s</sub></i> quanta be distributed into the <i>Q<sub style="font-size: 80%;">s</sub></i> number of cells?
+To start, he defined a sequence of cell types such that for each frequency &nu;<sub style="font-size: 80%;">s</sub> the cells can be defined as <span style="font-weight: bold; background-color: #ffff99;">p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">0</sub> (a cell that contains no quanta), p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">1</sub> (a cell that contains one quanta), p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">2</sub> (a cell that contains two quanta)</span>, and so on.
+The sum of this series is equal to the total number of quanta sharing the same frequency corresponding to the increment of frequency d&nu;<sub style="font-size: 80%;">s</sub>.
+This is expressed by the formula 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>N<sup style="font-size: 80%;">s</sup>=0p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">0</sub> + 1p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">1</sub> + 2p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">2</sub> + 3p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">3</sub> + &hellip;</i></span>.
+The sum of terms in this expression can be rewritten using the summation operator &Sigma; as <span style="white-space: nowrap; font-weight: bold;"><i>N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(rp<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span>.
+Bose refers to this summation form later in his derivation process.
+
+</p><p class="paragraph">
+Bose explained that for each frequency change <i>d&nu;</i>, the number of ways that the total quanta can be distributed into these cell types without regard to order is given statistically by the binominal coefficient<span onmouseover="linkInfoON(this, 2)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn2">[2]</a></sup></span> '<span style="font-size: 80%;">n</span>C<span style="font-size: 80%;">k</span>'.
+Using the binominal coefficient to determine the number of ways quanta with the same frequency <i>&nu;<sub style="font-size: 80%;">s</sub></i> can populate the total kinds of cells was expressed by the equation 
+<span style="white-space: nowrap; font-weight: bold;"><i>&Alpha;</i><sup style="font-size: 80%;">s</sup>! / p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">0</sub>! p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">1</sub>! p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">2</sub>!&hellip;</span>.
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The German mathematician Michael Stifel<span onmouseover="linkInfoON(this, 3)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn3">[3]</a></sup></span> is credited with providing the first documentation of the binominal coefficient in 1544 in his <a target="_blank" href="https://books.google.com/books?id=fndPsRv08R0C&hl=en">"Arithmetica Integra"</a>.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+In statistics the specific multiplication rule<span onmouseover="linkInfoON(this, 4)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn4">[4]</a></sup></span> is used to compute the probability of multiple independent events.
+Applying the specific multiplication rule, the formula to compute the probability of any given state resulting from all the probabilities over all the frequencies &nu;<sub style="font-size: 80%;">s</sub> is given by 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>W=&Pi;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>! / p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">0</sub>! p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">1</sub>! p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">2</sub>!&hellip;)</i></span>.
+The 'W' variable is introduced on page 4 in a manner that might be confusing to the reader and so this variable's treatment was clarified in this review of his paper.
+Bose pointed out that the terms <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub></i></span> can be viewed as large numbers.
+By this distinction he states that it is acceptable to use the Stirling Approximation<span onmouseover="linkInfoON(this, 5)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn5">[5]</a></sup></span> for the factorial operators with large numerical values.
+Applying the Stirling Approximation he presents the new form <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>ln(W)=&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>ln(&Alpha;<sup style="font-size: 80%;">s</sup>)) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)))</i></span>.
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The probability formula contains the mathematical operators ! and &Pi;<sub style="font-size: 80%;">s</sub>.  Some may not be familiar with these operators.
+The ! operator is called the factorial.
+It is a repeated operation restricted to positive integer values that successively multiplies the integer values starting at 1 through n.
+So n! is 1x2x3x...xn.
+The &Pi; operator is called the product operator.
+It is a repeating operation that performs the product of a sequence of values.
+In Bose's formula the probability is the product of all possible distributions for every frequency &nu;<sub style="font-size: 80%;">s</sub>.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+Some explanation is needed to explain how Bose used the Stirling Approxiation to produce the new form.
+The initial formula 
+<span style="white-space: nowrap; font-weight: bold;"><i>W=&Pi;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>! / p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">0</sub>! p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">1</sub>! p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">2</sub>!&hellip;)</i></span> can also be expressed as 
+<span style="white-space: nowrap;"><i>W=&Pi;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>! / &Pi;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!))</i></span> by gathering the series multiplication in the denominator.
+The successive products of fractions is equivalent to the product of the numerators divided by the product of the denominators.
+Using this simple rule the equation becomes 
+<span style="white-space: nowrap;"><i>W=&Pi;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>!) / &Pi;<sub style="font-size: 80%;">s</sub>(&Pi;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!))</i></span>.
+Using the rules of logarithms<span onmouseover="linkInfoON(this, 6)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn6">[6]</a></sup></span> the formula for <i>W</i> can be simplified.
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Exponentiation and logarithms may be unfamiliar to some.
+The logarithm and exponent functions are related mathematical operators.
+An exponent is an argument to a numeric value in some base (typically base 10) that specifies a count of multiplications of the value by the base such as 5<sub style="font-size: 70%;">(10)</sub>E+1=50.
+The logarithm has the opposite effect of an exponent in that it produces a value less than its argument.
+By definition the '<i>log<sub style="font-size: 80%;">base</sub>(N)=Result</i>' is equivalent to <i>base<sup style="font-size: 80%;">Result</sup>=N</i>.
+So the logarithm is a function on a numeric base that specifies the count of the number of divisions by the base that exist in the argument.
+For example log<sub style="font-size: 70%;">(10)</sub>(100)=2.
+</i><br>
+</div> <!-- /ASIDE -->
+<p class="paragraph">
+Bose took the natural logarithm<span onmouseover="linkInfoON(this, 7)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn7">[7]</a></sup></span> of both sides of the equation for <i>W</i> to produce the new equation 
+<span style="white-space: nowrap;"><i>ln(W)=ln(&Pi;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>!)/&Pi;<sub style="font-size: 80%;">s</sub>(&Pi;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!))</i></span>.
+Next, applying the logarithmic identity 
+<span style="white-space: nowrap;">'<i>log<sub style="font-size: 80%;">b</sub>(x/y)=log<sub style="font-size: 80%;">b</sub>(x)-log<sub style="font-size: 80%;">b</sub>(y)</i>'</span> 
+it is possible to rewrite the equations as 
+<span style="white-space: nowrap;"><i>ln(W)=ln(&Pi;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>!)) - ln(&Pi;<sub style="font-size: 80%;">s</sub>(&Pi;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!)))</i></span>.
+The product series of the <i>&Pi;</i> operator then becomes a summation series <i>&Sigma;</i> by applying the logarithmic identity 
+<span style="white-space: nowrap;">'<i>log<sub style="font-size: 80%;">b</sub>(xy)=log<sub style="font-size: 80%;">b</sub>(x) + log<sub style="font-size: 80%;">b</sub>(y)</i>'</span>.
+The equation can be written 
+<span style="white-space: nowrap;"><i>ln(W)=&Sigma;<sub style="font-size: 80%;">s</sub>(ln(&Alpha;<sup style="font-size: 80%;">s</sup>!)) - &Sigma;<sub style="font-size: 80%;">s</sub>(ln(&Pi;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!)))</i></span>.
+The same logarithmic rule can be applied to 
+<span style="white-space: nowrap;"><i>ln(&Pi;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!))</i></span>.
+Bose's final distribution probability equation form was then 
+<span style="white-space: nowrap;"><i>ln(W)=&Sigma;<sub style="font-size: 80%;">s</sub>(ln(&Alpha;<sup style="font-size: 80%;">s</sup>!)) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>!)))</i></span>.
+</p><p class="paragraph">
+By applying the Stirling Approximation to the previous formula's factorial operators it can be rewritten as 
+<span style="white-space: nowrap;"><i>ln(W)=&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup> ln(&Alpha;<sup style="font-size: 80%;">s</sup>) - &Alpha;<sup style="font-size: 80%;">s</sup>) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>) - p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ))</i></span>.
+The variable <i>&Alpha;<sup style="font-size: 80%;">s</sup></i> was defined by Bose to represent the total number of arrangements of a single quanta with a given frequency change <i>d&nu;<sub style="font-size: 80%;">s</sub></i>.
+The total number of arrangements that the variable <i>&Alpha;<sup style="font-size: 80%;">s</sup></i> represents must be equal to the total count of quanta distributed into the cells.
+To show this equality he wrote that 
+<span style="white-space: nowrap;"><i>&Alpha;<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span>.
+Using the rule 
+<span style="white-space: nowrap;"><i>&Sigma;(a-b)=&Sigma;(a)-&Sigma;(b)</i> allows <i>&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup> ln(&Alpha;<sup style="font-size: 80%;">s</sup>) - &Alpha;<sup style="font-size: 80%;">s</sup>) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>) - p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ))</i></span>
+to be rewritten as 
+<span style="white-space: nowrap;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup> ln(&Alpha;<sup style="font-size: 80%;">s</sup>)) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)) - (-&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> )))</i></span>.
+The forth term 
+<span style="white-space: nowrap;">-(-&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> )))</span>
+ becomes 
+ <span style="white-space: nowrap;">+&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ))</span>.
+Because 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Alpha;<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span> 
+the second term in the equation 
+<span style="white-space: nowrap;">-&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>)</span> 
+becomes 
+<span style="white-space: nowrap;">-&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ))</span>.
+As a result the second and forth terms cancel each other.
+The final form of this equation is then written as 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>ln(W)=&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup> ln(&Alpha;<sup style="font-size: 80%;">s</sup>)) - &Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub> ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)))</i></span>.
+</p><p class="paragraph">
+By this point in his paper Bose has established a counting model based on the theoretical number of cells within a phase space.
+The cells represent a range of change in individual discrete frequencies over the spectrum of quanta present within the phase space volume.
+He established that more than one quanta can occupy a single cell space, which means that these quanta are not distinguishable from one another.
+To establish his final solution he pointed out that the probability of cell populations over all the frequencies defined by the formula <span style="font-weight: bold;"><i>ln(W)</i></span> must be solved for the maximum of the probability distribution.
+To express this maximum probability he used the optimization method called the Lagrange multiplier<span onmouseover="linkInfoON(this, 8)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn8">[8]</a></sup></span>. 
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The Lagrange method (Lagrange Multipliers) is a method for finding a local minimum or maximum for a function.
+The Lagrange method is used when functionally related constraints are defined.
+The method is credited to Lagrange because of his book published in 1788 on analytical approaches to mechanics titled 'M&eacute;canique Analytique'.
+In his book he presented an analytic alternative for solving mechanics problems in place of the geometric approach explained in Netwon's 1687 publication <a target="blank" href="https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica">'Philosophiæ Naturalis Principia Mathematica'</a>.
+Lagrange's analytical method for statics was to determine the STATIC STATE that exists when the applied forces are comprised of arbitrary forces.
+In the static case the net sum of the applied forces must be zero.
+In a similar manner the statistical maximum of a distribution sought by Bose is also a static system in thermal equilibrium consisting of related functions whose sum of the derivatives must be equal to zero.
+So the method of undetermined coefficients employed by Lagrand to solve the static state is applied by Bose to find the maximum.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There is an English translation of Lagrange's book titled <a target="blank" href="https://ia800207.us.archive.org/35/items/springer_10.1007-978-94-015-8903-1/10.1007-978-94-015-8903-1.pdf">'Analytical Mechanics'</a> by AUGUSTE BOISSONNADE and VICTOR N. V AGLIENTE.
+In the preface to the translation the authors wrote, "Lagrange's effort was to bring a large portion of what was known about mechanics in his day under one principle - the Principle of Virtual Work."
+Virtual work was Lagrange's concept of work not actually done, but rather work that would be done if a static system became perturbed.
+A <a target="blank" href="https://www.britannica.com/science/statics">static system</a> is a stationary state of an object having all applied forces in equilibrium.
+On page 29 of his book the static state is expressed as the sum of forces along their lines of application to their force center as <span style="white-space: nowrap;">"P dp+Q dq+R dr+&hellip;=0."</span>
+In SECTION IV page 59 Lagrange explains that "to preserve the equilibrium of the static state various equations of condition [functionally related constraints] are required which are given by the nature of the system."
+This discussion leads up to his introduction of 'undetermined coefficients' which Lagrange applies to create the 'General Equation of Equilibrium'.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There is a good discussion regarding the history of the Lagrange multipliers at the <a target="blank" href="https://math.stackexchange.com/questions/769437/history-of-lagrange-multipliers">stack exchange</a>. 
+For more details there is a paper that was published in the "JOURNAL OF OPTIMIZATION THEORY AND APPLICATIONS" by P. Bussotti titled <a target="blank" href="http://www.math.harvard.edu/~knill/teaching/summer2014/exhibits/lagrange/genesis_lagrangemultpliers.pdf">'On the Genesis of the Lagrange Multipliers'</a>.
+
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+As a first step to apply the Lagrange method Bose recalled the constraints that he established at the beginning of his paper.
+His first constraint was <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>(N<sub style="font-size: 80%;">s</sub>h&nu;<sub style="font-size: 80%;">s</sub>)</i></span> for the total energy.
+The second constraint was with regard to the count of the total number of quanta sharing the same frequency corresponding to the increment of frequency d&nu;<sub style="font-size: 80%;">s</sub>. 
+For this he specified that <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(rp<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span>.
+He next wrote, "Carrying out the variation gives the condition..."
+It is presumed that by his use of the word 'variation' Bose meant that the variables of the function formula he obtained for <span style="font-weight: bold;"><i>ln(W)</i></span> must vary in relation to the constraints just mentioned to locate the maximum of the system.
+That variation then depends on several parameters of the <span style="font-weight: bold;"><i>ln(W)</i></span> function.
+</p><p class="paragraph">
+It is necessary to find the values of these parameters for which the expectation value of the energy is the highest possible.
+Each of the parameters would produce a maximum where the derivative of its function is zero.
+The derivative of any function is the expression of the slope of the tangent at every point on the function.
+Where the tangential slope of the function becomes zero the function is horizontal to the its base axis.
+This happens at a maximum or a minimum as the local function value trend reverses, either decreasing or increasing.
+</p><p class="paragraph">
+To find the desired maximum for <span style="font-weight: bold;"><i>ln(W)</i></span> he used three inter-dependent functions.  
+He set each of their individual derivatives to zero in order to define their separate maximums:
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>(1+ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>))))=0</i></span>, 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(&delta;N<sup style="font-size: 80%;">s</sup>h&nu;<sup style="font-size: 80%;">s</sup>)=0</i></span>  and
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Sigma;<sub style="font-size: 80%;">r</sub>(&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)=0</i></span>.
+In the first and third derivative functions the change is with respect to a change of the values of the cell divisions <span style="white-space: nowrap; font-weight: bold;"><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub></i></span>.
+In the second derivative function the change is with respect to the total number of quanta sharing the same frequency <span style="white-space: nowrap; font-weight: bold;"><i>N<sup style="font-size: 80%;">s</sup></i></span>, however he reminds the reader that <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&delta;N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)</i></span>.
+So substituting <span style="white-space: nowrap; font-weight: bold;"><i>&Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)</i></span> for <span style="white-space: nowrap; font-weight: bold;"><i>&delta;N<sup style="font-size: 80%;">s</sup></i></span> in the second equation then completes a set of three equations maximized with respect to a change in <span style="white-space: nowrap; font-weight: bold;"><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub></i></span>.
+</p><p class="paragraph">
+Precisely how Bose obtained his first derivative function could not be determined for this article.
+It appears that the first derivative function may have been obtained by some variation of the <span style="font-weight: bold;"><i>ln(W)</i></span> formula.
+He may have found a way to eliminate some terms because the derivative of a constant is always zero.
+The second derivative function maximizes his first constraint on the total energy <span style="font-weight: bold;"><i>E</i></span>.
+The third derivative function maximizes the number of arrangements of a single quanta at each increment of frequency <span style="font-weight: bold;"><i>A<sup style="font-size: 80%;">s</sup></i></span>.
+So Bose completed the preliminary step to the Lagrange method by establishing three interdependent derivative equations where each changes incrementally with respect to the same variable.
+</p><p class="paragraph">
+Bose substituted <span style="white-space: nowrap;"><i>&Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)</i></span> for <span style="white-space: nowrap;"><i>&delta;N<sup style="font-size: 80%;">s</sup></i></span> in <span style="white-space: nowrap;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(&delta;N<sup style="font-size: 80%;">s</sup>h&nu;<sup style="font-size: 80%;">s</sup>)</i></span> to produce the equation <span style="white-space: nowrap;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)h&nu;<sup style="font-size: 80%;">s</sup>)</i></span>.
+He rearranged the product within the summation &Sigma;<sub style="font-size: 80%;">s</sub>() as <span style="white-space: nowrap;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(h&nu;<sup style="font-size: 80%;">s</sup> &Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>))</i></span>.
+Using this new derivative formula and the first and third derivative formulas he multiplied these three derivative formulas with Lagrange multipliers and summed them.
+Applying the Lagrange multipliers (1), &lambda; and 1/&beta; produced the equation  
+<span style="white-space: nowrap;"><i>(1)&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>(1+ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)))) + 
+&Sigma;<sub style="font-size: 80%;">s</sub>(&lambda;<sup style="font-size: 80%;">s</sup> &Sigma;<sub style="font-size: 80%;">r</sub>(&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)) + 
+1/&beta;(&Sigma;<sub style="font-size: 80%;">s</sub>(h&nu;<sup style="font-size: 80%;">s</sup> &Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>))).
+</i></span>
+By combining the first and second terms the final equation becomes
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Sigma;<sub style="font-size: 80%;">s</sub>(&Sigma;<sub style="font-size: 80%;">r</sub>(&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>(1+ln(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>) + &lambda;<sup style="font-size: 80%;">s</sup>))) + 
+1/&beta;(&Sigma;<sub style="font-size: 80%;">s</sub>(h&nu;<sup style="font-size: 80%;">s</sup> &Sigma;<sub style="font-size: 80%;">r</sub>(r&delta;p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>)))=0</i></span>.
+</p><p class="paragraph">
+At this point of his paper Bose stated "From this we get the next step..." and introduces the equation
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>=B<sup style="font-size: 80%;">s</sup>exp(-rh&nu;<sup style="font-size: 80%;">s</sup>/&beta;)</i></span>.
+Note that at this point the translators introduced a new variable 'B<sup style="font-size: 80%;">s</sup>' without definition.
+It cannot be explained here how this derivation was performed.
+Given that Einstein had reviewed and approved Bose's derivation lends sufficient trust that the work is valid.
+However, in the periodical 'Current Science, Vol. 69 (10 July 1995)' published by Current Science Association is an article by S.K Das and S. Sengupta titled <a target="blank" href="https://www.jstor.org/stable/24096635?seq=1#page_scan_tab_contents">"Professor S. N. Bose's contribution to quantum statistics - A critical review"</a>.
+On page 76 of this article the authors noted about Bose's derivation, "<i>It is really surprising that neither Bose nor Einstein in their first paper considered it necessary to examine critically the derivation of the new expression for thermodynamic probability.</i>"
+There is a hint towards this mysterious step offered in that same article, "<i>In the logarithmic derivative of W, one has to use this condition [that Z<sup style="font-size: 80%;">s</sup> (expressed as A<sup style="font-size: 80%;">s</sup> in Bose's article) is constant]"</i>.
+Recall that <span style="white-space: nowrap; font-weight: bold;"><i>&Alpha;<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span>.
+The derivative of a constant is zero.
+</p><p class="paragraph">
+Substituting the new form of <span style="white-space: nowrap; font-weight: bold;"><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub></i></span> into the &Alpha;<sup style="font-size: 80%;">s</sup> equation yields 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&Alpha;<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(B<sup style="font-size: 80%;">s</sup>exp(-rh&nu;<sup style="font-size: 80%;">s</sup>/&beta;))</i></span>.
+&nbsp;&Alpha;<sup style="font-size: 80%;">s</sup> is the count of arrangements of a single quanta having an incremental change in the specific frequency &nu;<sub style="font-size: 80%;">s</sub>.
+The equation is a sum over all integer values for r from zero to infinity.
+The general <a target="blank" href="https://www.mathsisfun.com/algebra/sequences-sums-geometric.html">geometric series</a> formula to be applied is <span style="white-space: nowrap;">&Sigma;<sub style="font-size: 80%;">r</sub>(ak<sup style="font-size: 80%;">r</sup>)=a[(1-k<sup style="font-size: 80%;">r</sup>)/(1-k)]</span> for r=0 to n.
+Using the exponent law <span style="white-space: nowrap;">x<sup style="font-size: 80%;">ab</sup>=(x<sup style="font-size: 80%;">a</sup>)<sup style="font-size: 80%;">b</sup></span>
+the &Alpha;<sup style="font-size: 80%;">s</sup> formula's 'k' value can be expressed as exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)<sup style="font-size: 80%;">-r</sup>.
+Since the exponent value r is negative the value exp(k<sup style="font-size: 80%;">r</sup>) will vanish as r becomes large.
+In the general formula it can be seen that when k<sup style="font-size: 80%;">n</sup> becomes zero the formula in this case becomes essentially <i>a[(1)/(1-k)]</i>.
+The sum for &Alpha;<sup style="font-size: 80%;">s</sup> becomes <span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>B<sup style="font-size: 80%;">s</sup>[1/(1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;))]</i></span>.
+Solving for the constant B<sup style="font-size: 80%;">s</sup> (written B<sub style="font-size: 80%;">s</sub>) gives 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>B<sub style="font-size: 80%;">s</sub>=&Alpha;<sup style="font-size: 80%;">s</sup>[1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]</i></span>.
+</p><p class="paragraph">
+At this point Bose recalls that 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(rp<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span>.
+By using the previous equation 
+<span style="white-space: nowrap; font-weight: bold;"><i>p<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r&nbsp;</sub>=B<sup style="font-size: 80%;">s</sup>exp(-rh&nu;<sup style="font-size: 80%;">s</sup>/&beta;)</i></span>
+the equation 
+<span style="white-space: nowrap; font-weight: bold;"><i>N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(rp<sup style="font-size: 80%;">s</sup><span class="backspace"></span><sub style="font-size: 60%;">r</sub>)</i></span> 
+becomes 
+<span style="white-space: nowrap; font-weight: bold;"><i>N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(rB<sup style="font-size: 80%;">s</sup>exp(-rh&nu;<sup style="font-size: 80%;">s</sup>/&beta;))</i></span>.
+Substituting for B<sup style="font-size: 80%;">s</sup> then gives 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>N<sup style="font-size: 80%;">s</sup>=&Sigma;<sub style="font-size: 80%;">r</sub>(r&Alpha;<sup style="font-size: 80%;">s</sup>[1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]exp(-rh&nu;<sup style="font-size: 80%;">s</sup>/&beta;))</i></span>.
+Using the summation identity <i>&Sigma;(Cf(n))=C&Sigma;(f(n))</i> the constant value &Alpha;<sup style="font-size: 80%;">s</sup>[1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)] can be removed from the summation to give
+<span style="white-space: nowrap; font-weight: bold;"><i>N<sup style="font-size: 80%;">s</sup>=&Alpha;<sup style="font-size: 80%;">s</sup>[1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]&Sigma;<sub style="font-size: 80%;">r</sub>(rexp(-rh&nu;<sup style="font-size: 80%;">s</sup>/&beta;))</i></span>.
+Again applying the rules of geometric series for the summation &Sigma;<sub style="font-size: 80%;">r</sub> and the convergence as r approaches infinity this becomes
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>N<sup style="font-size: 80%;">s</sup>=&Alpha;<sup style="font-size: 80%;">s</sup>[exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)] / (1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)</i></span>.
+</p><p class="paragraph">
+
+At the end of page 5 Bose concluded the derivation.
+He first returned to the energy equality <span style="white-space: nowrap; font-weight: bold;"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>(N<sub style="font-size: 80%;">s</sub>h&nu;<sub style="font-size: 80%;">s</sub>)</i></span> established at the beginning of his paper.
+There is now an expression for the total number of quanta sharing the same frequency corresponding to the increment of frequency  <i>N<sup style="font-size: 80%;">s</sup></i> (also written <i>N<sub style="font-size: 80%;">s</sub></i>).
+He recalls here the definition <span style="white-space: nowrap; font-weight: bold;"><i>&Alpha;<sup style="font-size: 80%;">s</sup>=8&pi;(&nu;<sup style="font-size: 80%;">2</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>/c<sup style="font-size: 80%;">3</sup>)d&nu;<sub style="font-size: 80%;">s</sub></i></span>.
+Substituting for the <i>&Alpha;<sup style="font-size: 80%;">s</sup></i> in the <i>N<sup style="font-size: 80%;">s</sup></i> equation that was just obtained produces the equation
+<span style="white-space: nowrap; font-weight: bold;"><i>N<sup style="font-size: 80%;">s</sup>=8&pi;(&nu;<sup style="font-size: 80%;">2</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>/c<sup style="font-size: 80%;">3</sup>)d&nu;<sub style="font-size: 80%;">s</sub>[exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)/(1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]</i></span>.
+Substituting for <i>N<sup style="font-size: 80%;">s</sup></i> in the energy equation then produces 
+<span style="white-space: nowrap; font-weight: bold;"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>([8&pi;(&nu;<sup style="font-size: 80%;">2</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>/c<sup style="font-size: 80%;">3</sup>)d&nu;<sub style="font-size: 80%;">s</sub>[exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]/(1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]h&nu;<sub style="font-size: 80%;">s</sub>)</i></span>.
+Rearranging terms then produces 
+<span style="white-space: nowrap; font-weight: bold;"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>([8&pi;h&nu;<sub style="font-size: 80%;">s</sub>&nu;<sup style="font-size: 80%;">2</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>]/c<sup style="font-size: 80%;">3</sup> ([exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]/[1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]d&nu;<sub style="font-size: 80%;">s</sub>)</i></span>.
+The &nu;<sub style="font-size: 80%;">s</sub> terms combine to &nu;<sup style="font-size: 80%;">3</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>.
+</p><p class="paragraph">
+Notice the absence of the volume variable V in this equation.
+Recall that on page 3 Bose stated that the total number of cells must be regarded as the number of possible arrangements of one quantum in the given cell volume.
+Also recall that on page 4 that <i>&Alpha;<sup style="font-size: 80%;">s</sup></i> was defined without a volume.
+In his phase space formula the phase space change was comprised of both the increment of momentum and the increment of volume.
+So the volume must be accounted for. 
+It is not clear whether it was silently added here, originally omitted by the translators or whether Bose considered it part of <i>&Alpha;<sup style="font-size: 80%;">s</sup></i>.
+The formula for the total energy E given by Bose is finally expressed as 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>( [8&pi;h&nu;<sup style="font-size: 80%;">3</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>]/c<sup style="font-size: 80%;">3</sup> V ([exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)] / [1-exp(-h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)] d&nu;<sub style="font-size: 80%;">s</sub>)</i></span>.
+</p><p class="paragraph">
+Bose next examined the entropy<span onmouseover="linkInfoON(this, 9)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn9">[9]</a></sup></span> in the system.
+He wrote the entropy as 
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>S=k{(E/&beta;)-&Sigma;<sub style="font-size: 80%;">s</sub>(&Alpha;<sup style="font-size: 80%;">s</sup>)ln[1-exp(h&nu;<sup style="font-size: 80%;">s</sup>/&beta;)]}</i></span>.
+Recall that Bose's article is examining the energy distribution in black body radiation from a system that is at thermal equilibrium. 
+In his system the energy is given by the sum of all individual energies from microstates at each frequency change given by  
+<span style="white-space: nowrap; font-weight: bold; "><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>(f(&nu;<sub style="font-size: 60%;">s</sub>)d&nu;<sub style="font-size: 80%;">s</sub>)</i></span>.
+The entropy is based on Boltzmann's equation
+<span style="white-space: nowrap; font-weight: bold;"><i>S=kLog(W)</i></span> where S is entropy, k is Boltzmann's constant, and W is the total number of possible microstates.
+Bose concludes that because the change in entropy is equal to the change in energy divided by the constant temperature
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>&part;S/&part;E=1/T</i></span>
+then it is correct to conclude that the <i>&beta;</i> variable in his energy equation is equal to <i>kT</i>. 
+This then allows that the Bose statistical approach produces the same result as the Planck's formula
+<span style="white-space: nowrap; font-weight: bold; background-color: #ffff99;"><i>E=&Sigma;<sub style="font-size: 80%;">s</sub>((8&pi;h&nu;<sup style="font-size: 80%;">3</sup><span class="backspace"></span><sub style="font-size: 60%;">s</sub>/c<sup style="font-size: 80%;">3</sup>) V [exp(h&nu;<sup style="font-size: 80%;">s</sup>/kT)-1]<sup style="font-size: 80%;">-1</sup>d&nu;<sup style="font-size: 80%;">s</sup>)</i></span>.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Some readers may be curious how entropy fits this discussion.
+The importance arises in two ways.
+In the classical physics the understanding of heat transfer systems were written as the laws of thermodynamics.
+The first law is the law of the conservation of energy which states that energy of the isolated system can not be created or destroyed.
+Given this law it is then necessary to account for the difference between the starting and ending energy.
+This is stated in the second law of thermodynamics as entropy.
+So for the system state change modeled by Bose the energy change results in an entropy value.
+He represents the entropy in terms of his micro states N<sub style="font-size: 80%;">s</sub>.
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The second importance of entropy to Bose's derivation arises in its prior derivation as a statistical distribution by 
+<a target="blank" href="http://www-groups.dcs.st-and.ac.uk/history/Biographies/Boltzmann.html">Ludwig Boltzmann</a>.
+Around 1872 Ludwig Boltzmann extended Maxwell's statistical analysis of molecular velocities to entropy.
+In 1877 he published the paper 'On the Relationship between the Second Fundamental Theorem of the Mechanical Theory of Heat and Probability Calculations Regarding the Conditions for Thermal Equilibrium'. 
+An English translation of Boltzmann's paper can be obtained from <a target="blank" href="http://www.mdpi.com/1099-4300/17/4/1971">here</a>.
+Regarding this paper, Dieter Flamm wrote on page 6 of his article <a target="blank" href="http://cds.cern.ch/record/349186/files/9803005.pdf">'<i>History and outlook of statistical physics</i>'</a> that in Boltzmann's prior work, 
+"He could show that the entropy S is proportional to the 6N–dimensional phase space volume &Omega; occupied by the corresponding macrostate of an N–particle system".
+The similarity between this conceptual model and Bose's model are clear.
+</i><br>
+</div> <!-- /ASIDE -->
+
+
+<br><br>
+</div> <!-- articleBoundary -->
+
+<br>
+    <a id="fnotes"></a>
+	<table> <!-- REFERENCES -->
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+
+		<tr>
+			<td id="fn1"><span class="footNoteText">&nbsp;1. <a target="_blank"
+				href="https://www.mathopenref.com/spherearea.html">Surface Area of a Sphere</a>.
+				(https://www.mathopenref.com/spherearea.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Area=4&pi;r<sup style="font-size: 70%;">2</sup></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn2"><span class="footNoteText">&nbsp;2. <a target="_blank"
+				href="http://mathworld.wolfram.com/BinomialCoefficient.html">Binominal Coefficient'</a>.
+				(http://mathworld.wolfram.com/BinomialCoefficient.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The binomial coefficient (n; k) is the number of ways of picking 
+k unordered outcomes from n possibilities, also known as a combination or combinatorial number."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn3"><span class="footNoteText">&nbsp;3. <a target="_blank"
+				href="https://www.mathopenref.com/spherearea.html">Michael Stifel</a>.
+				(https://en.wikipedia.org/wiki/Michael_Stifel)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn4"><span class="footNoteText">&nbsp;4. <a target="_blank"
+				href="https://www.intmath.com/counting-probability/8-independent-dependent-events.php">Independent and Dependent Events</a>.
+				(https://www.intmath.com/counting-probability/8-independent-dependent-events.php)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "If E1 and E2 are independent events, then: P(E1 and E2)=P(E1) × P(E2)"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn5"><span class="footNoteText">&nbsp;5. <a target="_blank"
+				href="http://www.ruhr-uni-bochum.de/agstuhl/deutsch/Lehre/Vorlesung/PCVI/VorlSS01_B.PDF">Sterling Approximation</a>.
+				(http://www.ruhr-uni-bochum.de/agstuhl/deutsch/Lehre/Vorlesung/PCVI/VorlSS01_B.PDF)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; The Stirling Approximation uses a logrithmic function to approximate the factorial function as "ln <i>N</i>!=<i>N</i>(ln<i>N</i>)-<i>N</i>"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn6"><span class="footNoteText">&nbsp;6. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/List_of_logarithmic_identities">Logrithm Identities</a>.
+				(https://en.wikipedia.org/wiki/List_of_logarithmic_identities)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn7"><span class="footNoteText">&nbsp;7. <a target="_blank"
+				href="http://mathworld.wolfram.com/Logarithm.html">Logrithms</a>.
+				(http://mathworld.wolfram.com/Logarithm.html)</span>
+				<br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn8"><span class="footNoteText">&nbsp;8. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Lagrange_multiplier">Lagrange Multiplier</a>.
+				(https://en.wikipedia.org/wiki/Lagrange_multiplier)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "a strategy for finding the local maxima and minima of a function subject to equality constraints."</div>
+			</td>
+		</tr>
+				
+		<tr>
+			<td id="fn9"><span class="footNoteText">&nbsp;9. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Entropy">Entropy</a>.
+				(https://en.wikipedia.org/wiki/Entropy)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...the entropy S is the natural logarithm of the number of microstates [ln(&Omega;)], multiplied by the Boltzmann constant k<sub style="font-size: 80%;">B</sub>"</div>
+			</td>
+		</tr>
+
+		
+		<tr>
+			<td id="fn99"><span class="footNoteText">&nbsp;99. <a target="_blank"
+				>Example Reference</a>.
+				()</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "An example reference."</div>
+			</td>
+		</tr>
+	</table> <!-- /REFERENCES -->
+	<br><br>
+	
+	<div id="fnNotAssociative" style="display: none;">
+		<div>&nbsp;&nbsp;Neither the dot product nor the inner product operator is associative 
+because the dot and inner product operations between a vector and a scalar is not defined. 
+Each operator is only valid between two vectors.  
+However there is a kind of associative definition involving a scalar as shown.
+The equality is a combination of the multiply and dot product or inner product operators.
+A vector's magnitude is scaled by multiplication with a scaler.
+For this associative equality to hold either A or B can be scaled but not both.
+The right side of the equality shown scales the B vector by a, but it also holds if the A vector is scaled.</div>
+	</div>
+
+	<div id="fnComplexConjugate" style="display: none;">
+		<div>&nbsp;&nbsp;The inner product has its origin in Hamilton's quest for multiplication of complex valued vectors.
+The imaginary component of the complex valued vector presents a special case for this operation.
+In the case of the dot product from which the inner product is derived, two real valued vectors are the terms of the operation and the result is a single number.
+That number represents what magnitude of the first real valued vector exists in the same direction as the second vector.
+Ideally the Inner Product binary operator should be commutative the same as the Dot Product, however the commutative property only holds for the complex conjugate of the commuted operation.</div>
+	</div>
+</body>
+</html>

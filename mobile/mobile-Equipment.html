@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<!--  
+  indexMobile.html is the mobile web page (index page) of a web site that serves the site's mobile device access.
+  This and all other web content on this site was hand written by John Hunsberger to demonstrate some simple, 
+  perhaps useful techniques and to highlight some issues as well.  This content is open for anyone to copy.  If 
+  you have questions or opinions about this content feel free to contact me.  The ideas presented are not my invention, 
+  they are my application.
+  
+  The original design choice mimicked the standard page but added the slider that is still in use.  I found that
+  because the right side contained page used an iFrame that it removed the page's swipe response.  Starting that
+  slider on the left most page allowed the user to swipe left to expose the right page containing the iFrame but
+  once the iFrame was exposed the user could not swipe right to return to the left page.  A modified structure
+  as implemented here was devised to eliminate that.
+  
+  Design Notes:
+	1. This page contains a modal dialog box popup.
+	2. This page contains a slider.  The Slider.css defines the necessary format to hide a page depending on the 
+	   relative position of the visualContainer (either 0 or -100%).  When position 0 page 1 shows and page 2 is 
+	   hidden.  When set to -100% the page 2 shows and page 1 is hidden.  The transition between pages is implemented 
+	   using the swipe event in mobileview-js.eclipse.js.  It is important that all pages have the same dimensions.
+	
+	        |----------|
+	        |  Splash  |
+	        |----------|
+	        
+	        |----------|----------|
+	        |  Page 1  |  Page 2  | <<== contentContainer (two pages in one container)
+	        |          |          |      Pages must be same dimensions, set by mobileview-js.eclipse.js loadView().
+	        |----------|----------|
+                 ^
+                 ^== visualContainer (only shows one page at a time.)
+-->
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability Overview</title>
+<link rel="stylesheet" type="text/css" href="../styles/Mobile.css">
+<link rel="stylesheet" type="text/css" href="../styles/Slider.css">
+<link rel="stylesheet" type="text/css" href="../styles/Modal.css">
+<script type="text/javascript" src="../scripts/modal-js.eclipse.js"></script>
+<script type="text/javascript" src="../scripts/mobileview-js.eclipse.js"></script>
+
+</head>
+<body id="main" onload="loadView()">
+	<div class="visualContainer" id="MobileSplash">
+		<table>
+			<tr>
+				<td><img id="splashImage" alt="OLD TUG" height="auto" width="280px"
+					src="../images/Hoga.png"></td>
+			</tr>
+			<tr>
+				<th
+					style="vertical-align: bottom; text-align: left;">John
+					Hunsberger</th> <!--  font-size: 80px; -->
+			</tr>
+			<tr>
+				<th style="vertical-align: top; text-align: left;">Engineering
+					Contractor</th> <!--  font-size: 60px; -->
+			</tr>
+		</table>
+		<p class="directoryLink" onclick="showDirectory()">Site Directory</p>
+	</div><!-- /MobileSplash -->
+	<div class="visualContainer" id="touchsurface" ontouchstart="beginTouch(event)" ontouchmove="whileTouch(event)" ontouchend="endTouch(event)">
+		<div class="contentContainer" id="slider">
+<!-- ********************************************************************************************* -->			    
+		    <div class="container" id="master">
+				<table>
+					<tr>
+						<td><a href="../indexMobile.html">About OLD TUG</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Contacts.html">Contacts</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-Capability.html">Capabilities</a></td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Projects.html">Project</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Engineering.html">Engineering</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Products.html">Product</a></td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- <a href="../mobile/mobile-Equipment.html">Equipment</a></td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td><a href="../mobile/mobile-History.html">Work History</a></td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Reference</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- This Page</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Tool Chain</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Interests</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Cognition</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Quantum</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Encryption</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>Hobbies</td>
+					</tr>
+					<tr>
+					    <td>
+						<table>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Trains</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Chess</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Modeling</td>
+							</tr>
+							<tr style="background-Color: rgba(0, 0, 0, 0.0);">
+								<td>- Gaming</td>
+							</tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td style="line-height: 10%; font-size: 5px; border-bottom: 1px solid black;">&nbsp;</td>
+					</tr>
+				</table>
+	    	</div> <!-- /master -->
+<!-- ************************************************************************************* -->			    
+			<div class="container" id="detail">
+				<div id="page2"> <!-- added wrapper for sizing content with margins. -->
+	<h1 class="capabilityHeading">Equipment Accomplishments</h1>
+	
+	<p class="spread">The information here first presents a
+	detailed list of the equipment skills offered.  The general
+	classification of the skills are Safety, Instrumentation, Enclosure, Software Flow Control, Networks, Debugging and Analysis.
+	That is followed by a discussion regarding the equipment skills offered.</p>
+	
+	<p class="separator"> </p>
+	<a href="../mobile/mobile-Capability.html#Definitions"
+		style="text-decoration: none; font-style: italic; font-size: 11px;">*
+		Definition of rank stars, icons and acronyms</a>
+	<table class="skillsTable">
+		<tr>
+			<th class="skillsTableCellHeading" colspan="4">Skills Table</th>
+		</tr>
+		<tr>
+			<td class="skillsTableCellHeading" style="width: 100px;">Rank</td>
+			<td class="skillsTableCellHeading" style="width: 150px;">Skill</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Environment</td>
+			<td class="skillsTableCellHeading" style="width: 120px;">Activity</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Safety
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Equipment Design
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Instrumentation Selection
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star3.png"></img></td>
+			<td class="skillsTableCell">Enclosure Layout
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Machine Sequence Controls (PLC, PC)
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Sensors
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Motion Controls
+			</td>
+			<td class="skillsTableCell"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+		<tr>
+			<td class="skillsTableCell"><img src="../images/star2.png"></img></td>
+			<td class="skillsTableCell">Communications
+			</td>
+			<td class="skillsTableCell"><img src="../images/Aerospace.png"><img
+				src="../images/Commercial.png"></img></td>
+			<td class="skillsTableCell">PT</td>
+		</tr>
+	</table>
+	<br>
+	<span id="EngineeeringActivities" style="font-weight: bold;">Equipment Design Activities:</span><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;safety guarding and interlocking<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;OSHA compliant NRTL inspections<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;capacity study based on mature year volume estimate<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;robustness and maintainability for production environment<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;intelligent operator control interfaces<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;useful machine maintenance and debug interface<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;design specification, theory of operation<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;metrology, calibration &amp; maintenance procedures<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;production defects detection &amp; fault coverage analysis<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;installation and operation instruction<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;instrument SCPI control and data acquisition via communications channels<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;National Instruments LabVIEW and Test Stand<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;various programmable logic controller architectures and
+					programming software<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;use of various integrated design environments<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;manufacturing information systems (MIS)<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;rack and enclosure layouts for instrumentation<br>
+	<br>
+	<span id="EngineeringTools" style="font-weight: bold;">Kinds of Tools:</span><sup><a class="footnote" href="#fn1">1</a></sup><br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Team Development:</span> project team meetings, peer design reviews<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Safety:</span> Failure Modes and Effects Analysis, Fault Tree Analysis, NFPA 79, UL 508a, NRTL, Peer Safety Reviews<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">SW Integrated Development Environments:</span> LabVIEW, Yaskawa SigmaWin, Schneider PLC ProWORX &amp; Unity<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Electrical Circuit and Cabinet Drawings:</span> AutoCAD<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Typical Debug:</span> PS, Arb, Oscilloscope, DMM, Logic Analyzer, In-Circuit Emulator, Debugger<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Data Analysis:</span> Data logger, MS Excel, MS Access<br>
+	<span style="font-size: 80%;">&#9675;</span> &nbsp;<span style="color: #007070;">Documentation:</span> MS PowerPoint, MS Word<br>
+	<br>	
+	<span style="font-weight: bold;">Equipment Skills Discussion:</span><br>
+	<p style="margin-bottom: 0.5em;"> </p>
+	<p class="spread" style="margin-top: 0.5em;">
+	Equipment here refers to all of the various equipments required for production assembly and testing.  Equipment design must provide the necessary functionalities
+	to assist in assembly and assure the quality of a product offer.  Equipment designs must produce tools that are ergonomic in use and protect operators from 
+	all potential hazards.  Equipment designs must be robust, maintainable, accurate, meet production line takt times, provide total capacity, and respect space restrictions.  
+	All designs must meet their target costs.  Equipment designs must comply with the regulatory agency mandates as with UL 508A, NFPA 79, and OSHA Nationally
+	Recognized Test Lab (NRTL) approval.</p>
+	<p class="separator"> </p>
+	<p class="spread">
+	Equipment designs are generally a combination of mechanical assemblies (tooling, fixturing, pneumatics, and structures) that are controlled by automation.  The automation
+	generally consists of a control program (PLC, LabVIEW, C++) and electronics (instrument clusters, sensors, motor drives, pneumatic manifolds, lasers).  The offer
+	by this service is exclusively within the electronics category.
+	</p>
+	
+	<a id="fnotes"></a>
+	<table>
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+
+		<tr>
+			<td class="footNoteText" id="fn1">&nbsp;1. About the Tools List:<br>
+				<div style="font-size: 10px">&nbsp;&nbsp;The list of tools is a just a swipe at some kinds of tools used.  It is not
+				reasonable to include an exhaustive list here. Any working engineer having this background
+				will have used an enormous variety of tools ranging from soldering irons to part programmers.
+				The list presented is merely intended to give a flavor of the tool types.</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	
+				</div> <!-- /page2 -->
+			</div> <!-- /container -->
+<!-- ************************************************************************************* -->			    
+		</div><!-- /contentContainer -->
+	</div> <!-- /visualContainer -->
+</body>
+</html>

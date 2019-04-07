@@ -1,0 +1,1545 @@
+﻿<!DOCTYPE html>
+<html>
+<!--  
+scripted-Quantum.html: What is the electron's quantum properties and how did they emerge.
+
+scripted-Quantum.html is content displayed in the detail section of the main page that surveys the nature
+of quantum particles.
+This and all other web content on this site was hand written by me, John Hunsberger, to demonstrate some simple but 
+elegant techniques.  This content is open for anyone to copy.  If you have questions about any of this content feel 
+free to ask me.  The ideas presented are not invention, they are my application.
+
+Design Notes:
+  1. 
+-->
+<head>
+<meta charset="ISO-8859-1">
+<title>Electron's Quantum Properties, A History</title>
+<link rel="stylesheet" type="text/css" href="../styles/Formatting.css">
+<script type="text/javascript" src="../scripts/footnotes-js.eclipse.js"></script>
+</head>
+<body class="embedded-page">
+
+  <div id="linkHoverMessage" class="lnk_modal">
+        hello world.
+  </div>
+
+<H2 class="banner">Electron's Quantum Properties, A History</H2>
+
+<div id="articleBoundary" style="margin: -10px 30px 0px 30px">
+<br>
+<p class="paragraph">
+There are two historical threads presented in this article of the individuals who played important roles towards understanding the physics and mathematics of the electron quantum particle.
+The physics and mathematics are intertwined so that progress in one cannot be appreciated without considering the progress in the other.
+The main thread follows the progress of the physical experiments and the secondary thread follows the mathematical developments needed to model the experimental results.
+The two threads are differentiated by slightly indenting the mathematical contributors.
+It is not possible to include all of the historical contributions in this presentation.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Special Note:</span><i> 
+In the information presented on this HTML document there are raised reference markers included in the text such as this example: <span onmouseover="linkInfoON(this, 99)" onmouseout="linkInfoOFF()"><sup class="footnote">[99]</sup></span>.  
+For this example the marker <i>[99]</i> would be a link to a corresponding footnote that is included at the completion of the text in the Reference list as reference number 99.  
+In many of the instances where a marker is present in the text, while the mouse is hovered over it the document will display a pop-up panel of additional information regarding the marked topic.
+When the pop-up panel is displayed with quotation marks around the text, that indicates the quoted text is copied directly from the reference.
+Clicking on the raised marker will result in the associated reference link to be displayed at the bottom of this document.
+The reference material can then be accessed by using the reference link provided.
+The quoted material displayed from the source is the property of the source document and is only displayed in the pop-up panel as a convenience.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="https://www.sciencehistory.org/historical-profile/john-dalton">[1808] John Dalton</a> <span style="color: maroon;">&nbsp;Atoms are defined as measurable particles.</span><br>
+The concept that elements are composed of smaller particles was published around 1808<span onmouseover="linkInfoON(this, 1)" onmouseout="linkInfoOFF()" onclick="linkGOTO(this, 1)"><sup><a class="footnote" href="#fn1">[1]</a></sup></span> by John Dalton.
+His work with the 'weights' of gases suggested that there exists a unique atom for each element and that elements exist as aggregates of these fundamental parts.  
+He proposed that atoms are measurable particles and that all elements conform to what he called the system of "atomic weights".  
+The formalization of the idea that all matter is composed of atoms was the first important step towards identifying the subatomic structures and developing theories to explain their properties and behaviors. 
+It is curious how the evidences for the existence of subatomic particles and their behaviors arose from so many different physical investigations, in particular astronomy.
+
+</p><p class="paragraph">
+<div class="contributor">
+<a target="_blank" href="https://arxiv.org/pdf/0902.0685.pdf">[1809] Joseph-Louis Lagrange and Siméon Denis Poisson</a> <span style="color: maroon;">&nbsp;Analysis of elliptical orbits.</span><br>
+Lagrange and Poisson were working on the dynamics of the motion of planets.  
+Kepler proposed in early 1600 that observed planetary motion can be regarded mathematically as a path upon a smooth elliptical surface resulting from a definable mechanical system.
+Around 1809 both Lagrange<span onmouseover="linkInfoON(this, 60)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn60">[60]</a></sup></span> and Poisson simultaneously investigated the mathematics for the motion on a curved surface.
+They used classical mechanics to derive orbitals as a combination of the many forces describing a planet's path. 
+Motion on an eliptical path can be viewed as the result of many small incremental changes from one coordinate to the next.
+Depicting the motion between two points on the orbital path as having a flat coordinate system allows the incremental change to be described as the consequence of the sum of the incremental changes of the component forces.
+This kind of local representation is called a manifold<span onmouseover="linkInfoON(this, 27)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn27">[27]</a></sup></span>.
+This perspective is similar to viewing a trip from one place to another on a flat road map when in fact the earth is not flat.  
+Their effort resulted in defining the composition laws called the Poisson bracket.
+The Poisson bracket can be thought of as a binary operation on two sets of coordinates that maps the first set to the second.
+It has the notation (a, b)<span onmouseover="linkInfoON(this, 26)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn26">[26]</a></sup></span>.
+The work by Lagrange and Poisson is extended later by William Hamilton to introduce a new means to express mechanics.
+<br>
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The word manifold as used here may be unfamiliar.  Manifold in mathematics takes its meaning from the origin of the word "many folds".
+It serves to convey that the greater surface of which it represents only a localized region, can be expressed as a collection "folds" of such regions</i><span onmouseover="linkInfoON(this, 61)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn61">[61]</a></sup></span>.<br>
+</div> <!-- /ASIDE -->
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The term "composition law" refers to "binary operations".  In a general sense it defines the combination of two elements of a single set to produce another element of the same set</i><span onmouseover="linkInfoON(this, 22)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn22">[22]</a></sup></span>.<br>
+</div> <!-- /ASIDE -->
+<div  class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Poisson introduced a nomenclature depecting paired functions using parethesis (a, b) that is referred to in some literature as the Poisson parenthesis.  
+Because his published notation conflicted with the previous use of parenthesis by Lagrange, his notation was changed by mathematicians to {a, b} and is most commonly referred to as Poisson bracket to differentiate it from the Lagrange parenthesis</i>
+<span onmouseover="linkInfoON(this, 23)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn23">[23]</a></sup></span>.<br>
+</div> <!-- /ASIDE -->
+</div> <!-- /contributor -->
+
+<p class="paragraph">
+<a target="_blank" href="https://en.wikipedia.org/wiki/William_Rowan_Hamilton">[1833] William Hamilton</a> <span style="color: maroon;">&nbsp;Hamiltonian Mechanics.</span><br>
+In 1833 William Hamilton created a new mathematical formulation for Newtonian mechanics called Hamiltonian mechanics.
+The prior work by Poisson played an important role in the Hamiltonian mechanics<span onmouseover="linkInfoON(this, 24)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn24">[24]</a></sup></span>. 
+Hamilton's new mechanics depicted any change described by the classical Newtonian mechanics as a transition within a coordinate system, from one coordinate position to another.
+At each coordinate position the total energy is described by two independent energy functions T and V where T+V=ℋ.
+The 'ℋ' is the Hamiltonian symbol.  The Hamiltonian represents the total energy in the system (kinetic 'T' plus potential 'V').
+The energy functions T and V are independent of each other such that at time <i>t</i>, the value of T is a function of p, f1(p, t), and the value of V is a function of q, f2(q, t).
+The result is a three axis depiction of mechanics T, V, and <i>t</i> that represents mechanical change of T and V over time <i>t</i> as a curved path in 3D space.
+The 3D space is called the phase space because it represents all of the phases of the mechanical system's transitions with respect to time<span onmouseover="linkInfoON(this, 25)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn25">[25]</a></sup></span>.
+The transition from one point coordinate system to the next point's coordinate system is expressed by a transformation function.
+</p>
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;There may be some who may not be familiar with the idea of a 'phase space'.
+'phase space' is an abstraction of a theoretical volume in some space that can be defined by the permissible limits on some number of associated values.
+Consider a set of values for clothing; hat size, shoe size, suit size, tie length, ring size, etc. where each clothing item has an upper and lower bound on the size range.
+For example a ring size can vary from 3 to 9.
+The items mentioned are associated by all being worn by a person, though for any one person their set of size values will vary from others.
+If the set of values considered consisted only of rings then the space for that value range would be a line starting with 3 and ending with 9.
+If shoes are included with rings, having values from 6 to 16, then the phase space becomes a plane with a volume of 60.
+If there is a person who has both tight shoes and a loose ring and changes their shoe size from 9 to 10 and their ring from 5 to 4 then two things.
+The combination of the sizes are within the phase space volume.
+The person's phase change in the phase space was from (9,5) to (10,4).</i>
+</div> <!-- /ASIDE -->
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;"In Hamiltonian mechanics, a canonical transformation is a change of canonical coordinates<span onmouseover="linkInfoON(this, 28)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn28">[28]</a></sup></span> (q, p, t) → (Q, P, t) that preserves the form of Hamilton's equations (that is, the new Hamilton's equations resulting from the transformed Hamiltonian may be simply obtained by substituting the new coordinates for the old coordinates)..."</i><span onmouseover="linkInfoON(this, 30)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn30">[30]</a></sup></span>.
+<br>
+</div> <!-- /ASIDE -->
+<br>
+
+<div class="contributor">
+<a target="_blank" href="https://en.wikipedia.org/wiki/William_Rowan_Hamilton">[1843] William Hamilton</a> <span style="color: maroon;">&nbsp;The definition of Quaternians.</span><br>
+The introduction of complex and imaginary numeric values dates back to around 1828 when Carl Friedrich Gauss introduced them<span onmouseover="linkInfoON(this, 36)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn36">[36]</a></sup></span>.
+In 1843 Hamilton perceived a difficulty with the arithmetic treatment of the imaginary numbers.
+He detailed an algebra of couples by defining the usual algebraic operations on these numeric pairs.
+He then concluded his theory of couples by applying it to imaginary numbers where (a + b<span style="white-space: nowrap;">&radic;<span style="text-decoration:overline;">&nbsp;-1&nbsp;</span></span>) becomes the couple (a,b).
+By his couples notation <span style="white-space: nowrap;">&radic;<span style="text-decoration:overline;">&nbsp;-1&nbsp;</span></span>=(0,1).
+Hamilton wanted to extend the algebra of couples to three dimensional constructs called triplets.
+He encountered a difficulty defining multiplication of the imaginary values.
+In order to complete the required algebraic rules for triplets he was led to the numerical construct he called quaternions.
+His quaternion structure extended the triplet by one additional dimension.
+In his article in Philosophical Magazine, (1844–1850) titled <a target="blank" href="http://www.maths.tcd.ie/pub/HistMath/People/Hamilton/OnQuat/OnQuat.pdf">"ON QUATERNIONS, OR ON A NEW SYSTEM OF IMAGINARIES IN ALGEBRA"</a> he presented the derivation of a method of multiplication that suspends the pre-existing rule of algebra that multiplication must satisfy the commutative property<span onmouseover="linkInfoON(this, 37)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn37">[37]</a></sup></span>.
+The necessary step to accommodate multiplication of imaginary couples and preserve a symmetry in the product (Commutative law) was to define that the product of two complex valued pairs requires forming the complex conjugate of the second term.
+This advanced the idea that the multiplication of two imaginary numbers <i>ij</i> is not equal to <i>ji</i> but rather <span style="white-space: nowrap;"><i>-ji</i></span>.
+Hamilton's quaternians were popular for awhile but were supplanted later by <a target="blank" href="https://www.famousscientists.org/j-willard-gibbs/">Josiah Gibbs</a> in 1884 who presented the same operations using vectors<span onmouseover="linkInfoON(this, 63)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn63">[63]</a></sup></span>.
+</div> <!-- contributor -->
+<br>
+
+<div class="contributor">
+<a target="_blank" href="http://www-history.mcs.st-and.ac.uk/Biographies/Cayley.html">[1858] Arthur Cayley and James Sylvester</a> <span style="color: maroon;">&nbsp;The definition of matrix algebra.</span><br>
+The combined work of Arthur Cayley and James Sylvester's established an algebra based on matrices.
+The matrix algebra produced was an extension to the existing algebraic means for the solution of simultaneous linear equations.
+In the mid 1800's the collaboration between Arthur Cayley and James Joseph Sylvester on simultaneous linear equations produced a formal mathematical treatment for what Sylvester named the "matrix".
+In 1858 Cayley published an article in the Philosophical Transactions of the Royal Society of London (pp. 17-37) titled <a target="_blank" href="http://www.jstor.org/stable/i207013">'Memoir on the Theory of Matrices'</a>.
+This publication introduced his theory of matrices for which he stated, "It will be seen that matrices ... comport themselves as single quantite; they may be added, multiplied or compounded together...".
+In the introduction Cayley illustrates that the matrix content is composed from the coefficients of a set of linear equations.
+On  pg. 31 paragraph number 36, Cayley discusses how one matrix can transpose another.  
+In this article he gave the transpose matrix the symbol "tr.".
+Modern mathematics typically uses the the term 'T' to represent the transpose matrix.
+</div> <!-- contributor -->
+
+<div class="contributor">
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;There may be some who are unfamiliar with the term matrix.
+There are many structures in mathematics that can be treated singularly in binary operations despite their apparent complexity.
+Depending on how the structure enters into the operation its function has names such as divisor, multiplicand,  transpose, etc.
+What all structures have in common is that they represent a state.
+It is the practice of mathematics to combine structures according to the laws of their operators such as addition and multiplication.
+Over the many years the mathematical structures evolved, adding more complexity as needed.
+A matrix structure can be considered to be yet another mathematical structure for which rules for binary operations are defined.
+Moreover, the structure is introduced here as an algebra.
+Any algebra has universally defined properties for the numerical structure and mathematical operations on it.
+To understand the requirements of an algebra refer to the article at <a target="_blank" href="https://en.wikiversity.org/wiki/Basic_Laws_of_Algebra">wikiversity</a>.
+The matrix structure and its mathematical operations allow these structures be an algebra.
+</i>
+</div> <!-- /ASIDE -->
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The grounds for Cayley's work actually began back in 1720 when Newton had recorded a method to solve simultaneous equations using a particular form into his personal notes that was later published with his disapproval as <a target="_blank" href="https://books.google.com/books/about/Universal_Arithmetick.html?id=3_s2AAAAMAAJ">"Arithmetica Universalis"</a>. 
+On page 60 is the section "Of the Transformation of two or more EQUATIONS into one, in order to exterminate the unknown Quantities." then followed on page 63 by the section "The Extermination of an unknown Quantity of several Dimensions in each Equation".</i>
+</div> <!-- /ASIDE -->
+<div class="_Aside"> <!-- ASIDE -->
+
+<span class="aside">Aside:</span><i> &nbsp;A second prior work that contributed to the definition of matrices was done in 1810 when a procedural notation for the elimination process in solving simultaneous equations was defined by Carl Friedrich Gauss in his <a target="_blank" href="https://books.google.com/books/about/Theory_of_the_Motion_of_the_Heavenly_Bod.html?id=1TIAAAAAQAAJ">"Theory of the Motion of the Heavenly Bodies Moving about the Sun in Conic Sections"</a>.
+This can be found in the second book's third section "DETERMINATION OF AN ORBIT FROM ANY NUMBER OF OBSERVATIONS" part 184, starting on page 267.</i>
+</div> <!-- /ASIDE -->
+</div> <!-- contributor -->
+
+<p class="paragraph">
+<a target="_blank" href="http://www.clerkmaxwellfoundation.org/html/about_maxwell.html">[1861] James Clerk Maxwell</a> <span style="color: maroon;">&nbsp;The unification of optics and electromagnetism.</span><br>
+In the late 1800's it was desired to understand the connection between magnetism and electricity.
+It was known from Michael Faraday's work that electric energy could produce magnetic energy.
+Around 1861 James Clerk Maxwell continued research on this relationship and produced equations that represented light as a form of an electromagnetic wave<span onmouseover="linkInfoON(this, 10)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn10">[10]</a></sup></span>.
+Maxwell's work was significant to subsequent investigations using spectral analysis in order to correlate the energy of emitted light to atomic structures.
+
+<div class="contributor"> 
+<a target="_blank" href="http://www.encyclopedia.com/people/science-and-technology/mathematics-biographies/felix-klein">[1872] Felix Klein</a> <span style="color: maroon;">&nbsp; Introduction of Invariant Transformation Groups.</span><br>
+Nearly forty years after Hamilton's introduction of the new mechanics representation, Felix Klein published a series of  mathemathical analyses that included the geometries of curved sufaces.  
+Published in 1872, this collection of his analyses is called the "Erlangen programme".
+A part of this work was to depict a curved surface as the result of a group of linear transformations of successive coordinates along the surface.
+The transformation group produces successive coordinates that define the system's evolution.
+Klein's work produced a means to discover those elements of the mathematical model for the geometry that do not change under a group of transformations<span onmouseover="linkInfoON(this, 29)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn29">[29]</a></sup></span>.
+This work is collectively referred to as transformation geometry<span onmouseover="linkInfoON(this, 39)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn39">[39]</a></sup></span>.
+By removing the noise, what remains as invariant by the transformation group exposes the symmetry of the motion and the main forces that are conserved throughout an orbital path.
+</div> <!-- contributor -->
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1907/michelson-bio.html">[1880] Albert A. Michelson</a> <span style="color: maroon;">&nbsp;The Invention of the Interferometer.</span><br>
+During the decade of 1880 there were a number of significant events.
+One in particular was the invention of the interferometer.
+Spectroscopic instruments and their careful use have made important contributions within the historical investigations of the subatomic particles.
+Albert Michelson was a pioneer and major contributor to the field of spectroscopy.
+In 1881 Michelson invented the interferometer<span onmouseover="linkInfoON(this, 49)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn49">[49]</a></sup></span> and used it to make contribution to the field of Astrophysics by examining the spectral lines of the light originating from space.
+Michelson was searching for evidence of the aether wind of space by measuring the effect it had on the propagation of light.  
+None was found.
+It is now known that space consists of a near vacuum with a small amount of hydrogen.
+This failed experiment was of special interest at that time because it was understood that other types of waves such as sound require some sort of medium (water or air) through which to propagate.
+</p>
+
+<div class="contributor">
+<a target="_blank" href="https://www.aps.org/programs/outreach/history/historicsites/gibbs.cfm">[1884] Josiah Gibbs</a> <span style="color: maroon;">&nbsp;The definition of Dot and Inner Products from Quaternians.</span><br>
+Hamilton's quaternions algebra was later extended to vector algebra by Josiah Gibbs around 1884. 
+Josiah identified the vector multiplication operators dot product and inner product<span onmouseover="linkInfoON(this, 38)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn38">[38]</a></sup></span>.
+The dot product of two vectors with real valued terms A=(a<sub style="font-size:70%;">1</sub>,a<sub style="font-size:70%;">2</sub>) and B=(b<sub style="font-size:70%;">1</sub>,b<sub style="font-size:70%;">2</sub>) is expressed as A&middot;B=a<sub style="font-size:70%;">1</sub>,b<sub style="font-size:70%;">1</sub>+a<sub style="font-size:70%;">2</sub>,b<sub style="font-size:70%;">2</sub><span onmouseover="linkInfoON(this, 40)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn40">[40]</a></sup></span>.
+The result of the dot product of two real valued vectors is a real value.
+The inner product of two vectors with complex valued terms A=(a<sub style="font-size:70%;">1</sub>,a<sub style="font-size:70%;">2</sub>) and B=(b<sub style="font-size:70%;">1</sub>,b<sub style="font-size:70%;">2</sub>), where each a<sub style="font-size:70%;"><i>i</i></sub> and b<sub style="font-size:70%;"><i>i</i></sub> has the form x+<i>i</i>y, is expressed as &lt;A,B&gt;=a<sub style="font-size:70%;">1</sub><span style="text-decoration: overline">b</span><sub style="font-size:70%;">1</sub> + a<sub style="font-size:70%;">2</sub><span style="text-decoration: overline">b</span><sub style="font-size:70%;">2</sub><span onmouseover="linkInfoON(this, 41)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn41">[41]</a></sup></span>.
+The overbar on the b<sub style="font-size:70%;"><i>i</i></sub> terms is notation common to Physics for the complex conjugate transpose.
+There is some confusion in field of mathematics wherein different branches of study use different notations for the same thing.
+Refer to the 'Notation' section of the <a target="_blank" href="https://en.wikipedia.org/wiki/Complex_conjugate">Complex Conjugate</a> article for more information on the differences.
+The resulting value of the inner product of two complex valued vectors is a complex value.
+<p class="paragraph">
+Binary operators like addition and multiplication have properties regarding the mathematical implications of the operator's terms and the impact that scalars have in association with the terms.
+The following table is inserted here to offer a clarification of how the dot and inner product binary operators agree and disagree with the addition and multiplication operators.
+The Commutative property for the Inner Product is not linear like the other operators presented in the table.
+This case is referred to as a sesquilinear form <span onmouseover="linkInfoON(this, 43)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn43">[43]</a></sup></span>.
+</p>
+<table class="operators_table">
+<tr><td colspan="5" style="background-color:acqua; font-size:80%; text-align: left;">In this table the lower case letters are scalar values and the upper case are vector values. Often the binary operator for multiplication is an <i>x</i>.  In this table the operator is implied so that the expression ab means a times b.</td></tr>
+<tr><td class="operators_heading">&nbsp;</td><td class="operators_heading">Real Numbers</td><td class="operators_heading">Real Numbers</td><td class="operators_heading">Real Valued Vectors</td><td class="operators_heading">Complex Valued Vectors</td></tr>
+<tr><td class="operators_heading">Property</td><td class="operators_type">Addition</td><td class="operators_type">Multiplication</td><td class="operators_type">Dot Product</td><td class="operators_type">Inner Product</td></tr>
+<tr><td class="operators_heading">Commutative</td><td class="operators">a+b=b+a</td><td class="operators">ab=ba</td><td class="operators">A&middot;B=B&middot;A</td><td class="operator_except" onmouseover="linkInfoON(this,'ComplexConjugate')" onmouseout="linkInfoOFF()">&lt;A,B&gt;=<span style="text-decoration: overline">&lt;B,A&gt;</span></td></tr>
+<tr><td class="operators_heading">Associative</td><td class="operators">a+(b+c)=(a+b)+c</td><td class="operators">a(bc)=(ab)c</td><td class="operator_except" onmouseover="linkInfoON(this,'NotAssociative')" onmouseout="linkInfoOFF()">a(A&middot;B)=A&middot;(aB)</td><td class="operator_except" onmouseover="linkInfoON(this,'NotAssociative')" onmouseout="linkInfoOFF()">a&lt;A,B&gt;=&lt;A,(aB)&gt;</td></tr>
+<tr><td class="operators_heading">Distributive</td><td class="operators">a(b+c)=ab+ac</td><td class="operators">a(b+c)=ab+ac</td><td class="operators">A&middot;(B+C)=A&middot;B+A&middot;C</td><td class="operators">&lt;A,(B+C)&gt;=&lt;A,B&gt;+&lt;A,C&gt;</td></tr>
+</table>
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Numerous sources present both the dot and inner product operators having both real and complex valued terms.
+My opinion is that the dot product should never be presented with complex terms.
+Real valued terms for the inner product may be considered correct because the inner product is an extension of the dot product and is inclusive of the case of real valued terms.
+It is important to make note that it was the exceptions to the inner product for complex valued terms that became the significant step in Hamilton's quest towards a multiplication of complex valued vectors.
+The significance of Gibbs' work was to distinguish the dot product and inner product as separate operators.
+</i>
+<br>
+</div> <!-- /ASIDE -->
+</div> <!-- contributor -->
+<br>
+
+<p class="paragraph">
+<a target="_blank" href="https://en.wikipedia.org/wiki/Johann_Jakob_Balmer">[1885] Johan Jakob Balmer</a><span style="color: maroon;">&nbsp; Formula For Visible Lines Of Hydrogen Spectrum.</span><br>
+The interferometer was used in 1885 by Johan Balmer to study the wavelength and spectral width of atomic hydrogen emission lines.
+Balmer found that the wavelengths of visible light from hydrogen, in particular the Hα, Hβ and Hγ lines, could be defined as a mathematical series &lambda;=B*(<i>n</i><sup>2</sup> / [<i>n</i><sup>2</sup>-2<sup>2</sup>]), where B is the Balmer constant<span onmouseover="linkInfoON(this, 50)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn50">[50]</a></sup></span>.
+</p>
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;When this measurement was done it was not known that hydrogen has just one electron.
+The observed spectral lines were not associated with an atomic structure.
+Electron particles were not identified until 1897 when J.J.Thomson's research with charged beams identified the electron particle.
+Much later, in 1913, Niels Bohr advanced a model for the atomic structure defining the atomic shells.
+According to the Bohr model, the hydrogen atom has numerous electron orbital shells designated by 'n'.
+The Bohr model allows the electron to be present in any one of the 'n' shells depending on its energy state.
+It is understood now that when the electron absorbs energy it is promoted from its current shell to the next.
+Also, when the electron emits a photon it looses energy that results in it being demoted to the next lower shell.
+In the case where a photon is emitted, the energy of the emitted photon will match the energy lost in the transition from the higher orbital to the lower one.
+Max Planck's work in 1900 related light frequency is to energy by E=hf.
+Therefore the spectral line's frequency 'f' will correspond to the particular energy loss by the orbital change.</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="https://www.britannica.com/biography/Heinrich-Hertz">[1887] Heinrich Hertz</a><span style="color: maroon;">&nbsp; Observation of the Photoelectric Effect.</span><br>
+In 1887 Heinrich Hertz was performing experiments with a spark-gap transmitter<span onmouseover="linkInfoON(this, 15)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn15">[15]</a></sup></span> and detector.  
+His intent was to confirm the wave theory of electromagnitism proposed earlier by James Clerk Maxwell<span onmouseover="linkInfoON(this, 11)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn11">[11]</a></sup></span>. 
+While performing his experiments he discovered that by shining light on the detector rods he could more readily reproduce the sparks from the generator.  
+His data demonstrated the photoelectric effect. 
+At that time he was not able to explain the effect that he discovered.
+His discovery would later influence Philipp Lenard's research and his model of atomic structure.
+</p><p class="paragraph">
+It is also interesting to note that Hertz characterized the spark gap transmitter used in his experiments to investigate the electromagnetic waves.
+His characterization of this device's resulting electromagnetic wave became well known.
+This influenced later work by Max Planck who proposed that black body radiation could be modeled mathematically by using a collection of hertzian oscillators<span onmouseover="linkInfoON(this, 16)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn16">[16]</a></sup></span>.
+</p>
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1907/michelson-bio.html">[1888-1889] Albert Michelson</a><span style="color: maroon;">&nbsp; Fine Line Structure of Hydrogen Hα Spectral Line.</span><br>
+Albert Michelson was asked by the International Committee of Weights and Measures to find a way to measure the standard meter length using light waves.
+During the late 1800's he used the interferometer he invented to investigate what light source would be best to establish the number of wavelengths in the stanadard meter.
+During his research he examined the light from a hydrogen source.
+While studying the light from hydrogen he discovered that the Hα spectral line<span onmouseover="linkInfoON(this, 52)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn52">[52]</a></sup></span> displayed as two spectral lines, a doublet, rather than the expected single red line.
+This was the discovery of the fine structure of the hydrogen spectral lines<span onmouseover="linkInfoON(this, 51)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn51">[51]</a></sup></span>.
+</p>
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;The importance of this discovery came into focus when Bohr proposed his atomic model in 1913.
+Atomic models are comprised of both a physical concept and an attendant mathematical description.
+It is an expectation that the model's fitness depends on its mathematical prediction of observable effects.
+The Bohr atomic model of 1913 defined quantized energy levels as atomic shells he designated with 'n'.
+Bohr modeled electron orbitals as symmetrically circular paths.
+Because the energy and angular momentum in the Bohr model is constant it is then expected that the frequency 'f' of the spectral lines would always be single lines.
+So the presence of a doublet becomes significant as Physicists begin to work on the fitness of subsequent atomic models.
+This specific issue with the atomic model was addressed by Arnold Sommerfeld in 1915 who identified the azimuthal angle.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1902/lorentz-bio.html">[1892] Hendrik A. Lorentz</a><span style="color: maroon;">&nbsp; Theory of the Electron.</span><br>
+Up to the 1800s there was a significant refinement in the understanding of electric and magnetic forces from the works of the famous physicists such as 
+<a target="_blank" href="http://www.bbc.co.uk/history/historic_figures/gilbert_william.shtml">Gilbert</a> in in 1600, 
+<a target="_blank" href="https://www.famousscientists.org/benjamin-franklin/">Franklin</a> in 1747,
+<a target="_blank" href="https://nationalmaglab.org/education/magnet-academy/history-of-electricity-magnetism/pioneers/alessandro-volta">Volta</a> in 1769,
+<a target="_blank" href="https://www.famousscientists.org/hans-christian-oersted/">Oersted</a> in 1820,
+<a target="_blank" href="https://www.famousscientists.org/michael-faraday/">Faraday</a> in 1821,
+<a target="_blank" href="https://www.britannica.com/biography/Andre-Marie-Ampere">Ampère</a> in 1827,
+<a target="_blank" href="https://www.britannica.com/biography/Georg-Ohm">Ohm</a> in 1827,
+<a target="_blank" href="https://www.biography.com/people/james-c-maxwell-9403463">Maxwell</a> in 1873,
+<a target="_blank" href="http://ethw.org/Oliver_Heaviside">Heaviside</a> in 1884,
+and others.
+By 1892, during Lorentz's investigations of the ether (Michelson's 1880 'aether wind of space'), he pulled together the properties associated with electricity, magnetism and a theory of electrons.
+In his time the electron was not regarded as physical particle.
+It isn't until five years later in 1897 that the electron mass was measured by J.J.Thomson.
+Lorentz developed the relationship between electrical charge, heat, and light in his theory of the electrons.
+He published his works as a series of lectures he delivered at Columbia University in New York<span onmouseover="linkInfoON(this, 58)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn58">[58]</a></sup></span>.
+</p>
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1911/wien-bio.html">[1893] Wilhelm Wien</a><span style="color: maroon;">&nbsp; Correlation Between Energy and Frequency of Emitted Light.</span><br>
+A number of investigations were being performed on light emissions from black bodies<span onmouseover="linkInfoON(this, 5)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn5">[5]</a></sup></span> during the late 1800's.
+Wilhelm Wien's displacement law of 1893 established that the peak energy of the wavelengths of light emitted from a black body "shifted" as 
+a function of the cavity's temperature<span onmouseover="linkInfoON(this, 6)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn6">[6]</a></sup></span> (applied energy).  
+Moreover, Wien reported that the product of the wavelength having the peak emission energy and its temperature was the constant value (0.2898 centimetre-degree Kelvin).
+An explanation for Wien's law was later proposed in 1900 by Max Planck.
+</p>
+
+<p class="paragraph">
+<a target="_blank" href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1902/zeeman-bio.html">[1896] Peter Zeeman</a><span style="color: maroon;">&nbsp; Discovery of Magnetic Impact On Light.</span><br>
+Zeeman studied the effect of light from burning sodium metal emitted through a narrow slit and reflected by a concave grating<span onmouseover="linkInfoON(this, 47)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn47">[47]</a></sup></span>.
+His experiments demonstrated that the sodium light was split mainly into two separate sharp yellow lines.
+He characterized the lines as resulting mainly from two dominant oscillations of the sodium metal's atomic structure.
+He then applied a large magnetic field across the burning sodium metal.
+The slit was aligned perpendicular to the applied magnetic field's lines of force.
+The previously focused beams became diffused.
+Zeeman understood from Hendrik A. Lorentz's teaching that the sodium contained electrons.
+According to Lorentz's theory, the light oscillations that create the focused beams (without the external magnetic field) resulted from the normal vibration of the electrons<span onmouseover="linkInfoON(this, 48)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn48">[48]</a></sup></span>.
+Zeeman summarized from his experimental evidence that the magnetic field created new oscillations in the sodium having greater and lesser periods of oscillation.
+The diffusion of the beams, he concluded, was a result of the magnetic field displacing the electrons from their normal vibrations.
+</p><p class="paragraph">
+The discovery by Zeeman became known as the Zeeman effect.
+It had a subsequent contribution to the atomic model through the work of Otto Stern in 1921.
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1906/thomson-bio.html">[1897] Joseph J. Thomson</a><span style="color: maroon;">&nbsp; First Measurement of Electrons and First Model of Atomic Structure.</span><br>
+By the early 1800s the concepts of charge, current and voltage were understood.<span onmouseover="linkInfoON(this, 2)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn2">[2]</a></sup></span>
+But the particles involved in these properties were not.  
+The electron is the first of the subatomic particles identified<span onmouseover="linkInfoON(this, 3)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn3">[3]</a></sup></span>.  
+Joseph J. Thomson's work with beams in a cathode ray tube in 1897 discovered that a ratio existed between an applied electric charge and the mass of the beam.
+Thomson proposed that the beam in his experiment was composed of individual particles having a mass approximately 1/1,700 of that of the hydrogen atom.
+The significance of this work established that a particle existed that was smaller than an atom (sub-atomic) having its own measurable mass.
+He also reasoned that since the electron has a negative charge and the gas element has no charge then something else existed that neutralized the charge of the electron. 
+He called this a neutron and envisioned it to be the balance of the atom's structure.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Up to this point the notions of physics regarding planetary orbitals, light spectrums, magnetism, charge and more have been 
+following along the understood principles of classical physical behaviors.  The mathematical analysis used has been
+based on the assumption of a continuous analog behavior.  All of that is suddenly changed by Max Planck who in 1900 introduced 
+the concept that is the entire point of this historical development.  That point being that the physical behavior at the subatomic
+level demonstrates a discrete quantized property that is called QUANTUM.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1918/planck-bio.html">[1900] Max Planck</a><span style="color: maroon;">&nbsp; First Expression of Quantized Energy.</span><br>
+Max Planck worked with the physics of thermodynamics and black body radiation.
+He sought to explain Wilhelm Wien's black body radiation experiments that demonstrated a shift in wavelength proportional to the applied heat.
+Influenced by previous work by Heinrich Hertz on the photoelectric effect, he proposed that the observed shift could be explained in terms of atomic vibrations that he modeled using harmonic oscillators<span onmouseover="linkInfoON(this, 16)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn16">[16]</a></sup></span>.  
+While developing his mathematical model Max Planck discovered that it was necessary to establish that the energy change progressed in "discrete" units that he called the energy element '<i>E</i>'.
+The discrete energy units were the minimal increment of energy '<i>E</i>' for each Hertzian oscillator in his model.
+To adjust his mathematics to match Wien's earlier account of the relationship between the energy and frequency he deduced a porportionality constant '<i>h</i>' <span onmouseover="linkInfoON(this, 7)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn7">[7]</a></sup></span>.  
+This constant is called Planck's constant. Max Planck expressed the relationship between energy and frequency as <i>E=hf</i>.  
+The concept of a discrete energy element '<i>E</i>' was in conflict with the continuous analog gain or loss of energy understood within physics at that time.  
+Planck's work introduced the important concept of "quantization of energy" but it remained for Einstein to later rationalize this concept.
+Einstein redefined the concept of the discrete energy element '<i>E</i>' to be the minimal energy of an electromagnetic wave, or photon.
+</p><p class="paragraph">
+In his analysis of the spectral density of black body radiation his model was based on a volume of Hertzian oscillators, each of which uniquely contributed to the total energy.
+This approach was later regarded by Satyendra Bose to lack proper conformity to the quantum principal of discrete quantities.
+Bose used a statistical model to generate the same black body spectral densities.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;In the equation E=hf the energy is related to frequency using Planck's constant h.
+To relate energy of an orbital to its angular frequency the relationship &omega;=2&pi;f can be used to replace linear frequency using &omega;/2&pi;=f.
+That gives E=h&omega;/2&pi;.  
+The normalized Planck's constant &#8463; is h/2&pi; so for convenience this is typically expressed as E=&#8463;&omega;.
+</i><br>
+</div> <!-- /ASIDE -->
+
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1905/lenard-bio.html">[1902] Philipp Lenard</a><span style="color: maroon;">&nbsp; Photoelectric Correlation Between Applied Light Frequency and Electron Energy.</span><br>
+Further study of the photoelectric effect took place in 1902 by Philipp Lenard.  Lenard's work with the photoelectric effect introduced another confirmation that atoms
+consisted of subatomic particles [electrons] and asserted that the atom structure consisted mostly of empty space.  Philipp Lenard
+also presented his atom model as neutrally charged having positively charged components that balanced the negative charge of the electrons.  
+His experimental data with electron emissions by incident light demonstrated that the amount of energy of the emitted electrons was not a function of the light intensity, as he expected,
+but rather the energy was greater for the higher frequencies of applied light<span onmouseover="linkInfoON(this, 12)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn12">[12]</a></sup></span>.
+This finding conformed well with the earlier result of Max Planck's research that stated <i>E=hf</i>.  
+The higher frequency "<i>f</i>" of the light imparts greater energy "<i>E</i>" to the surface molecules of the illuminated material.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein-bio.html">[1905] Albert Einstein</a><span style="color: maroon;">&nbsp; Unification of Wave and Planck's Quanta Models.</span><br>
+In 1905 Albert Einstein had an extraordinary year<span onmouseover="linkInfoON(this, 14)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn14">[14]</a></sup></span> in which he published a number of significant articles.
+The prior work done by James Clerk Maxwell, Heinrich Hertz and Philipp Lenard was strongly based on the wave property of light.  
+Max Planck's work in 1900 introduced the idea that energy was somehow quantized.  The wave and quanta ideas did not seem to align.
+Einstein understood the physical implications of both Max Planck's quanta and Maxwell's wave theory.
+In this productive year Einstein determined that the wave and particle models could coexist if the wave energy was considered to be an average over many quantized packets.
+Einstein then applied this concept to more accurately explain the physics of the photoelectric effect.  
+He used the electron subatomic particle and atom model introduced by J. J. Thomson in 1897.
+Einstein proposed that Planck's quanta of energy was a particle of light.
+Einstein envisioned that particles of light (photons) colliding with the atoms's electrons in the metallic element caused the electrons to be released from their atomic orbital to become radiated electrons<span onmouseover="linkInfoON(this, 13)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn13">[13]</a></sup></span>.
+In this work Einstein introduced the wave-particle duality and the law of the photoelectric effect. 
+He received the Nobel prize in 1921 for the law of the photoelectric effect.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein-bio.html">[1905] Albert Einstein</a><span style="color: maroon;">&nbsp; Theory of Relativity.</span><br>
+In June of 1905 Einstein published the paper "ON THE ELECTRODYNAMICS OF MOVING BODIES"<span onmouseover="linkInfoON(this, 53)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn53">[53]</a></sup></span>.
+This contained his theory of relativity in which he used a moving rod metaphor observed in two distinct frames of reference.
+He first established a definition of simultaneity by describing the synchronization of two clocks A and B that are used to establish the time of two linked events, each event at their different locations.
+Each clock transmits the time of its event to the other clock position using a beam of light.
+Some data is acquired by an observer at each clock at the synchronized time.
+It is significant to be able to compare the results of the following frames that the time for the light to travel in both directions is the same.
+Einstein then introduced his moving rod metaphor.
+The moving rod can be regarded as rather long or else the observers rather small.
+At each end of the rod is a pair of synchronized clocks awaiting their event to transmit the time.  
+Each clock has an observer moving with it.
+Someplace forward of the moving rod are two more synchronized clocks that are synchronized with the two on the rod.
+Each fixed clock has a stationary observer.
+At a simultaneous time <i>t</i> an event triggers the four clocks so the four observers can record the precise position of the rod ends with respect to a parallel coordinate system. 
+The observers in motion have some velocity <i>v</i> in their frame of reference that impacts the time <i>t</i> that it takes for the light to travel in either direction.
+Einstein asserts this to be true because regardless of the rod's velocity and relative motion of its clocks, the light wave propagates at an independent constant velocity <i>c</i>.
+Because clock B is moving away from the light at the velocity <i>v</i> the net velocity in the motion frame is reduced to <i>c</i>-<i>v</i>, increasing the duration of time of light travel between the fixed points A and B.
+For the same reason the velocity in the direction B to A is increased to <i>c</i>+<i>v</i>, decreasing the duration of time of light traveling back.
+But in the stationary frame there is zero velocity and so the light travel times are equal in either direction.
+The conclusion is that the observers in motion frame would declare that the clocks were not synchronized by the definition of synchronization given and more importantly, that measurements are relative to their frame of reference.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1921/einstein-bio.html">[1905] Albert Einstein</a><span style="color: maroon;">&nbsp; Relativistic Mass.</span><br>
+In September of 1905 Einstein published the short paper "DOES THE INERTIA OF A BODY DEPEND UPON ITS ENERGY-CONTENT?"<span onmouseover="linkInfoON(this, 54)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn54">[54]</a></sup></span>
+It was in this publication that Einstein's famous equation E=mc<sup style="font-size: 80%;">2</sup> is credited.
+The actual point of his publication was that kinetic energy of a moving body viewed from two frames of reference will be different.
+His reasoning follows directly from his previous paper on his theory of relativity.
+He begins with an arbitrary body positioned in a three dimensional coordinate system (<i>x,y,z</i>) as a rest frame of reference.
+A moving frame having coordinates (<i>&xi;,&eta;,&zeta;</i>) that is parallel to the rest frame is a second frame of reference.
+Within the rest frame the body's energy is depicted as E<sub style="font-size: 80%;">0</sub> and in the motion frame the energy is depicted as H<sub style="font-size: 80%;">0</sub>.
+If the observed body emits a portion of its energy as light then the amount of energy remaining is different depending on the frame.
+The total energy of the body is its kinetic plus its potential.
+To preserve the potential energy Einstein proposed that the emission energy within the rest frame is composed of two equal and opposite emissions <i>&frac12;L</i>.
+In the rest frame the remaining energy is E<sub style="font-size: 80%;">1</sub> and the motion frame it is H<sub style="font-size: 80%;">1</sub>.
+The difference between the two energy values observed in the two frames <i>H-E</i> is then related to differences of their kinetic energy <i>K</i>.
+In each frame the original energy is equal to the sum of remaining energy plus the kinetic energy lost by the emission.
+Because the emitted energy was defined for the rest frame, the emission energy <i>&frac12;L</i> must be translated to the motion coordinates by the angle between the two frames as the <i>cos(&theta;)</i>.
+He performs several steps of algebraic manipulation to represent the difference between the kinetic energy of the two frames K<sub style="font-size: 80%;">0</sub>-K<sub style="font-size: 80%;">1</sub>.
+His final representation of the kinetic energy difference between the two frames is given as K<sub style="font-size: 80%;">0</sub>-K<sub style="font-size: 80%;">1</sub>=&frac12;(L/[c<sup style="font-size: 80%;">2</sup>])<i>v</i><sup style="font-size: 80%;">2</sup>.
+Kinetic energy is related to mass and velocity of the body as <i>K=&frac12;mV<sup style="font-size: 80%;">2</sup></i>.
+In Einstein's final representation it can be seen that (L/[c<sup style="font-size: 80%;">2</sup>]) can be viewed as <i>m.</i>
+Set <i>m</i>=(L/[c<sup style="font-size: 80%;">2</sup>]) and rearranging reveals L=<i>m</i>[c<sup style="font-size: 80%;">2</sup>].
+Recall that L was the total energy loss of the body, so E=<i>m</i>c<sup style="font-size: 80%;">2</sup>.
+Einstein's conclusion (from the English translation found on John Walker's Formilab web site<span onmouseover="linkInfoON(this, 54)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn54">[54]</a></sup></span>) was that, "The mass of a body is a measure of its energy-content; if the energy changes by L, the mass changes in the same sense by L/(9 × 10<sup style="font-size: 80%;">20</sup>)...".
+The contribution of this work is the establishment in special relativity of a rest mass and a relativistic mass<span onmouseover="linkInfoON(this, 59)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn59">[59]</a></sup></span>.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/chemistry/laureates/1908/rutherford-bio.html">[1911] Ernest Rutherford</a><span style="color: maroon;">&nbsp; Planetary Atomic Model.</span><br>
+Subsequent research was being done to better formalize the atomic model produced by J. J. Thomson's work.
+The nucleus was formally demonstrated in 1911<span onmouseover="linkInfoON(this, 4)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn4">[4]</a></sup></span> and credited to Ernest Rutherford.  
+He experimented with directing alpha particles at a thin foil of gold metal.  
+His experiment was to investigate scattering of the alpha particles by the atomic structure of the foil.  
+The experimental data collected was comprised largely of no deflections at all,  had a few deflections and most surprisingly had some very rare reflections.  
+The conclusion by the near absence of deflections and the presence of rare reflections was that a small region at the center 
+of the atomic structure called the nucleus contained the majority of its mass and positive charge and the rest of the atom was empty.   
+This new model of the atom is called the planetary model.
+This was the next step towards establishing a physical model for the atom's subatomic particles.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Rutherford created alpha particles from radon gas, a radioactive element for which he is credited with the discovery<span onmouseover="linkInfoON(this, 64)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn64">[64]</a></sup></span>.
+As the radon decays it emits alpha particles.
+Rutherford found three types of radioactive particles; alpha, beta and gamma.
+The three types were classified by the degree of penetration into thin foils of metals<span onmouseover="linkInfoON(this, 65)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn65">[65]</a></sup></span>.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;After the introduction of a 'quantization of energy' in 1900 by Max Planck, the next significant steps for Quantum Mechanics was the identification of specific quantized properties and their Quantum Numbers.
+In 1913 Niels Bohr began the process of defining these quantum numbers starting with 'n'.  
+The four quantum properties of the electron are represented by the letters n "shell number", l "azimuthal number", m "magnetic number" and s "spin number".
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1922/bohr-bio.html">[1913] Niels Bohr</a><span style="color: maroon;">&nbsp; Bohr Atomic Model with Atomic Shells and First Quantum Number.</span><br>
+Rutherford's planetary model gained acceptance.  
+However the manner of the relationship between the nucleus and the electrons needed to be investigated.
+Niels Bohr knew that the electron particle moving on a circular trajectory around a nucleus would loose energy and its orbit would decay over time.
+Bohr proposed a new version of the planetary model in 1913<span onmouseover="linkInfoON(this, 8)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn8">[8]</a></sup></span>.  
+Bohr's work followed on Einstein's clarification of Max Planck's pioneer work with quantization of energy.  
+The Bohr atomic model positioned the electrons into discrete circular orbitals associated with fixed energy levels.  
+He referred to the circular orbitals as shells and assigned them numbers. 
+The orbital number '<i>n</i>' was the <b>first identified quantum number</b> assigned to the electron.  
+The smaller orbitals of the Bohr model were assigned the lesser energy levels and the largest orbitals the greater energy levels.
+An electron with a particular energy level resulted in the electron occupying a particular orbital.
+As an electron gained or lost sufficient energy it could shift to a higher or lower orbit.  
+Bohr also reasoned out that each shell can contain a number of electrons with the same energy level.  
+
+</p><p class="paragraph">
+To explain the location of the shells, Bohr proposed that the electron's energy (angular velocity) and the axial force of charge attraction between the electron and the nucleus holding it in the particular shell determined the radius of a circular arc.  
+J.J.Thomson previously published the electron's mass.
+Max Planck previously published his Energy Quanta.
+Bohr computed a size for the atomic orbitals as a function of the energy element '<i>E</i>', the electron mass and Planck's constant <i>h</i>.<span onmouseover="linkInfoON(this, 9)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn9">[9]</a></sup></span>
+In summary, the Bohr model of orbitals was a series of discrete energy states where the energy difference of the transition from one state to another is either emitted or absorbed as a light quantum.
+</p>
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;In 1686 Isaac Newton established his laws of motion.  The first law is famously, "Every object persists in its state of rest or uniform motion in a straight line unless it is compelled to change that state by forces impressed on it." 
+Momentum is the conserved linear property of an object (mass) moving in a straight line and at a particular speed (velocity) that preserves the object's motion in the straight line.
+The linear momentum is equal to the mass times the velocity (p=mv) and the value <span style="fontfont-weight: bold;"><i>p</i></span> is a linear momentum vector having computed magnitude in the same direction as the velocity vector.
+For circular motion the momentum is expressed as the angular momentum and is the conserved angular property of the mass moving in the circular path.
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The angular momentum is the cross product of its position vector r and its perpendicular linear momentum vector <span style="white-space: nowrap;">(r x mv)</span>.
+Because angular momentum is a cross product of two vectors, the resulting vector is perpendicular to both the position vector r and velocity vector v.
+The resulting direction of the cross product is given by the <a target="blank" href="https://en.wikipedia.org/wiki/Right-hand_rule">right-hand rule</a>.
+Linear momentum has a moment that is defined as the 1<sup style="font-size: 80%;">st</sup> moment of momentum.
+In general a moment is defined by &mu;<sub style="font-size: 80%;">n</sub>=r<sup style="font-size: 80%;">n</sup>Q.
+The 1<sup style="font-size: 80%;">st</sup> moment of momentum is that value for which n=1 and Q is the applied force.
+The moment is then a vector having the same direction as the applied force.
+The torque is similar but is defined as <span style="white-space: nowrap;"><i>&tau;=r x F</i></span>, where r is a position vector rather than a length.
+Given the difference between moment and torque, torque can be considered the angular momentum's equivalent to linear momentum's moment.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="https://www.famousscientists.org/arnold-sommerfeld/">[1915] Arnold Sommerfeld</a><span style="color: maroon;">&nbsp; Azimuth Axis and Second Quantum Number.</span><br>
+<!-- https://www.nobelprize.org/nobel_prizes/physics/laureates/1955/lamb-lecture.pdf-->
+Both Bohr and Sommerfeld were aware of the conflict of Bohr's orbital model with the fine line doublet of the Hα spectral line discovered by Albert Michelson in 1888.
+If the electron orbit was circular as proposed by Bohr then the angular velocity would be constant and the expected spectral display of the light emissions would always be single lines.
+In 1915 Arnold Sommerfeld proposed a new model to address the existence of Michelson's fine line structure.
+He apparently reasoned out that in order to have photon emission with discrete wavelengths slightly offset in frequency from the main Hα emission line while having the same shell <i>'n'</i>, the model required that the electron's orbital energy must be slightly shifted in some instances.
+For a more informative explanation refer to <a target="_blank" href="http://www.academia.edu/37947790/PHYSICS_HIGHER_SECONDARY_SECOND_YEAR">PHYSICS HIGHER SECONDARY SECOND YEAR VOLUME - II</a>, TAMIL NADU TEXTBOOK CORPORATION, COLLEGE ROAD, CHENNAI - 600 00: starting on page 23, Section <span style="text-decoration: underline;">6.2.10</span> 'Sommerfeld atom model'.
+
+</p><p class="paragraph">
+Sommerfeld proposed that the electrons travel about the positively charged nucleus in elliptical orbits rather than the circular orbits of the Bohr model.  
+He established two foci for the ellipse, one for the apogee and one for the perigee, and placed the nucleus at the apogee.
+His model envisioned that the semi-major axis would increase as the orbital 'n' increased.
+At the lowest energy orbital the Bohr's circular orbit was then a special case.
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Sommerfeld's introduction of elliptical<span onmouseover="linkInfoON(this, 62)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn62">[62]</a></sup></span> orbits to the atomic structure had a parallel in prior history.
+Before 1609 the standing theory of planetary orbits was the Copernican model that stated that all planetary motion was in circular orbits around the sun.
+In 1609 Johannes Kepler published his law of planetary orbits<span onmouseover="linkInfoON(this, 56)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn56">[56]</a></sup></span> that disagreed with the Copernican model. 
+Kepler's new law of planetary orbits established that they actually travel in elliptical paths<span onmouseover="linkInfoON(this, 57)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn56">[57]</a></sup></span>.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+Most important to his new model, Sommerfeld understood Einstein's 1905 publication of relativistic mass.
+Because the electron orbital speed (oscillation by earlier accounts) is at near light speed the relativistic mass has an observable effect.
+His model allowed for the electron's velocity to vary throughout the elliptical orbit where the electron's velocity was at its greatest in its closest distance to the nucleus and slowest at its greatest distance from the nucleus.
+His model's variation in velocity introduced a variation in the electron's angular momentum throughout its orbit.
+Accordingly, the relativistic mass of the electron should vary as its speed varies throughout the elliptical orbit.
+The introduction of mass variance added slight deflections out of the flat plane of the orbit<span onmouseover="linkInfoON(this, 19)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn19">[19]</a></sup></span>.
+Sommerfeld defined these precessed orbitals as having discrete offset angles that produced slight shifts in energy corresponding to the discrete fine lines observed by Michelson.
+Each angular offset constitutes an azimuthal angle out of the flat plane of orbit and each has slightly different effective energy.
+The introduction of the discrete azimuthal angle is the <b>second identified quantum number</b> for electrons and is typically represented as '<i>l</i>'.
+Because Sommerfeld's model exploited relativistic mass it is sometimes referred to as the relativistic atomic model.
+
+<!-- 
+https://en.wikipedia.org/wiki/Old_quantum_theory
+The Bohr model was the focus of study, and Arnold Sommerfeld[3] made a crucial contribution 
+by quantizing the z-component of the angular momentum, which in the old quantum era was called 
+space quantization (Richtungsquantelung). This allowed the orbits of the electron to be ellipses 
+instead of circles, and introduced the concept of quantum degeneracy. 
+-->
+
+<!-- 
+https://en.wikipedia.org/wiki/Degenerate_energy_levels
+In quantum mechanics, an energy level is degenerate if it corresponds to two or more different measurable states of a quantum system. Conversely, two or more different states of a quantum mechanical system are said to be degenerate if they give the same value of energy upon measurement. The number of different states corresponding to a particular energy level is known as the degree of degeneracy of the level. It is represented mathematically by the Hamiltonian for the system having more than one linearly independent eigenstate with the same energy eigenvalue.[1]:p. 48 In classical mechanics, this can be understood in terms of different possible trajectories corresponding to the same energy.
+Degeneracy plays a fundamental role in quantum statistical mechanics. For an N-particle system in three dimensions, a single energy level may correspond to several different wave functions or energy states. These degenerate states at the same level are all equally probable of being filled. The number of such states gives the degeneracy of a particular energy level. 
+-->
+
+<!-- Nodes occur where the wavefunction is zero.  This is a region in space where the probability of an electron is zero.  
+Recall from Bohr's first quantum number 'n' that electron orbitals proceeded in discrete radial distances from the nucleus.
+A radial node is the circular region between subsequent n shells in which the probability of an electron presence is zero. 
+An angular node is a planar region. -->
+<!-- https://en.wikipedia.org/wiki/Azimuthal_quantum_number -->
+
+<div class="_Aside"> <!-- ASIDE -->
+<span class="aside">Aside:</span><i> &nbsp;Azimuthal may be an unfamiliar term.
+Azimuthal refers to an angular displacement from a line of sight or straight line.
+Typical use of this relates to marine navigation where a sextant is used to determine longitude and latitude.
+The instrument was introduced around 1731<span onmouseover="linkInfoON(this, 55)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn55">[55]</a></sup></span>. 
+The following is a very abbreviated description.
+A much better explanation can be found at <a target="_blank" href="http://www.marineinsight.com/marine-navigation/what-is-a-sextant/">http://www.marineinsight.com/marine-navigation/what-is-a-sextant/</a>.
+The sextant instrument can display two images simultaneously side by side.
+The first sighting is with the telescope to view the horizon and establish the flat plane of travel.
+The sextant's index bar is then adjusted to view a celestial reference object through the index mirror such that its image aligns with the horizon.
+The angle between the two objects is the azimuthal angle and it is correlated with the time of the observation to determine position from reference charts.
+</i><br>
+</div> <!-- /ASIDE -->
+
+<p class="paragraph">
+<a target="_blank" href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1943/stern-bio.html">[1921] Otto Stern</a><span style="color: maroon;">&nbsp; Magnetic Moment and Third Quantum Number.</span><br> 
+Otto Stern noted that electrons of the hydrogen atom moving in a rotational orbit around the nucleus should produce a magnetic moment in the same way that current passed through a circular coil of wire does.
+That was not supported by the evidence.
+To investigate this anomaly the Stern–Gerlach experiment was performed.
+Charged particle beams had been used previously by Joseph J. Thomson in 1897 in his research that exposed the ratio between an applied electric charge and the mass of the beam.
+Also prior to the Stern-Gerlach experiment, in 1911 <a target="_blank" href="http://scienceworld.wolfram.com/biography/Dunoyer.html">Louis Dunoyer</a> experimented with the luminescence properties of sodium vapors.
+Dunoyer discovered that by using the optical slit experimental methods, he was able to create a straight line beam of neutral sodium atoms<span onmouseover="linkInfoON(this, 44)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn44">[44]</a></sup></span>.
+Dunoyer's experiment provided proof of the kinetic theory of gases<span onmouseover="linkInfoON(this, 45)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn45">[45]</a></sup></span>.
+Otto Stern was aware of Dunoyer's neutral atomic beam apparatus<span onmouseover="linkInfoON(this, 46)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn46">[46]</a></sup></span>.
+<p class="paragraph">
+In the Stern-Gerlach experiment a beam of silver atoms was passed through a nonuniform magnetic field.
+The expectation was that the silver atoms would behave as tiny magnets, interact with the magnetic field, and the beam would become diffused.
+Rather than a diffuse deposition on the collector of the atomic beam apparatus, the beam split into only discrete points.
+This demonstrated that the magnetic moment of an atom in an external magnetic field can have only a few possible discrete orientation angles with respect to the external field lines.
+The magnetic quantum number of an electron is a discrete integer value that is a function of the electron's angular momentum quantum number <i>l</i>.
+The magnetic quantum number <i>m<sub style="font-size:70%;">l</sub></i> became <b>the third quantum number</b> assigned to the electron.
+
+</p><p class="paragraph">
+<a target="_blank" href="https://www.famousscientists.org/s-n-bose/">[1924] Satyendra Nath Bose</a><span style="color: maroon;">&nbsp; Formulation of Quantum Statistics</span><br>
+The theoretical understanding of quantum states in 1924 was that each state was a strict consequence of the quantum numbers such that the particles strictly adhered to one of the available quantum states.
+In this model the quantum particles were presumed to be uniquely distinguishable.
+Max Planck had previously used energy quantum and unique quantum states in his mathematical model<span onmouseover="linkInfoON(this, 66)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn66">[66]</a></sup></span> to explain Wilhelm Wien's black body radiation.
+His radiation formula defined the amount of emitted radiation (spectral density) of a surface maintained at a constant temperature.
+He used a set of unique harmonic oscillators, each one being distinguishable from each other.
+
+<p class="paragraph">
+It was significant to Bose that the unique harmonic oscillators entered into Planck's mathematical model as distinguishable contributors<span onmouseover="linkInfoON(this, 67)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn67">[67]</a></sup></span>.&nbsp;
+Additionally, Bose objected to the use of classical physics in order to obtain the spectral density formula for black body radiation.
+He was able to derive the same result as Planck by using a statistical derivation of the density of a black-body spectral emission.
+In his publication <a target="_blank" href="http://articles.adsabs.harvard.edu//full/1994JApA...15....3B/0000003.000.html ">"PLANCK'S LAW AND THE LIGHT QUANTUM HYPOTHESIS"</a> in the American Journal of Physics he explained his approach.
+An important aspect of his work was later called the 
+<a target="blank" href="https://en.wikipedia.org/wiki/Bose%E2%80%93Einstein_statistics">B-E statistics</a>
+that was based on his introduction of 
+<a target="blank" href="https://en.wikipedia.org/wiki/Identical_particles">indistinguishable particles.</a>
+Because of the significance of the introduction of statistical physics I present a more rigorous examination of Bose's publication in the article
+<a target="blank" href="scripted-Quantum Statistics.html">~Statistics</a>.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1929/broglie-bio.html">[1924] Louis de Broglie</a><span style="color: maroon;">&nbsp; The de Broglie Wavelength.</span><br> 
+In 1924 Louis de Broglie theorized that all matter exhibits both particle and wave properties<span onmouseover="linkInfoON(this, 20)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn20">[20]</a></sup></span>.
+He extended the particle wave duality of the photon proposed by Einstein to all matter.  This property of matter is called matter waves<span onmouseover="linkInfoON(this, 21)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn21">[21]</a></sup></span>.
+He specified that the electron particle can be described by an intrinsic "phase wave" which propogates the electron in a specific orbital.
+Louis de Broglie correlated the wave and orbital number by stating that a whole number of the electron's wavelengths must fit onto the circumference of its orbital shell.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1932/heisenberg-bio.html">[1925] Werner Heisenberg</a><span style="color: maroon;">&nbsp; Electron Orbitals as Statistical Distributions.</span><br>
+Heisenberg remained skeptical about the theories regarding an atomic orbital.
+He rejected the notion by the Bohr model of a neatly fixed orbital at a fixed radius.
+Heisenberg proposed that if the electron behaved like a wave then it is not possible to know its position and momentum precisely at the same instance in time<span onmouseover="linkInfoON(this, 32)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn32">[32]</a></sup></span>.
+His desire was to express the mechanics of electron orbitals solely on measurable properties.
+He reasoned that the electron's mechanics could be explained by making a correlation between the observable emission and absorption of light using spectroscopy<span onmouseover="linkInfoON(this, 31)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn31">[31]</a></sup></span>.
+At the time the orbital distance was regarded as a function of its momentum as related to Bohr's energy element <i>E</i>,  Thomson's mass and Planck's constant <i>h</i>.
+Heisenberg's approach to electron orbitals was more a statistical representation by using data from spectroscopy measurements over time and expressed the transitions by square arrays. 
+The matrix algebra employed had been defined by Cayley and Sylvester in 1858. 
+Instead of describing the motion as a coordinate system with position being some function of time, x(t), he used a square array of transition amplitudes to represent the orbit<span onmouseover="linkInfoON(this, 34)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn34">[34]</a></sup></span>.
+This is referred to in some literature as Heisenberg's matrix mechanics<span onmouseover="linkInfoON(this, 42)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn42">[42]</a></sup></span>.
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1954/born-bio.html">[1926] Max Born</a><span style="color: maroon;">&nbsp; Statistical Transition Between Electron Orbitals.</span><br>
+Max Born realized that, just as orbitals have a statistical field associated with them, the promotion or demotion of electrons between the fields is not a precise energy value.
+Rather the change of electron orbitals has a statistical probability having some range of energy values.
+In June of 1926 Max Born submitted an article to Zeitschrift für Physik that was published later that year in Volume 37, Issue 12, pp.863-867 titled <a target="_blank" href="http://www.neo-classical-physics.info/uploads/3/0/6/5/3065888/born_-_qm_for_collisions_i.pdf">'Zur Quantenmechanik der Stoßvorgänge'</a>, in English "On the quantum mechanics of collisions".
+In this paper he proposed a statistical approach to the understanding of atomic orbitals and the likely promotion or demotion of an electron from one orbital to another called the Born Rule<span onmouseover="linkInfoON(this, 43)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn43">[43]</a></sup></span>.
+Born expressed his position on classical physics in the following extract from his lecture presented to the Nobel Prize committee in 1954, "<i>... the determinism of classical physics turns out to be an illusion, created by overrating mathematico-logical concepts.
+It is an idol, not an ideal in scientific research and cannot, therefore, be used as an objection to the essentially indeterministic statistical interpretation of quantum mechanics.</i>"<span onmouseover="linkInfoON(this, 35)" onmouseout="linkInfoOFF()"><sup><a class="footnote" href="#fn35">[35]</a></sup></span>
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1933/schrodinger-bio.html">[1926] Erwin Rudolf Josef Alexander Schrödinger</a><span style="color: maroon;">&nbsp; Introduction of Orbital Wave Mechanics.</span><br>
+Erwin Schrödinger accepted that the matter wave duality was real.
+In 1926 he published a wave equation based on the wave property to describe the statistical distribution of electron orbitals based on the wave property of electron particles.
+His equation is often referred to as the Schrödinger wave equation.
+In his equation he set about to transform the prevailing orbital model of a uniform curved path into a system of wave surfaces normal to it.
+<br>
+
+third quantum number, known as the magnetic quantum<br>
+https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation<br>
+
+</p><p class="paragraph">
+<a target="_blank" href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1933/dirac-bio.html">[1926] Paul Dirac</a><span style="color: maroon;">&nbsp; hooberdoober.</span><br>
+https://ocw.mit.edu/courses/physics/8-05-quantum-physics-ii-fall-2013/lecture-notes/MIT8_05F13_Chap_04.pdf  "DIRAC’s BRA AND KET NOTATION"<br>
+https://en.wikipedia.org/wiki/Paul_Dirac<br>
+<a target="_blank" href="http://www.faculty.umb.edu/gary_zabel/Courses/Parallel%20Universes/Texts/Quantum%20Indeterminism%20and%20the%20Wavefunction.htm">Unification:</a> (Historical note: This state space representation was developed by the great British physicist and mathematician Paul Dirac. In doing so, he showed that the then-competing representations of Schrödinger's wave mechanics (we have just considered the wavefunction) and Heisenberg's matrix mechanics had the same representation in the state space and were therefore, in fact, identical.)<br>
+Bra Ket notation.<br>
+<!-- https://www.nobelprize.org/nobel_prizes/physics/laureates/1955/lamb-lecture.pdf
+Spin and magnetic moment of the electron were suggested by Uhlenbeck and Goudsmit in 1925,
+and their dynamical equations were worked out by Thomas a year later. In
+1928, Dirac discovered an equation which described an electron with wave
+properties, charge, spin, magnetic moment and a mass depending on
+velocity as required by relativity theory. The energy levels of hydrogen
+were given by Dirac’s theory with high precision.-->
+
+
+
+https://en.wikipedia.org/wiki/Old_quantum_theory
+http://demonstrations.wolfram.com/SpaceQuantizationOfAngularMomentum/
+https://en.wikipedia.org/wiki/Uncertainty_principle
+http://www.newworldencyclopedia.org/entry/Subatomic_particle
+https://www.britannica.com/science/subatomic-particle
+https://en.wikipedia.org/wiki/Subatomic_particle
+http://www.particleadventure.org/other/history/quantumt.html
+https://the-history-of-the-atom.wikispaces.com/
+</p><p class="paragraph">
+
+<a target="_blank" href="">[19??] ????</a><br> http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/hydfin.html electron spin
+Friedrich Paschen Ernst E. A. Back<br>
+Paschen-Back effect<br>
+Ernst Back earned his Ph.D. in 1913. His thesis, titled Zur Prestonschen Regel, as on the subject of what would later be called the Paschen-Back effect<br>
+From 1926 to 1927 Samuel Abraham Goudsmit worked with Back to make the first measurement of nuclear spin and its Zeeman effect.<br>
+Spin orbital<br>
+A theory of the molecular Zeeman effect in the Paschen-Back regime (PBR) was first considered by Hill (1929), who described the splitting of molecular doublet levels for the intermediate case (a–b) using Hund’s case (b) wavefunctions.<br>
+http://hyperphysics.phy-astr.gsu.edu/hbase/hframe.html<br>
+</div> <!-- articleBoundary -->
+
+<br>
+    <a id="fnotes"></a>
+	<table> <!-- REFERENCES -->
+		<tr>
+			<td class="footNoteTableStart">---------------------------------------------</td>
+		</tr>
+		<tr>
+			<td>Reference:</td>
+		</tr>
+		<tr>
+			<td id="fn1"><span class="footNoteText">&nbsp;1. <a target="_blank"
+				href="https://www.chemheritage.org/historical-profile/john-dalton">Original Atomic Theory</a>.
+				(https://www.chemheritage.org/historical-profile/john-dalton)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Dalton consolidated his theories in his New System of Chemical Philosophy (1808–1827)."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn2"><span class="footNoteText">&nbsp;2. <a target="_blank"
+				href="https://www.britannica.com/science/Ohms-law">Ohm’s law</a>.
+				(https://www.britannica.com/science/Ohms-law)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "That the resistance, or the ratio of voltage to current, for all or part of an electric circuit at a fixed temperature is generally constant had been established by 1827"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn3"><span class="footNoteText">&nbsp;3. <a target="_blank"
+				href="http://voyager.egglescliffe.org.uk/physics/particles/electron/electron.html">Discovery of the Electron Particle</a>.
+				(http://voyager.egglescliffe.org.uk/physics/particles/electron/electron.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The electron was first discovered in 1898 by Sir John Joseph Thomson."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn4"><span class="footNoteText">&nbsp;4. <a target="_blank"
+				href="http://history.aip.org/exhibits/rutherford/sections/alpha-particles-atom.html">Rutherford's central charge hypothesis</a>.
+				(http://history.aip.org/exhibits/rutherford/sections/alpha-particles-atom.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...deviation in the path of a massive charged particle could only be achieved if most of the mass of, say, an atom of gold and most of its charge were concentrated in a very small central body."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn5"><span class="footNoteText">&nbsp;5. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Black_body">Black body</a>.
+				(https://en.wikipedia.org/wiki/Black_body)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "A black body is an idealized physical body that absorbs all incident electromagnetic radiation..."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn6"><span class="footNoteText">&nbsp;6. <a target="_blank"
+				href="https://www.britannica.com/science/Wiens-law">Wiens law</a>.
+				(https://www.britannica.com/science/Wiens-law)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...the product wavelength multiplied by Temperature] is an absolute constant: 0.2898 centimetre-degree Kelvin"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn7"><span class="footNoteText">&nbsp;7. <a target="_blank"
+				href="https://www.britannica.com/science/Plancks-constant">Planck’s constant</a>.
+				(https://www.britannica.com/ science/ Plancks-constant)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...radiation, such as light, is emitted, transmitted, and absorbed in discrete energy packets..."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn8"><span class="footNoteText">&nbsp;8. <a target="_blank"
+				href="https://www.khanacademy.org/science/physics/quantum-physics/atoms-and-electrons/a/bohrs-model-of-hydrogen">Bohr's model of hydrogen</a>.
+				(https://www.khanacademy.org/ science/physics/ quantum-physics/ atoms-and-electrons/a/ bohrs-model-of-hydrogen)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...electrons travel in specific shells, or orbits, around the nucleus."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn9"><span class="footNoteText">&nbsp;9. <a target="_blank"
+				href="http://galileo.phys.virginia.edu/classes/252/Bohr_Atom/Bohr_Atom.html">The Bohr Atom; Michael Fowler, University of Virginia</a>.
+				(http://galileo.phys.virginia.edu/classes/252/Bohr_Atom/Bohr_Atom.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The relevant electronic parameters are the mass <i>m</i> and the strength of attraction <i>e<sup>2</sup>/4&pi;&epsilon;<sub>0</sub></i>. Together with <i>h</i>, these parameters determine a length."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn10"><span class="footNoteText">&nbsp;10. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Maxwell's_equations">Maxwell's equations</a>.
+				(https://en.wikipedia.org/wiki/Maxwell's_equations)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Maxwell understood the connection between electromagnetic waves and light in 1861, thereby unifying the theories of electromagnetism and optics."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn11"><span class="footNoteText">&nbsp;11. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Spark-gap_transmitter#History">Spark-gap Transmitter History</a>.
+				(https://en.wikipedia.org/wiki/Spark-gap_transmitter#History)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Hertz verified that electromagnetic waves were being produced by the transmitter."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn12"><span class="footNoteText">&nbsp;12. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Philipp_Lenard#Photoelectric_investigations">Photoelectric investigations</a>.
+				(https://en.wikipedia.org/wiki/Philipp_Lenard#Photoelectric_investigations)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...the energy of the rays was independent of the light intensity, but was greater for shorter wavelengths of light."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn13"><span class="footNoteText">&nbsp;13. <a target="_blank"
+				href="http://history.aip.org/history/exhibits/einstein/essay-photoelectric.htm">Photoelectric investigations</a>.
+				(http://history.aip.org/history/exhibits/einstein/essay-photoelectric.htm)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; 'Einstein on the Photoelectric Effect', David Cassidy</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn14"><span class="footNoteText">&nbsp;14. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Annus_Mirabilis_papers">Annus Mirabilis Papers</a>.
+				(https://en.wikipedia.org/wiki/Annus_Mirabilis_papers)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The Annus mirabilis papers (from Latin annus mīrābilis, "extraordinary year") are the papers of Albert Einstein published in the Annalen der Physik scientific journal in 1905. These four articles contributed substantially to the foundation of modern physics and changed views on space, time, mass, and energy."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn15"><span class="footNoteText">&nbsp;15. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Spark-gap_transmitter">Spark-gap transmitter</a>.
+				(https://en.wikipedia.org/wiki/Spark-gap_transmitter )</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "A spark-gap transmitter is a device that generates radio frequency electromagnetic waves using a spark gap."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn16"><span class="footNoteText">&nbsp;16. <a target="_blank"
+				href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1918/planck-lecture.html">Max Planck - Nobel Lecture</a>.
+				(http://www.nobelprize.org/nobel_prizes/physics/laureates/1918/planck-lecture.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Max Planck stated in his Nobel lecture "Heinrich Hertz's linear oscillator, whose laws of emission, for a given frequency, Hertz had just 
+previously completely developed, seemed to me to be a particularly suitable device for this purpose. If a number of such Hertzian 
+oscillators are set up within a cavity surrounded by a sphere of reflecting walls, then by analogy with audio oscillators and 
+resonators, energy will be exchanged between them by the output and absorption of electromagnetic waves, and finally stationary 
+radiation corresponding to Kirchhoff's Law, the so-called black-body radiation, should be set up within the cavity. "</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn17"><span class="footNoteText">&nbsp;17. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Classical_central-force_problem">Classical central-force problem</a>.
+				(https://en.wikipedia.org/wiki/Classical_central-force_problem)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...solution to the central-force problem often makes a good initial approximation of the true motion, as in calculating the motion of the planets in the Solar System."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn18"><span class="footNoteText">&nbsp;18. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Azimuthal_quantum_number">Azimuthal quantum number</a>.
+				(https://en.wikipedia.org/wiki/Azimuthal_quantum_number)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; From the article 'Azimuthal quantum number', "... an atomic orbital that determines its orbital angular momentum and describes the shape of the orbital."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn19"><span class="footNoteText">&nbsp;19. <a target="_blank"
+				href="http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/vecmod.html">Vector Model for Orbital Angular Momentum</a>.
+				(http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/vecmod.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; From the article 'Vector Model for Orbital Angular Momentum', "... the angular momentum vector is seen as precessing about a direction in space."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn20"><span class="footNoteText">&nbsp;20. <a target="_blank"
+				href="http://www.lightandmatter.com/html_books/lm/ch35/ch35.html#sec:ch-35-0">35.1 Electrons as waves</a>.
+				(http://www.lightandmatter.com/html_books/lm/ch35/ch35.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "... the basic units of matter ... are waves as well as particles..."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn21"><span class="footNoteText">&nbsp;21. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Matter_wave">Matter Wave</a>.
+				(https://en.wikipedia.org/wiki/Matter_wave)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Matter waves are a central part of the theory of quantum mechanics, being an example of wave–particle duality.".</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn22"><span class="footNoteText">&nbsp;22. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Binary_operation">Binary operation</a>.
+				(https://en.wikipedia.org/wiki/Binary_operation)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...binary operation on a set S is a map which sends elements of the Cartesian product S × S to S."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn23"><span class="footNoteText">&nbsp;23. <a target="_blank"
+				href="https://arxiv.org/pdf/0902.0685.pdf">The inception of symplectic geometry: the works of Lagrange and Poisson during the years 1808–1810</a>.
+				(https://arxiv.org/pdf/0902.0685.pdf  '4.5 Poisson’s paper of 1809 and the Poisson bracket' )</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...[Poisson] denoted by (a,b), (a,c), ... These quantities are not the Lagrange parentheses. Today, they are called the Poisson brackets"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn24"><span class="footNoteText">&nbsp;24. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Poisson_bracket">Poisson bracket</a>.
+				(https://en.wikipedia.org/wiki/Poisson_bracket )</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...the Poisson bracket is an important binary operation in Hamiltonian mechanics, playing a central role in Hamilton's equations of motion, which govern the time evolution of a Hamiltonian dynamical system."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn25"><span class="footNoteText">&nbsp;25. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Hamiltonian_mechanics">Hamiltonian mechanics</a>.
+				(https://en.wikipedia.org/wiki/Hamiltonian_mechanics)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "In Hamiltonian mechanics, a classical physical system is described by a set of canonical coordinates r = (q,p), where each component of the coordinate <i>q<sub>i</sub>,p<sub>i</sub></i> is indexed to the frame of reference of the system."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn26"><span class="footNoteText">&nbsp;26. <a target="_blank"
+				href="http://mathworld.wolfram.com/PoissonBracket.html">Poisson Bracket</a>.
+				(http://mathworld.wolfram.com/PoissonBracket.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Let u and v be any functions of a set of variables <i>(q<sub>1</sub>,...,q<sub>n</sub>, p<sub>1</sub>,...,p<sub>n</sub>)</i>. Then the expression <i>(u, v) =</i> ... is called a Poisson bracket."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn27"><span class="footNoteText">&nbsp;27. <a target="_blank"
+				href="https://ncatlab.org/nlab/show/manifold">manifold</a>.
+				(https://ncatlab.org/nlab/show/manifold)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "A manifold is a topological space which looks locally like a Cartesian space, commonly a finite-dimensional Cartesian space &#8477;<sup><i>n</i></sup> but possibly an infinite-dimensional topological vector space."</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn28"><span class="footNoteText">&nbsp;28. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Canonical_coordinates">Canonical coordinates</a>.
+				(https://en.wikipedia.org/wiki/Canonical_coordinates)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...canonical coordinates are sets of coordinates which can be used to describe a physical system at any given point in time (locating the system within phase space)."</div>
+			</td>
+		</tr>
+		
+
+		<tr>
+			<td id="fn29"><span class="footNoteText">&nbsp;29. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Felix_Klein">Felix Klein</a>.
+				(https://en.wikipedia.org/wiki/Felix_Klein)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Klein's synthesis of geometry as the study of the properties of a space that is invariant under a given group of transformations, known as the Erlangen Program (1872), profoundly influenced the evolution of mathematics."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn30"><span class="footNoteText">&nbsp;30. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Canonical_transformation">Canonical transformation</a>.
+				(https://en.wikipedia.org/wiki/Canonical_transformation)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; 'Canonical transformation'</div>
+			</td>
+		</tr>
+ 
+		<tr>
+			<td id="fn31"><span class="footNoteText">&nbsp;31. <a target="_blank"
+				href="https://plato.stanford.edu/entries/qt-uncertainty/">Canonical transformation</a>.
+				(https://plato.stanford.edu/entries/qt-uncertainty/)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "In atomic physics the observational data were obtained from spectroscopy..."</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn32"><span class="footNoteText">&nbsp;32. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Uncertainty_principle">Uncertainty principle</a>.
+				(https://en.wikipedia.org/wiki/Uncertainty_principle)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "...the more precisely the position of some particle is determined, the less precisely its momentum can be known, and vice versa."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn33"><span class="footNoteText">&nbsp;33. <a target="_blank"
+				href="https://www.researchgate.net/publication/223235607_The_rise_of_Cayley%27s_invariant_theory_1841-1862">Tony Crilly</a>.
+				(https://www.researchgate.net/publication/223235607_The_rise_of_Cayley%27s_invariant_theory_1841-1862)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp;  "A short note to his friend and collaborator, J. J. Sylvester (1814-1897), in late 1851 showed Cayley’s new commitment to founding invariants on partial differential equations. Here, without referring to his earlier allusion to differential equations in [1845], Cayley announced that the link to differential equations would 'constitute the foundation of a new theory of Invariants'”</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn34"><span class="footNoteText">&nbsp;34. <a target="_blank"
+				href="http://schoolworkhelper.net/werner-heisenberg-biography-physicist/">Werner Heisenberg biography</a>.
+				(http://schoolworkhelper.net/werner-heisenberg-biography-physicist/)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Heisenberg introduced his square arrays or matrices, which depict the electron as existing simultaneously in all possible Bohr orbits”</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn35"><span class="footNoteText">&nbsp;35. <a target="_blank"
+				href="http://www.nobelprize.org/nobel_prizes/physics/laureates/1954/born-lecture.pdf">Max Born - Nobel Lecture</a>.
+				(http://www.nobelprize.org/nobel_prizes/physics/laureates/1954/born-lecture.pdf)</span>
+				<br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn36"><span class="footNoteText">&nbsp;36. <a target="_blank"
+				href="https://books.google.com/books?id=oKU-AQAAIAAJ">Bulletin of the American Mathematical Society, Volume 9</a>.
+				(https://books.google.com/books?id=oKU-AQAAIAAJ)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; On page 359 Achter Band wrote in his article titled GAUSS'S COLLECTED WORKS, "...in 1828 and 1832 Gauss took the momentous step of introducing imaginary numbers into the theory of numbers."</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn37"><span class="footNoteText">&nbsp;37. <a target="_blank"
+				href="http://www.maths.tcd.ie/pub/HistMath/People/Hamilton/OnQuat/OnQuat.pdf">ON QUATERNIONS, OR ON A NEW SYSTEM OF IMAGINARIES IN ALGEBRA</a>.
+				(http://www.maths.tcd.ie/pub/HistMath/People/Hamilton/OnQuat/OnQuat.pdf)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Hamilton wrote, "...though it must, at first sight, seem strange and almost unallowable, to define that the product
+of two imaginary factors in one order differs (in sign) from the product of the same factors
+in the opposite order (ji = −ij). It will, however, it is hoped, be allowed, that in entering
+on the discussion of a new system of imaginaries, it may be found necessary or convenient
+to surrender some of the expectations suggested by the previous study of products of real
+quantities, or even of expressions of the form x + iy, in which i<sup>2</sup> = −1. And whether the
+choice of the system of definitional equations, (A.), (B.), (C.), has been a judicious, or at
+least a happy one, will probably be judged by the event, that is, by trying whether those
+equations conduct to results of sufficient consistency and elegance."</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn38"><span class="footNoteText">&nbsp;38. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Josiah_Willard_Gibbs#Later_years">Josiah Willard Gibbs</a>.
+				(https://en.wikipedia.org/wiki/Josiah_Willard_Gibbs#Later_years)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "From 1880 to 1884, Gibbs worked on developing the exterior algebra of Hermann Grassmann into a vector calculus well-suited to the needs of physicists. With this object in mind, Gibbs distinguished between the dot and cross products of two vectors and introduced the concept of dyadics. Gibbs sought to convince other physicists of the convenience of the vectorial approach over the quaternionic calculus of William Rowan Hamilton."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn39"><span class="footNoteText">&nbsp;39. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Transformation_geometry">Transformation geometry</a>.
+				(https://en.wikipedia.org/wiki/Transformation_geometry)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "In mathematics, transformation geometry (or transformational geometry) is the name of a mathematical and pedagogic take on the study of geometry by focusing on groups of geometric transformations, and that are invariant under them. It is opposed to the classical synthetic geometry approach of Euclidean geometry, that focuses on geometric constructions."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn40"><span class="footNoteText">&nbsp;40. <a target="_blank"
+				href="https://www.mathsisfun.com/algebra/vectors-dot-product.html">Dot Product</a>.
+				(https://www.mathsisfun.com/algebra/vectors-dot-product.html)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn41"><span class="footNoteText">&nbsp;41. <a target="_blank"
+				href="http://mathworld.wolfram.com/InnerProduct.html">Inner Product</a>.
+				(http://mathworld.wolfram.com/InnerProduct.html)</span>
+				<br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn42"><span class="footNoteText">&nbsp;42. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Matrix_mechanics">Matric Mechanics</a>.
+				(https://en.wikipedia.org/wiki/Matrix_mechanics)</span>
+				<br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn43"><span class="footNoteText">&nbsp;43. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Sesquilinear_form">Sesquilinear form</a>.
+				(https://en.wikipedia.org/wiki/Sesquilinear_form)</span>
+				<br>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn43"><span class="footNoteText">&nbsp;43. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Born_rule">Born rule</a>.
+				(https://en.wikipedia.org/wiki/Born_rule)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "(I deliberately avoid the phrase “transition probabilities.”) In
+that regard, the formalism that has been developing quite far since then is well established.
+However, this way of posing the question addresses only one aspect of the
+quantum-theoretic problem; in addition, it raises the just-as-important question of the
+essence of the “transition” itself"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn44"><span class="footNoteText">&nbsp;44. <a target="_blank"
+				href="http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication300v5.pdf">NBS Special Publication 300, Vol 5, pg 152, '<i>A Historical Review of Atomic Frequency Standards</i>, R. E. BEEHLER</a>.
+				(http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nbsspecialpublication300v5.pdf)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The first experiments using atomic or molecular beams were those of the French physicist A. L. Dunoyer in 
+1911. He observed that when sodium was heated sufficiently in [a heated glass bulb], a deposit was formed in [an attached collection tube] whose distribution could be explained by the 
+assumption that the sodium atoms traveled in straight lines"</div>
+			</td>
+		</tr>
+	
+		<tr>
+			<td id="fn45"><span class="footNoteText">&nbsp;45. <a target="_blank"
+				href="https://chem.libretexts.org/Core/Physical_and_Theoretical_Chemistry/Physical_Properties_of_Matter/States_of_Matter/Properties_of_Gases/Kinetic_Theory_of_Gases/Kinetic_Theory_of_Gases">NBS Special Publication 300, Vol 5, pg 152, '<i>A Historical Review of Atomic Frequency Standards</i>, R. E. BEEHLER</a>.
+				(https://chem.libretexts.org/Core/Physical_and_Theoretical_Chemistry/Physical_Properties_of_Matter/States_of_Matter/Properties_of_Gases/Kinetic_Theory_of_Gases/Kinetic_Theory_of_Gases)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Gases consist of particles in constant, random motion. They continue in a straight line until they collide with something—usually each other or 
+the walls of their container."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn46"><span class="footNoteText">&nbsp;46. <a target="_blank"
+				href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1943/stern-lecture.pdf">NBS Special Publication 300, Vol 5, pg 152, '<i>A Historical Review of Atomic Frequency Standards</i>, R. E. BEEHLER</a>.
+				(https://www.nobelprize.org/nobel_prizes/physics/laureates/1943/stern-lecture.pdf)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Stern wrote in his Nobel lecture, "... proven first by Dunoyer in
+1911. He used sodium vapor and condensed the beam molecules hitting the
+wall by cooling it with liquid air. The sodium deposit formed on the wall
+had exactly the shape calculated under the assumption that the molecules
+move in straight lines like rays of light. Therefore we call such a beam a
+«molecular ray» or «molecular beam»."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn47"><span class="footNoteText">&nbsp;47. <a target="_blank"
+				href="http://adsabs.harvard.edu/full/1898ApJ.....8..102M">Astrophysical Journal, vol. 8, p.102, <i>Notes ON THE CONCAVE GRAGING</i>, Mitchell, S. A.</a>.
+				(http://adsabs.harvard.edu/full/1898ApJ.....8..102M)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn48"><span class="footNoteText">&nbsp;48. <a target="_blank"
+				href="https://www.nobelprize.org/nobel_prizes/physics/laureates/1902/zeeman-lecture.html">Zeeman Nobel Lecture, 'Light Radiation in a Magnetic Field'</a>.
+				(https://www.nobelprize.org/nobel_prizes/physics/laureates/1902/zeeman-lecture.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Zeeman wrote in his Nobel lecture, "Innumerable electrical particles oscillate in every flame and light source. 
+We can in fact assume that every heat source is filled with electrons which will continue to oscillate ceaselessly and indefinitely.
+All these electrons leave their impression on the emitted rays."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn49"><span class="footNoteText">&nbsp;49. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Michelson_interferometer">Michelson ingterferometer</a>.
+				(https://en.wikipedia.org/wiki/Michelson_interferometer)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The Michelson interferometer (among other interferometer configurations) is employed in many scientific experiments and became well known for its 
+use by Albert Michelson and Edward Morley in the famous Michelson-Morley experiment (1887)"</div>
+			</td>
+		</tr>	
+
+		<tr>
+			<td id="fn50"><span class="footNoteText">&nbsp;50. <a target="_blank"
+				href="http://www.chemguide.co.uk/atoms/properties/hspectrum.html">THE ATOMIC HYDROGEN EMISSION SPECTRUM</a>.
+				(http://www.chemguide.co.uk/atoms/properties/hspectrum.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "By an amazing bit of mathematical insight, in 1885 Balmer came up with a simple formula for predicting the wavelength of any of the lines in what we now know as the Balmer series."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn51"><span class="footNoteText">&nbsp;51. <a target="_blank" 
+				href="http://adsabs.harvard.edu/full/1931ApJ....74....1G">'Albert a. Michelson', Gale, H. G. pg.4</a>.
+				(http://adsabs.harvard.edu/full/1931ApJ....74....1G)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "In 1888 and 1889 Michelson and Morley published their method for determining the number of wave-lengths
+of light in the standard meter.  This was another application of the interferometer, and amounted to making
+light-waves, instead of an arbitrary bar, the standard of length.  In the search for a suitable light-wave, in 
+terms of which to evaluate the meter, Professor Michelson discovered the fine structure of spectral lines.
+The double character of the red hydrogen line was a discovery which has had a profound influence on the
+development of modern theories of the nature of the atom."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn52"><span class="footNoteText">&nbsp;52. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/H-alpha">H-alpha</a>.
+				(https://en.wikipedia.org/wiki/H-alpha)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "H-alpha (Hα) is a specific deep-red visible spectral line in the Balmer series with a wavelength of 656.28 nm; it 
+occurs when a hydrogen electron falls from its third to second lowest energy level."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn53"><span class="footNoteText">&nbsp;53. <a target="_blank"
+				href="https://www.fourmilab.ch/etexts/einstein/specrel/www/">ON THE ELECTRODYNAMICS OF MOVING BODIES</a>.
+				(https://www.fourmilab.ch/etexts/einstein/specrel/www/)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn54"><span class="footNoteText">&nbsp;54. <a target="_blank"
+				href="https://www.fourmilab.ch/etexts/einstein/E_mc2/www/">DOES THE INERTIA OF A BODY DEPEND UPON ITS ENERGY-CONTENT?</a>.
+				(https://www.fourmilab.ch/etexts/einstein/E_mc2/www/)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn55"><span class="footNoteText">&nbsp;55. <a target="_blank"
+				href="http://www.mat.uc.pt/~helios/Mestre/Novemb00/H61iflan.htm">The History of the Sextant</a>.
+				(http://www.mat.uc.pt/~helios/Mestre/Novemb00/H61iflan.htm)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn56"><span class="footNoteText">&nbsp;56. <a target="_blank" 
+				href="https://en.m.wikipedia.org/wiki/Kepler's_laws_of_planetary_motion#history">Kepler's laws of planetary motion</a>.
+				(https://en.m.wikipedia.org/wiki/Kepler's_laws_of_planetary_motion#history)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Johannes Kepler published his first two laws about planetary motion in 1609, having found 
+them by analyzing the astronomical observations of Tycho Brahe."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn57"><span class="footNoteText">&nbsp;57. <a target="_blank"
+				href="http://hyperphysics.phy-astr.gsu.edu/hbase/kepler.html#c2">Kepler</a>.
+				(http://hyperphysics.phy-astr.gsu.edu/hbase/kepler.html#c2)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn58"><span class="footNoteText">&nbsp;58. <a target="_blank" 
+				href="https://archive.org/details/cu31924005244615">Lorentz 'The theory of electrons'</a>.
+				(https://archive.org/details/cu31924005244615)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The theory of electrons, on which I shall have the honor to 
+lecture before you, already forms so vast a subject, that it will be 
+impossible for me to treat it quite completely. Even if I confine 
+myself to a general review of this youngest branch of the science 
+of electricity, to its more important applications in the domain 
+of light and radiant heat, and to the discussion of some of the 
+difficulties that still remain, I shall have to express myself as concisely 
+as possible, and to use to the best advantage the time at our 
+disposal. [Regarding the] medium surrounding an electrified body or a magnet, that we may 
+think of electricity as of some substance or fluid, free to move in 
+a conductor and bound to positions of equilibrium in a dielectric, 
+and that we may also conceive a magnetic field as the seat of 
+certain invisible motions, rotations for example around the lines of 
+force."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn59"><span class="footNoteText">&nbsp;59. <a target="_blank"
+				href="https://arxiv.org/pdf/physics/0504110.pdf">Relativistic Mass</a>.
+				(https://arxiv.org/pdf/physics/0504110.pdf)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Einstein was not in favor of using relativistic
+mass, except in his earliest works. In fact, one
+would be hard-pressed to find an explicit statement of
+relativistic mass in Einstein’s work after his 1906 paper
+on transverse and longitudinal mass"</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn60"><span class="footNoteText">&nbsp;60. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Lagrangian_mechanics">Lagrangian mechanics</a>.
+				(https://en.wikipedia.org/wiki/Lagrangian_mechanics)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Lagrangian mechanics is ideal for systems with conservative forces 
+and for bypassing constraint forces in any coordinate system. Dissipative and 
+driven forces can be accounted for by splitting the external forces into a sum 
+of potential and non-potential forces, leading to a set of modified Euler-Lagrange 
+(EL) equations.[5] Generalized coordinates can be chosen by convenience, to exploit symmetries 
+in the system or the geometry of the constraints, which may simplify solving for the 
+motion of the system. Lagrangian mechanics also reveals conserved quantities and their 
+symmetries in a direct way, as a special case of Noether's theorem."</div>
+			</td>
+		</tr>
+		
+		<tr>
+			<td id="fn61"><span class="footNoteText">&nbsp;61. <a target="_blank"
+				href="http://www.dictionary.com/browse/manifold">Manifold</a>.
+				(http://www.dictionary.com/browse/manifold)</span>
+				<br>
+			</td>
+		</tr>
+				
+		<tr>
+			<td id="fn62"><span class="footNoteText">&nbsp;62. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/Ellipse">Ellipse</a>.
+				(https://en.wikipedia.org/wiki/Ellipse)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn63"><span class="footNoteText">&nbsp;63. <a target="_blank"
+				href="https://www.aps.org/programs/outreach/history/historicsites/gibbs.cfm">J. Willard Gibbs</a>.
+				(https://www.aps.org/programs/outreach/history/historicsites/gibbs.cfm)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Gibbs is also known as the "father of vector analysis", or the formal 
+study of vectors in math, and is largely responsible for the widespread use of vectors in physics, 
+replacing the quaternions that William Rowan Hamilton had earlier discovered."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn64"><span class="footNoteText">&nbsp;64. <a target="_blank"
+				href="http://www.radon.com/radon_facts/">Radon Gas</a>.
+				(http://www.radon.com/radon_facts/)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Radon is a gaseous highly radioactive element discovered by English physicist 
+Ernest Rutherford in 1899. The discovery is also credited to German physicist Friedrich Ernst Dorn in 1900. 
+More specifically, Rutherford discovered radon’s alpha radiation and Dorn discovered that radium was releasing a gas."</div>
+			</td>
+		</tr>
+ 
+		<tr>
+			<td id="fn65"><span class="footNoteText">&nbsp;65. <a target="_blank"
+				href="http://chemed.chem.purdue.edu/genchem/history/rutherford.html">Ernest Rutherford</a>.
+				(http://chemed.chem.purdue.edu/genchem/history/rutherford.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "In 1899 Ernest Rutherford studied the absorption of radioactivity by thin sheets 
+of metal foil and found two components: alpha (a) radiation, which is absorbed by a few thousandths of a centimeter 
+of metal foil, and beta (b) radiation, which can pass through 100 times as much foil before it was absorbed."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn66"><span class="footNoteText">&nbsp;66. <a target="_blank"
+				href="https://www.britannica.com/science/Plancks-radiation-law">Planck's Law</a>.
+				(https://www.britannica.com/science/Plancks-radiation-law)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "Planck’s law for the energy Eλ radiated per unit volume by a cavity of a blackbody 
+in the wavelength interval λ to λ + Δλ (Δλ denotes an increment of wavelength) can be written in terms of Planck’s 
+constant (h), the speed of light (c), the Boltzmann constant (k), and the absolute temperature (T)"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn67"><span class="footNoteText">&nbsp;67. <a target="_blank"
+				href="http://adsbit.harvard.edu//full/1994JApA...15....3B/0000009.000.html">Einstein's translation of Bose's paper 'Planck’s Law and Light Quantum Hypothesis.'</a>.
+				(http://adsbit.harvard.edu//full/1994JApA...15....3B/0000009.000.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Bose wrote, "Planck’s formula for the distribution of energy in the radiation from a
+black body was the starting point of the quantum theory [...] [All 
+derivations use...] the relation between the radiation density and the mean energy of
+an oscillator, and they make assumptions about the number of degrees of
+freedom of the ether. ... This factor, however, can be derived only from
+classical theory. This is the unsatisfactory feature in all derivations"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn68"><span class="footNoteText">&nbsp;68. <a target="_blank"
+				href="https://www.mathopenref.com/spherearea.html">Surface Area of a Sphere</a>.
+				(https://www.mathopenref.com/spherearea.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; Area = 4&pi;r<sup style="font-size: 70%;">2</sup></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn69"><span class="footNoteText">&nbsp;69. <a target="_blank"
+				href="http://mathworld.wolfram.com/BinomialCoefficient.html">Binominal Coefficient'</a>.
+				(http://mathworld.wolfram.com/BinomialCoefficient.html)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "The binomial coefficient (n; k) is the number of ways of picking 
+k unordered outcomes from n possibilities, also known as a combination or combinatorial number."</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn70"><span class="footNoteText">&nbsp;70. <a target="_blank"
+				href="https://www.mathopenref.com/spherearea.html">Michael Stifel</a>.
+				(https://en.wikipedia.org/wiki/Michael_Stifel)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn71"><span class="footNoteText">&nbsp;71. <a target="_blank"
+				href="http://www.ruhr-uni-bochum.de/agstuhl/deutsch/Lehre/Vorlesung/PCVI/VorlSS01_B.PDF">Sterling Approximation</a>.
+				(http://www.ruhr-uni-bochum.de/agstuhl/deutsch/Lehre/Vorlesung/PCVI/VorlSS01_B.PDF)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; The Stirling Approximation uses a logrithmic function to approximate the factorial function as "ln <i>N</i>!=<i>N</i>(ln<i>N</i>)-<i>N</i>"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn72"><span class="footNoteText">&nbsp;72. <a target="_blank"
+				href="https://en.wikipedia.org/wiki/List_of_logarithmic_identities">Logrithm Identities</a>.
+				(https://en.wikipedia.org/wiki/List_of_logarithmic_identities)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn73"><span class="footNoteText">&nbsp;73. <a target="_blank"
+				href="http://mathworld.wolfram.com/Logarithm.html">Logrithms</a>.
+				(http://mathworld.wolfram.com/Logarithm.html)</span>
+				<br>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn74"><span class="footNoteText">&nbsp;74. <a target="_blank"
+				href="https://www.intmath.com/counting-probability/8-independent-dependent-events.php">Logrithms</a>.
+				(https://www.intmath.com/counting-probability/8-independent-dependent-events.php)</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "If E1 and E2 are independent events, then: P(E1 and E2) = P(E1) × P(E2)"</div>
+			</td>
+		</tr>
+
+		<tr>
+			<td id="fn99"><span class="footNoteText">&nbsp;99. <a target="_blank"
+				href="">Example Reference</a>.
+				()</span>
+				<br>
+				<div style="font-size: 70%;">
+				&nbsp;&nbsp; "An example reference."</div>
+			</td>
+		</tr>
+	</table> <!-- /REFERENCES -->
+	<br><br>
+	
+	<div id="fnNotAssociative" style="display: none;">
+		<div>&nbsp;&nbsp;Neither the dot product nor the inner product operator is associative 
+because the dot and inner product operations between a vector and a scalar is not defined. 
+Each operator is only valid between two vectors.  
+However there is a kind of associative definition involving a scalar as shown.
+The equality is a combination of the multiply and dot product or inner product operators.
+A vector's magnitude is scaled by multiplication with a scaler.
+For this associative equality to hold either A or B can be scaled but not both.
+The right side of the equality shown scales the B vector by a, but it also holds if the A vector is scaled.</div>
+	</div>
+
+	<div id="fnComplexConjugate" style="display: none;">
+		<div>&nbsp;&nbsp;The inner product has its origin in Hamilton's quest for multiplication of complex valued vectors.
+The imaginary component of the complex valued vector presents a special case for this operation.
+In the case of the dot product from which the inner product is derived, two real valued vectors are the terms of the operation and the result is a single number.
+That number represents what magnitude of the first real valued vector exists in the same direction as the second vector.
+Ideally the Inner Product binary operator should be commutative the same as the Dot Product, however the commutative property only holds for the complex conjugate of the commuted operation.</div>
+	</div>
+</body>
+</html>
